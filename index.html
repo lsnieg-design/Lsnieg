@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="es">
+
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -9,12 +11,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
@@ -23,30 +33,60 @@
     <div class="ambient a1"></div>
     <div class="ambient a2"></div>
 
-    <!-- BARRA SUPERIOR -->
+
+    <!-- =====================================================
+         BARRA SUPERIOR
+    ====================================================== -->
+
     <div class="top-strip">
-        <span>presentación interactiva</span>
-        <span>Lucía Snieg · FAyD</span>
+
+        <span>
+            presentación interactiva
+        </span>
+
+        <span>
+            Lucía Snieg · FAyD
+        </span>
+
     </div>
 
 
+
+    <!-- =====================================================
+         ESCRITORIO
+    ====================================================== -->
+
     <main class="workspace" id="workspace">
 
-        <!-- =====================================================
-             VENTANA PRINCIPAL
-        ====================================================== -->
 
-        <section class="window welcome-window" data-window="welcome">
+        <!-- =================================================
+             PORTADA
+        ================================================== -->
+
+        <section
+            class="window welcome-window"
+            data-window="welcome"
+        >
 
             <div class="window-bar">
 
                 <div class="window-title">
+
                     <span class="dot blue"></span>
+
                     lucia_snieg / presentación
+
                 </div>
 
                 <div class="window-actions">
-                    <button class="close" aria-label="Cerrar">×</button>
+
+                    <button
+                        class="close"
+                        aria-label="Cerrar"
+                    >
+                        ×
+                    </button>
+
                 </div>
 
             </div>
@@ -54,70 +94,88 @@
 
             <div class="welcome-body">
 
+
                 <div class="welcome-copy">
 
                     <p class="tiny">
                         POSTULACIÓN · TUTORÍA VIRTUAL
                     </p>
 
+
                     <h1>
-                        La virtualidad<br>
-                        también <em>se acompaña.</em>
+                        Conozco el otro<br>
+                        lado de la <em>pantalla.</em>
                     </h1>
 
+
                     <p class="lead">
-                        Soy Lucía Snieg. Docente de Educación Especial,
-                        especialista en accesibilidad y educación mediada
-                        por tecnologías.
+
+                        Mi recorrido empezó en las instituciones,
+                        en las aulas y en los equipos de trabajo.
+                        Hoy trabajo con tecnologías porque aprendí
+                        que acompañar también es encontrar nuevas
+                        formas de estar cerca.
+
                     </p>
+
 
                     <p class="question">
-                        Abrí las ventanas. Hay un poco de mi recorrido en cada una.
+                        Podés empezar por donde quieras.
                     </p>
+
 
                     <p class="launcher-hint">
-                        ● elegí una ventana para comenzar
+                        ↓ explorá mi recorrido
                     </p>
 
-                    <button class="start" data-open="video">
+
+                    <button
+                        class="start"
+                        data-open="video"
+                    >
+
                         ▶ Ver presentación
+
                     </button>
 
                 </div>
 
 
-                <!-- FOTO -->
+
+                <!-- =============================================
+                     FOTO
+                ============================================== -->
 
                 <div class="portrait">
 
-                    <!--
-                    REEMPLAZÁ TU_FOTO_AQUI.jpg POR EL NOMBRE DE TU FOTO.
-
-                    Por ejemplo:
-                    <img src="foto-lucia.jpg" alt="Lucía Snieg">
-
-                    La foto debería estar dentro de la misma carpeta
-                    que este index.html.
-                    -->
-
                     <img
-                        src="TU_FOTO_AQUI.jpg"
+                        src="lucia.png"
                         alt="Lucía Snieg"
                         class="profile-photo"
                     >
 
-                    <strong>Lucía Snieg</strong>
+
+                    <strong>
+                        Lucía Snieg
+                    </strong>
+
 
                     <span>
                         Educación · Accesibilidad · Tecnología
                     </span>
 
+
                     <div class="hand-note">
-                        no llegué a la virtualidad desde una plataforma;<br>
+
+                        no llegué a la virtualidad
+                        desde una plataforma;<br>
+
                         llegué desde las instituciones.
+
                     </div>
 
                 </div>
+
 
             </div>
 
@@ -125,9 +183,146 @@
 
 
 
-        <!-- =====================================================
+        <!-- =================================================
+             NAVEGACIÓN CIRCULAR
+        ================================================== -->
+
+        <nav
+            class="dock"
+            aria-label="Explorar presentación"
+        >
+
+            <button
+                data-open="who"
+                title="Quién soy"
+            >
+
+                <span>◉</span>
+
+                <b>
+                    Quién soy
+                </b>
+
+            </button>
+
+
+            <button
+                data-open="route"
+                title="Recorrido"
+            >
+
+                <span>⌁</span>
+
+                <b>
+                    Recorrido
+                </b>
+
+            </button>
+
+
+            <button
+                data-open="virtual"
+                title="Virtualidad"
+            >
+
+                <span>▣</span>
+
+                <b>
+                    Virtualidad
+                </b>
+
+            </button>
+
+
+            <button
+                data-open="accompany"
+                title="Acompañamiento"
+            >
+
+                <span>♡</span>
+
+                <b>
+                    Acompañar
+                </b>
+
+            </button>
+
+
+            <button
+                data-open="access"
+                title="Accesibilidad"
+            >
+
+                <span>♿</span>
+
+                <b>
+                    Accesibilidad
+                </b>
+
+            </button>
+
+
+            <button
+                data-open="formation"
+                title="Formación"
+            >
+
+                <span>□</span>
+
+                <b>
+                    Formación
+                </b>
+
+            </button>
+
+
+            <button
+                data-open="works"
+                title="Proyectos"
+            >
+
+                <span>✦</span>
+
+                <b>
+                    Proyectos
+                </b>
+
+            </button>
+
+
+            <button
+                data-open="publications"
+                title="Trabajos escritos"
+            >
+
+                <span>↗</span>
+
+                <b>
+                    Trabajos
+                </b>
+
+            </button>
+
+        </nav>
+
+
+        <div class="dock-guide">
+
+            <span>●</span>
+
+            <span>
+                podés abrir y cerrar cada ventana
+            </span>
+
+            <span>↓</span>
+
+        </div>
+
+
+
+        <!-- =================================================
              VIDEO
-        ====================================================== -->
+        ================================================== -->
 
         <section
             class="window panel-window"
@@ -138,12 +333,20 @@
             <div class="window-bar">
 
                 <div class="window-title">
+
                     <span class="dot teal"></span>
+
                     video_presentacion.mp4
+
                 </div>
 
+
                 <div class="window-actions">
-                    <button class="close">×</button>
+
+                    <button class="close">
+                        ×
+                    </button>
+
                 </div>
 
             </div>
@@ -154,6 +357,7 @@
                 <p class="tiny">
                     UNA PRESENTACIÓN EN PRIMERA PERSONA
                 </p>
+
 
                 <h2>
                     Prefiero presentarme yo.
@@ -167,26 +371,33 @@
                         id="playVideo"
                         aria-label="Reproducir video"
                     >
+
                         <span class="material-icons-round">
                             play_arrow
                         </span>
+
                     </button>
+
 
                     <strong>
                         VIDEO DE PRESENTACIÓN
                     </strong>
 
+
                     <small>
-                        Este espacio está preparado para incorporar
-                        el video de presentación.
+                        Este espacio está preparado para
+                        incorporar el video de presentación.
                     </small>
 
                 </div>
 
 
                 <p class="under-note">
-                    La idea: contar quién soy, qué experiencias me llevaron
-                    hasta acá y cómo pienso el acompañamiento tutorial.
+
+                    La idea: contar quién soy, qué experiencias
+                    me llevaron hasta acá y cómo pienso
+                    el acompañamiento tutorial.
+
                 </p>
 
             </div>
@@ -195,9 +406,9 @@
 
 
 
-        <!-- =====================================================
+        <!-- =================================================
              QUIÉN SOY
-        ====================================================== -->
+        ================================================== -->
 
         <section
             class="window panel-window"
@@ -208,12 +419,20 @@
             <div class="window-bar">
 
                 <div class="window-title">
+
                     <span class="dot yellow"></span>
+
                     quien_soy.txt
+
                 </div>
 
+
                 <div class="window-actions">
-                    <button class="close">×</button>
+
+                    <button class="close">
+                        ×
+                    </button>
+
                 </div>
 
             </div>
@@ -221,14 +440,17 @@
 
             <div class="window-content two-panel">
 
+
                 <div>
 
                     <p class="tiny">
                         QUIÉN SOY
                     </p>
 
+
                     <h2>
-                        Mi recorrido no empezó en una plataforma.
+                        Mi recorrido no empezó
+                        en una plataforma.
                     </h2>
 
                 </div>
@@ -237,28 +459,44 @@
                 <div class="copy">
 
                     <p class="large">
-                        Empezó en las instituciones, en las aulas,
-                        en los equipos de trabajo y en el acompañamiento
-                        cotidiano de personas con distintas necesidades.
+
+                        Empezó en las instituciones,
+                        en las aulas, en los equipos
+                        de trabajo y en el acompañamiento
+                        cotidiano de personas con distintas
+                        necesidades.
+
                     </p>
 
-                    <p>
-                        Soy Licenciada y Profesora de Educación Especial.
-                        Mi experiencia reúne docencia, acompañamiento
-                        de trayectorias, discapacidad, accesibilidad,
-                        formación docente y tecnologías educativas.
-                    </p>
 
                     <p>
-                        Con el tiempo, la tecnología se volvió una herramienta
-                        para pensar problemas concretos: cómo organizar,
-                        cómo comunicar, cómo enseñar, cómo acompañar y cómo
-                        hacer que más personas puedan participar.
+
+                        Soy Licenciada y Profesora de Educación
+                        Especial. Mi experiencia reúne docencia,
+                        acompañamiento de trayectorias,
+                        discapacidad, accesibilidad, formación
+                        docente y tecnologías educativas.
+
                     </p>
+
+
+                    <p>
+
+                        Con el tiempo, la tecnología se volvió
+                        una herramienta para pensar problemas
+                        concretos: cómo organizar, cómo comunicar,
+                        cómo enseñar, cómo acompañar y cómo hacer
+                        que más personas puedan participar.
+
+                    </p>
+
 
                     <blockquote>
-                        La tecnología puede acercar. Pero para que eso ocurra
-                        tiene que estar pensada desde las personas que la van a usar.
+
+                        La tecnología puede acercar.
+                        Pero para que eso ocurra tiene que estar
+                        pensada desde las personas que la van a usar.
+
                     </blockquote>
 
                 </div>
@@ -269,9 +507,9 @@
 
 
 
-        <!-- =====================================================
+        <!-- =================================================
              RECORRIDO
-        ====================================================== -->
+        ================================================== -->
 
         <section
             class="window panel-window"
@@ -282,12 +520,20 @@
             <div class="window-bar">
 
                 <div class="window-title">
+
                     <span class="dot blue"></span>
+
                     recorrido_2012-2026.log
+
                 </div>
 
+
                 <div class="window-actions">
-                    <button class="close">×</button>
+
+                    <button class="close">
+                        ×
+                    </button>
+
                 </div>
 
             </div>
@@ -299,14 +545,21 @@
                     MI RECORRIDO
                 </p>
 
+
                 <h2>
-                    Una trayectoria que fue cambiando de lugar,
+
+                    Una trayectoria que fue
+                    cambiando de lugar,
                     pero no de pregunta.
+
                 </h2>
 
+
                 <p class="intro">
-                    ¿Qué necesita una persona para poder participar,
-                    aprender y sentirse acompañada?
+
+                    ¿Qué necesita una persona para poder
+                    participar, aprender y sentirse acompañada?
+
                 </p>
 
 
@@ -315,15 +568,21 @@
 
                     <article>
 
-                        <time>2012–2014</time>
+                        <time>
+                            2012–2014
+                        </time>
 
                         <div>
-                            <b>Acompañamiento terapéutico</b>
+
+                            <b>
+                                Acompañamiento terapéutico
+                            </b>
 
                             <p>
                                 CET “Cea Buenos Aires”.
                                 Acompañamiento terapéutico infantil.
                             </p>
+
                         </div>
 
                     </article>
@@ -331,18 +590,22 @@
 
                     <article>
 
-                        <time>2014–2022</time>
+                        <time>
+                            2014–2022
+                        </time>
 
                         <div>
 
                             <b>
-                                Tallerista · Centro de día “Sobre Puentes”
+                                Tallerista · Centro de día
+                                “Sobre Puentes”
                             </b>
 
                             <p>
                                 Docencia de apoyo de inclusión en EPJA
-                                y talleres de Coro, Proyecto Laboral Autogestivo,
-                                Teatro, Cine, Fotografía y Comedia Musical.
+                                y talleres de Coro, Proyecto Laboral
+                                Autogestivo, Teatro, Cine, Fotografía
+                                y Comedia Musical.
                             </p>
 
                         </div>
@@ -352,7 +615,9 @@
 
                     <article>
 
-                        <time>2015–2017</time>
+                        <time>
+                            2015–2017
+                        </time>
 
                         <div>
 
@@ -361,8 +626,8 @@
                             </b>
 
                             <p>
-                                Co-coordinación de grupos de aprendizaje
-                                y de arte/recreación.
+                                Co-coordinación de grupos
+                                de aprendizaje y de arte/recreación.
                             </p>
 
                         </div>
@@ -372,12 +637,15 @@
 
                     <article>
 
-                        <time>2017–2019</time>
+                        <time>
+                            2017–2019
+                        </time>
 
                         <div>
 
                             <b>
-                                Coordinadora de espacios para personas con discapacidad
+                                Coordinadora de espacios
+                                para personas con discapacidad
                             </b>
 
                             <p>
@@ -392,17 +660,21 @@
 
                     <article>
 
-                        <time>2019–2021</time>
+                        <time>
+                            2019–2021
+                        </time>
 
                         <div>
 
                             <b>
-                                Docente · Escuela Especial “Juntos a la Par”
+                                Docente · Escuela Especial
+                                “Juntos a la Par”
                             </b>
 
                             <p>
                                 Primer y segundo ciclo.
-                                Planificación y desarrollo de actividades.
+                                Planificación y desarrollo
+                                de actividades.
                             </p>
 
                         </div>
@@ -412,17 +684,21 @@
 
                     <article>
 
-                        <time>2020–actualidad</time>
+                        <time>
+                            2020–actualidad
+                        </time>
 
                         <div>
 
                             <b>
-                                Docente de nivel superior · Instituto Miguel Raspanti
+                                Docente de nivel superior
+                                · Instituto Miguel Raspanti
                             </b>
 
                             <p>
-                                Prácticas, reflexión filosófica, sujeto con DI,
-                                recursos y medios didácticos, ESI, cultura digital,
+                                Prácticas, reflexión filosófica,
+                                sujeto con DI, recursos y medios
+                                didácticos, ESI, cultura digital,
                                 didácticas y tecnología.
                             </p>
 
@@ -433,7 +709,9 @@
 
                     <article>
 
-                        <time>2021–2024</time>
+                        <time>
+                            2021–2024
+                        </time>
 
                         <div>
 
@@ -442,9 +720,9 @@
                             </b>
 
                             <p>
-                                Didactización, maquetación y soporte de Moodle
-                                y Educativa. Especialista en educación a distancia
-                                e-learning.
+                                Didactización, maquetación y soporte
+                                de Moodle y Educativa. Especialista
+                                en educación a distancia e-learning.
                             </p>
 
                         </div>
@@ -454,12 +732,15 @@
 
                     <article>
 
-                        <time>2023–2025</time>
+                        <time>
+                            2023–2025
+                        </time>
 
                         <div>
 
                             <b>
-                                Acompañamiento de trayectorias · UNAHUR
+                                Acompañamiento de trayectorias
+                                · UNAHUR
                             </b>
 
                             <p>
@@ -474,22 +755,27 @@
 
                     <article class="current">
 
-                        <time>2026–actualidad</time>
+                        <time>
+                            2026–actualidad
+                        </time>
 
                         <div>
 
                             <b>
-                                Herramientas digitales y accesibilidad
+                                Herramientas digitales
+                                y accesibilidad
                             </b>
 
                             <p>
-                                Creación de webs, software y entornos virtuales
-                                de aprendizaje accesibles. Asesoría en accesibilidad.
+                                Creación de webs, software y entornos
+                                virtuales de aprendizaje accesibles.
+                                Asesoría en accesibilidad.
                             </p>
 
                         </div>
 
                     </article>
+
 
                 </div>
 
@@ -499,9 +785,9 @@
 
 
 
-        <!-- =====================================================
+        <!-- =================================================
              VIRTUALIDAD
-        ====================================================== -->
+        ================================================== -->
 
         <section
             class="window panel-window"
@@ -512,12 +798,20 @@
             <div class="window-bar">
 
                 <div class="window-title">
+
                     <span class="dot teal"></span>
+
                     virtualidad / ideas.md
+
                 </div>
 
+
                 <div class="window-actions">
-                    <button class="close">×</button>
+
+                    <button class="close">
+                        ×
+                    </button>
+
                 </div>
 
             </div>
@@ -529,9 +823,11 @@
                     EDUCACIÓN A DISTANCIA
                 </p>
 
+
                 <h2>
                     La virtualidad también necesita presencia.
                 </h2>
+
 
                 <p class="intro">
                     Hacé clic en cada carpeta.
@@ -540,10 +836,12 @@
 
                 <div class="folders">
 
+
                     <button
                         class="folder active"
                         data-tab="presence"
                     >
+
                         📁
 
                         <strong>
@@ -553,6 +851,7 @@
                         <small>
                             estar disponible
                         </small>
+
                     </button>
 
 
@@ -560,6 +859,7 @@
                         class="folder"
                         data-tab="orientation"
                     >
+
                         📁
 
                         <strong>
@@ -569,6 +869,7 @@
                         <small>
                             hacer visible el camino
                         </small>
+
                     </button>
 
 
@@ -576,6 +877,7 @@
                         class="folder"
                         data-tab="access"
                     >
+
                         📁
 
                         <strong>
@@ -585,6 +887,7 @@
                         <small>
                             que nadie quede afuera
                         </small>
+
                     </button>
 
 
@@ -592,6 +895,7 @@
                         class="folder"
                         data-tab="autonomy"
                     >
+
                         📁
 
                         <strong>
@@ -601,7 +905,9 @@
                         <small>
                             acompañar sin reemplazar
                         </small>
+
                     </button>
+
 
                 </div>
 
@@ -615,19 +921,24 @@
                         01
                     </span>
 
+
                     <div>
 
                         <h3>
                             Presencia
                         </h3>
 
+
                         <p>
-                            En una propuesta a distancia, la presencia
-                            no necesariamente es estar conectados todo
-                            el tiempo. Es construir referencias: saber
-                            dónde preguntar, recibir una respuesta,
-                            encontrar orientación y sentir que hay
-                            alguien del otro lado.
+
+                            En una propuesta a distancia,
+                            la presencia no necesariamente es
+                            estar conectados todo el tiempo.
+                            Es construir referencias: saber dónde
+                            preguntar, recibir una respuesta,
+                            encontrar orientación y sentir que
+                            hay alguien del otro lado.
+
                         </p>
 
                     </div>
@@ -640,9 +951,9 @@
 
 
 
-        <!-- =====================================================
+        <!-- =================================================
              ACOMPAÑAMIENTO
-        ====================================================== -->
+        ================================================== -->
 
         <section
             class="window panel-window"
@@ -653,12 +964,20 @@
             <div class="window-bar">
 
                 <div class="window-title">
+
                     <span class="dot yellow"></span>
+
                     acompañamiento.txt
+
                 </div>
 
+
                 <div class="window-actions">
-                    <button class="close">×</button>
+
+                    <button class="close">
+                        ×
+                    </button>
+
                 </div>
 
             </div>
@@ -670,8 +989,10 @@
                     CÓMO PIENSO EL ACOMPAÑAMIENTO
                 </p>
 
+
                 <h2>
-                    No se trata solamente de responder mensajes.
+                    No se trata solamente
+                    de responder mensajes.
                 </h2>
 
 
@@ -687,8 +1008,9 @@
                         </h3>
 
                         <p>
-                            Leer entre las preguntas, detectar obstáculos
-                            y reconocer cuándo una dificultad académica
+                            Leer entre las preguntas,
+                            detectar obstáculos y reconocer
+                            cuándo una dificultad académica
                             también necesita orientación.
                         </p>
 
@@ -704,9 +1026,9 @@
                         </h3>
 
                         <p>
-                            Ayudar a organizar tiempos, consignas,
-                            recursos y próximos pasos sin reemplazar
-                            la autonomía.
+                            Ayudar a organizar tiempos,
+                            consignas, recursos y próximos
+                            pasos sin reemplazar la autonomía.
                         </p>
 
                     </article>
@@ -721,8 +1043,9 @@
                         </h3>
 
                         <p>
-                            Construir una comunicación cercana, clara
-                            y respetuosa que sostenga la trayectoria.
+                            Construir una comunicación cercana,
+                            clara y respetuosa que sostenga
+                            la trayectoria.
                         </p>
 
                     </article>
@@ -737,8 +1060,9 @@
                         </h3>
 
                         <p>
-                            Cuando una plataforma se convierte en una barrera,
-                            buscar otra manera de explicar, orientar o acceder.
+                            Cuando una plataforma se convierte
+                            en una barrera, buscar otra manera
+                            de explicar, orientar o acceder.
                         </p>
 
                     </article>
@@ -752,9 +1076,9 @@
 
 
 
-        <!-- =====================================================
+        <!-- =================================================
              ACCESIBILIDAD
-        ====================================================== -->
+        ================================================== -->
 
         <section
             class="window panel-window"
@@ -765,12 +1089,20 @@
             <div class="window-bar">
 
                 <div class="window-title">
+
                     <span class="dot teal"></span>
+
                     accesibilidad / lectura.txt
+
                 </div>
 
+
                 <div class="window-actions">
-                    <button class="close">×</button>
+
+                    <button class="close">
+                        ×
+                    </button>
+
                 </div>
 
             </div>
@@ -785,21 +1117,31 @@
                         ACCESIBILIDAD
                     </p>
 
+
                     <h2>
-                        Que una persona pueda entrar no significa
-                        necesariamente que pueda participar.
+                        Que una persona pueda entrar
+                        no significa necesariamente
+                        que pueda participar.
                     </h2>
 
-                    <p>
-                        Trabajo la accesibilidad desde una mirada amplia:
-                        física, comunicacional y cognitiva.
-                    </p>
 
                     <p>
-                        En los entornos digitales, esto implica pensar
-                        interfaces sencillas e intuitivas, lenguaje claro,
-                        recorridos comprensibles y distintas maneras de
-                        acceder a la información.
+
+                        Trabajo la accesibilidad desde
+                        una mirada amplia: física,
+                        comunicacional y cognitiva.
+
+                    </p>
+
+
+                    <p>
+
+                        En los entornos digitales, esto implica
+                        pensar interfaces sencillas e intuitivas,
+                        lenguaje claro, recorridos comprensibles
+                        y distintas maneras de acceder
+                        a la información.
+
                     </p>
 
                 </div>
@@ -807,7 +1149,9 @@
 
                 <div class="access-list">
 
+
                     <div>
+
                         ◌
 
                         <b>
@@ -817,10 +1161,12 @@
                         <small>
                             Información clara y organizada.
                         </small>
+
                     </div>
 
 
                     <div>
+
                         ◌
 
                         <b>
@@ -830,10 +1176,12 @@
                         <small>
                             Interfaces simples e intuitivas.
                         </small>
+
                     </div>
 
 
                     <div>
+
                         ◌
 
                         <b>
@@ -843,10 +1191,12 @@
                         <small>
                             Distintas formas de participar.
                         </small>
+
                     </div>
 
 
                     <div>
+
                         ◌
 
                         <b>
@@ -856,7 +1206,9 @@
                         <small>
                             Herramientas y dispositivos accesibles.
                         </small>
+
                     </div>
+
 
                 </div>
 
@@ -866,9 +1218,9 @@
 
 
 
-        <!-- =====================================================
+        <!-- =================================================
              FORMACIÓN
-        ====================================================== -->
+        ================================================== -->
 
         <section
             class="window panel-window"
@@ -879,12 +1231,20 @@
             <div class="window-bar">
 
                 <div class="window-title">
+
                     <span class="dot blue"></span>
+
                     formación.pdf
+
                 </div>
 
+
                 <div class="window-actions">
-                    <button class="close">×</button>
+
+                    <button class="close">
+                        ×
+                    </button>
+
                 </div>
 
             </div>
@@ -892,14 +1252,17 @@
 
             <div class="window-content two-panel">
 
+
                 <div>
 
                     <p class="tiny">
                         FORMACIÓN
                     </p>
 
+
                     <h2>
-                        Educación, discapacidad y tecnología.
+                        Educación, discapacidad
+                        y tecnología.
                     </h2>
 
                 </div>
@@ -915,8 +1278,8 @@
                         </small>
 
                         <b>
-                            Maestría en Procesos educativos mediados
-                            por la tecnología
+                            Maestría en Procesos educativos
+                            mediados por la tecnología
                         </b>
 
                         <span>
@@ -955,7 +1318,8 @@
                     <article>
 
                         <b>
-                            Dipl. “Discapacidad como categoría social y política”
+                            Dipl. “Discapacidad como categoría
+                            social y política”
                         </b>
 
                         <span>
@@ -982,8 +1346,10 @@
                     <article>
 
                         <b>
-                            Postítulo “Tecnología Adaptada y comunicación
-                            aumentativa y alternativa para personas con discapacidad”
+                            Postítulo “Tecnología Adaptada
+                            y comunicación aumentativa
+                            y alternativa para personas
+                            con discapacidad”
                         </b>
 
                         <span>
@@ -1001,9 +1367,9 @@
 
 
 
-        <!-- =====================================================
+        <!-- =================================================
              PROYECTOS
-        ====================================================== -->
+        ================================================== -->
 
         <section
             class="window panel-window"
@@ -1014,12 +1380,20 @@
             <div class="window-bar">
 
                 <div class="window-title">
+
                     <span class="dot yellow"></span>
+
                     trabajos / proyectos
+
                 </div>
 
+
                 <div class="window-actions">
-                    <button class="close">×</button>
+
+                    <button class="close">
+                        ×
+                    </button>
+
                 </div>
 
             </div>
@@ -1031,8 +1405,10 @@
                     PROYECTOS Y EXPERIENCIAS
                 </p>
 
+
                 <h2>
-                    Algunas cosas que hice con esta mirada.
+                    Algunas cosas que hice
+                    con esta mirada.
                 </h2>
 
 
@@ -1050,8 +1426,8 @@
                         </h3>
 
                         <p>
-                            Didactización, maquetación y soporte de plataformas
-                            en educación a distancia.
+                            Didactización, maquetación y soporte
+                            de plataformas en educación a distancia.
                         </p>
 
                     </article>
@@ -1068,8 +1444,9 @@
                         </h3>
 
                         <p>
-                            Área TIC, webmaster, creación de materiales
-                            y acompañamiento a docentes.
+                            Área TIC, webmaster, creación
+                            de materiales y acompañamiento
+                            a docentes.
                         </p>
 
                     </article>
@@ -1086,8 +1463,9 @@
                         </h3>
 
                         <p>
-                            Orientación y acompañamiento a estudiantes ·
-                            Equipo de discapacidad.
+                            Orientación y acompañamiento
+                            a estudiantes · Equipo
+                            de discapacidad.
                         </p>
 
                     </article>
@@ -1104,9 +1482,38 @@
                         </h3>
 
                         <p>
-                            Creación de webs, software y entornos virtuales
-                            de aprendizaje accesibles.
+                            Creación de webs, software
+                            y entornos virtuales de aprendizaje
+                            accesibles.
                         </p>
+
+                    </article>
+
+
+                    <article class="celcit-card">
+
+                        <small>
+                            05 · CELCIT + MOBIX.AR
+                        </small>
+
+                        <h3>
+                            Accesibilidad web
+                        </h3>
+
+                        <p>
+                            Rediseño accesible del entorno virtual
+                            de aprendizaje CELCIT, trabajando sobre
+                            accesibilidad y experiencia de uso.
+                        </p>
+
+                        <a
+                            href="https://celcit.org.ar/"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-link"
+                        >
+                            visitar CELCIT ↗
+                        </a>
 
                     </article>
 
@@ -1119,9 +1526,9 @@
 
 
 
-        <!-- =====================================================
+        <!-- =================================================
              TRABAJOS ESCRITOS
-        ====================================================== -->
+        ================================================== -->
 
         <section
             class="window panel-window"
@@ -1132,12 +1539,20 @@
             <div class="window-bar">
 
                 <div class="window-title">
+
                     <span class="dot teal"></span>
+
                     trabajos_escritos
+
                 </div>
 
+
                 <div class="window-actions">
-                    <button class="close">×</button>
+
+                    <button class="close">
+                        ×
+                    </button>
+
                 </div>
 
             </div>
@@ -1149,13 +1564,15 @@
                     TRABAJOS ESCRITOS
                 </p>
 
+
                 <h2>
-                    También pienso, investigo y escribo.
+                    También pienso,
+                    investigo y escribo.
                 </h2>
 
+
                 <p class="intro">
-                    Estos cuatro enlaces son los que aparecen realmente
-                    en el PDF de mi CV.
+                    Algunos trabajos que forman parte de mi recorrido.
                 </p>
 
 
@@ -1171,23 +1588,28 @@
                             2026
                         </span>
 
+
                         <div>
 
                             <b>
-                                Soberanía tecnológica y gestión situada
+                                Soberanía tecnológica
+                                y gestión situada
                             </b>
 
                             <small>
-                                Jornada de educación digital · PBA 2026
+                                Jornada de educación digital ·
+                                PBA 2026
                             </small>
 
                         </div>
+
 
                         <i>
                             ↗
                         </i>
 
                     </button>
+
 
 
                     <button
@@ -1199,24 +1621,29 @@
                             2026
                         </span>
 
+
                         <div>
 
                             <b>
                                 Discapacidad y escolaridad:
-                                el pediatra como guía en un sistema que confunde
+                                el pediatra como guía
+                                en un sistema que confunde
                             </b>
 
                             <small>
-                                Congreso Nacional de Pediatría Ambulatoria · 2026
+                                Congreso Nacional de Pediatría
+                                Ambulatoria · 2026
                             </small>
 
                         </div>
+
 
                         <i>
                             ↗
                         </i>
 
                     </button>
+
 
 
                     <button
@@ -1228,6 +1655,7 @@
                             INV.
                         </span>
 
+
                         <div>
 
                             <b>
@@ -1235,16 +1663,19 @@
                             </b>
 
                             <small>
-                                II Congreso Internacional de Psicoanálisis · UNR
+                                II Congreso Internacional
+                                de Psicoanálisis · UNR
                             </small>
 
                         </div>
+
 
                         <i>
                             ↗
                         </i>
 
                     </button>
+
 
 
                     <button
@@ -1256,6 +1687,7 @@
                             INV.
                         </span>
 
+
                         <div>
 
                             <b>
@@ -1264,11 +1696,13 @@
                             </b>
 
                             <small>
-                                Congreso Internacional “Cultura digital” ·
+                                Congreso Internacional
+                                “Cultura digital” ·
                                 Instituto Miguel Raspanti
                             </small>
 
                         </div>
+
 
                         <i>
                             ↗
@@ -1285,9 +1719,9 @@
 
 
 
-        <!-- =====================================================
-             VENTANA PDF
-        ====================================================== -->
+        <!-- =================================================
+             VISOR DE PDF
+        ================================================== -->
 
         <section
             class="window pdf-window"
@@ -1298,12 +1732,20 @@
             <div class="window-bar">
 
                 <div class="window-title">
+
                     <span class="dot teal"></span>
+
                     lectura / documento
+
                 </div>
 
+
                 <div class="window-actions">
-                    <button class="close">×</button>
+
+                    <button class="close">
+                        ×
+                    </button>
+
                 </div>
 
             </div>
@@ -1320,92 +1762,14 @@
 
         </section>
 
+
     </main>
 
 
 
     <!-- =====================================================
-         DOCK CIRCULAR
+         ESTADO
     ====================================================== -->
-
-    <div
-        class="dock"
-        aria-label="Abrir secciones"
-    >
-
-        <button
-            data-open="who"
-            title="Quién soy"
-        >
-            <span>◉</span>
-            <b>Quién soy</b>
-        </button>
-
-
-        <button
-            data-open="route"
-            title="Recorrido"
-        >
-            <span>⌁</span>
-            <b>Recorrido</b>
-        </button>
-
-
-        <button
-            data-open="virtual"
-            title="Virtualidad"
-        >
-            <span>▣</span>
-            <b>Virtualidad</b>
-        </button>
-
-
-        <button
-            data-open="accompany"
-            title="Acompañar"
-        >
-            <span>♡</span>
-            <b>Acompañar</b>
-        </button>
-
-
-        <button
-            data-open="access"
-            title="Accesibilidad"
-        >
-            <span>♿</span>
-            <b>Accesibilidad</b>
-        </button>
-
-
-        <button
-            data-open="formation"
-            title="Formación"
-        >
-            <span>□</span>
-            <b>Formación</b>
-        </button>
-
-
-        <button
-            data-open="works"
-            title="Proyectos"
-        >
-            <span>✦</span>
-            <b>Proyectos</b>
-        </button>
-
-
-        <button
-            data-open="publications"
-            title="Trabajos escritos"
-        >
-            <span>↗</span>
-            <b>Trabajos</b>
-        </button>
-
-    </div>
-
 
     <div class="status">
 
@@ -1417,6 +1781,7 @@
 
     </div>
 
+
 </div>
 
 
@@ -1424,7 +1789,7 @@
 <script>
 
 /* ============================================================
-   ENLACES A LOS TRABAJOS
+   ENLACES DE LOS TRABAJOS ESCRITOS
 ============================================================ */
 
 const LINKS = {
@@ -1446,7 +1811,7 @@ const LINKS = {
 
 
 /* ============================================================
-   VENTANAS
+   SISTEMA DE VENTANAS
 ============================================================ */
 
 let z = 10;
@@ -1454,42 +1819,75 @@ let z = 10;
 
 function openWindow(id) {
 
-    const el = document.getElementById(id);
+    const element =
+        document.getElementById(id);
 
-    if (!el) return;
+    if (!element) return;
 
-    el.hidden = false;
 
-    el.style.zIndex = ++z;
+    element.hidden = false;
 
-    el.classList.add("opening");
+    element.style.zIndex = ++z;
+
+    element.classList.remove("opening");
+
+    void element.offsetWidth;
+
+    element.classList.add("opening");
+
 
     setTimeout(() => {
 
-        el.classList.remove("opening");
+        element.classList.remove("opening");
 
-    }, 450);
+    }, 500);
+
+
+    setTimeout(() => {
+
+        element.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
+
+    }, 100);
 
 }
 
+
+
+/* Abrir desde cualquier botón */
 
 document
     .querySelectorAll("[data-open]")
     .forEach(button => {
 
-        button.addEventListener("click", () => {
+        button.addEventListener(
+            "click",
+            () => {
 
-            openWindow(button.dataset.open);
+                openWindow(
+                    button.dataset.open
+                );
 
-        });
+            }
+        );
 
     });
 
 
 
+/* ============================================================
+   CERRAR VENTANAS
+============================================================ */
+
 document
     .querySelectorAll(".window")
     .forEach(windowElement => {
+
 
         windowElement.addEventListener(
             "pointerdown",
@@ -1526,31 +1924,52 @@ document
 
 const folderData = {
 
+
     presence: [
+
         "01",
+
         "Presencia",
+
         "En una propuesta a distancia, la presencia no necesariamente es estar conectados todo el tiempo. Es construir referencias: saber dónde preguntar, recibir una respuesta, encontrar orientación y sentir que hay alguien del otro lado."
+
     ],
+
 
     orientation: [
+
         "02",
+
         "Orientación",
+
         "Una tutoría puede ayudar a convertir una consigna grande en un próximo paso posible: ordenar tiempos, ubicar recursos, entender qué se espera y recuperar el hilo cuando algo se pierde."
+
     ],
+
 
     access: [
+
         "03",
+
         "Accesibilidad",
+
         "La accesibilidad no es solamente técnica. También es poder comprender una consigna, encontrar un recurso, interpretar una interfaz y participar sin que la plataforma se convierta en una barrera."
+
     ],
 
+
     autonomy: [
+
         "04",
+
         "Autonomía",
+
         "Acompañar no es hacer el camino por otra persona. Es ofrecer apoyos suficientes para que pueda tomar decisiones, resolver problemas y avanzar con cada vez mayor autonomía."
+
     ]
 
 };
+
 
 
 document
@@ -1561,11 +1980,14 @@ document
             "click",
             () => {
 
+
                 document
                     .querySelectorAll(".folder")
                     .forEach(item => {
 
-                        item.classList.remove("active");
+                        item.classList.remove(
+                            "active"
+                        );
 
                     });
 
@@ -1574,20 +1996,28 @@ document
 
 
                 const data =
-                    folderData[button.dataset.tab];
+                    folderData[
+                        button.dataset.tab
+                    ];
 
 
                 document
                     .getElementById("folderReadme")
                     .innerHTML = `
 
-                        <span>${data[0]}</span>
+                        <span>
+                            ${data[0]}
+                        </span>
 
                         <div>
 
-                            <h3>${data[1]}</h3>
+                            <h3>
+                                ${data[1]}
+                            </h3>
 
-                            <p>${data[2]}</p>
+                            <p>
+                                ${data[2]}
+                            </p>
 
                         </div>
 
@@ -1612,15 +2042,27 @@ document
             "click",
             () => {
 
+
                 const url =
-                    LINKS[button.dataset.drive];
+                    LINKS[
+                        button.dataset.drive
+                    ];
+
+
+                if (!url) return;
+
 
                 const match =
-                    url.match(/\/d\/([^/]+)/);
+                    url.match(
+                        /\/d\/([^/]+)/
+                    );
+
 
                 if (!match) return;
 
-                const id = match[1];
+
+                const id =
+                    match[1];
 
 
                 document
@@ -1631,7 +2073,9 @@ document
                     + "/preview";
 
 
-                openWindow("pdfWindow");
+                openWindow(
+                    "pdfWindow"
+                );
 
             }
         );
@@ -1651,7 +2095,7 @@ document
         () => {
 
             alert(
-                "Este bloque está listo para insertar tu video de presentación."
+                "Este espacio está listo para incorporar tu video de presentación."
             );
 
         }
@@ -1663,7 +2107,7 @@ document
    RELOJ
 ============================================================ */
 
-function clock() {
+function updateClock() {
 
     document
         .getElementById("clock")
@@ -1679,11 +2123,17 @@ function clock() {
 }
 
 
-clock();
+updateClock();
 
-setInterval(clock, 30000);
+
+setInterval(
+    updateClock,
+    30000
+);
 
 </script>
 
+
 </body>
+
 </html>
