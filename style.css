@@ -8,6 +8,9 @@
 }
 
 :root {
+
+    /* ---------- PALETA PRINCIPAL ---------- */
+
     --azul: #173B50;
     --azul-2: #214F67;
 
@@ -15,8 +18,12 @@
     --verde-claro: #DDF0EC;
     --turquesa: #72CEC2;
 
+    /* ---------- FONDOS ---------- */
+
     --crema: #F7F3EA;
     --crema-2: #EEE8DC;
+
+    /* ---------- ACENTOS ---------- */
 
     --amarillo: #F5E7A5;
     --amarillo-suave: #FFF8D8;
@@ -30,15 +37,22 @@
     --celeste: #D8EAF2;
     --celeste-suave: #EEF7FA;
 
+    /* ---------- NEUTROS ---------- */
+
     --blanco: #FFFFFF;
     --texto: #213842;
     --gris: #718187;
+
+    /* ---------- SOMBRAS ---------- */
 
     --sombra:
         0 18px 40px rgba(23, 59, 80, .10);
 
     --sombra-fuerte:
         0 28px 70px rgba(23, 59, 80, .20);
+
+    --sombra-tarjeta:
+        0 12px 28px rgba(23, 59, 80, .13);
 }
 
 
@@ -51,23 +65,29 @@ html {
 }
 
 body {
+
     margin: 0;
 
     color: var(--texto);
 
-    font-family: "DM Sans", sans-serif;
+    font-family:
+        "DM Sans",
+        sans-serif;
 
     background:
+
         radial-gradient(
             circle at 8% 20%,
             rgba(255,255,255,.95) 0 90px,
             transparent 91px
         ),
+
         radial-gradient(
             circle at 91% 10%,
             rgba(213,235,231,.9) 0 170px,
             transparent 171px
         ),
+
         linear-gradient(
             135deg,
             #faf8f2 0%,
@@ -81,6 +101,7 @@ body {
    ========================================================= */
 
 .topbar {
+
     position: fixed;
 
     z-index: 9999;
@@ -94,6 +115,7 @@ body {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     padding: 0 16px;
@@ -115,6 +137,7 @@ body {
    ========================================================= */
 
 .mural {
+
     min-height: 100vh;
 
     padding:
@@ -125,21 +148,25 @@ body {
     overflow: hidden;
 
     background:
+
         radial-gradient(
             circle at 13% 28%,
             rgba(255,255,255,.92) 0 75px,
             transparent 76px
         ),
+
         radial-gradient(
             circle at 92% 15%,
             rgba(210,235,231,.8) 0 170px,
             transparent 171px
         ),
+
         radial-gradient(
             circle at 85% 87%,
             rgba(255,255,255,.8) 0 110px,
             transparent 111px
         ),
+
         linear-gradient(
             135deg,
             #faf8f2,
@@ -153,22 +180,28 @@ body {
    ========================================================= */
 
 .intro-window {
+
     position: relative;
 
     z-index: 20;
 
-    width: min(880px, 92vw);
+    width:
+        min(880px, 92vw);
 
-    margin: 0 auto 38px;
+    margin:
+        0 auto 30px;
 
-    background: rgba(255,255,255,.97);
+    background:
+        rgba(255,255,255,.97);
 
     border:
         1px solid rgba(23,59,80,.10);
 
-    border-radius: 22px;
+    border-radius:
+        20px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     box-shadow:
         0 25px 65px rgba(23,59,80,.12);
@@ -180,51 +213,66 @@ body {
    ========================================================= */
 
 .window-bar {
+
     height: 34px;
 
     display: flex;
 
     align-items: center;
 
-    padding: 0 14px;
+    padding:
+        0 14px;
 
     gap: 12px;
 
-    background: #F1F2F1;
+    background:
+        #F1F2F1;
 
     border-bottom:
         1px solid rgba(23,59,80,.08);
 
-    color: #7a898e;
+    color:
+        #7a898e;
 
-    font-size: 8px;
+    font-size:
+        8px;
 }
 
 .dots {
+
     display: flex;
 
     gap: 5px;
 }
 
 .dots i {
+
     width: 7px;
     height: 7px;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
-    background: #c5d1d0;
+    background:
+        #c5d1d0;
 }
 
 .dots i:first-child {
-    background: var(--verde);
+
+    background:
+        var(--verde);
 }
 
 .window-symbol {
-    margin-left: auto;
 
-    color: var(--verde);
+    margin-left:
+        auto;
 
-    font-size: 10px;
+    color:
+        var(--verde);
+
+    font-size:
+        10px;
 }
 
 
@@ -233,15 +281,18 @@ body {
    ========================================================= */
 
 .intro-body {
+
     display: grid;
 
     grid-template-columns:
         1fr
         250px;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 45px;
+    gap:
+        45px;
 
     padding:
         40px
@@ -249,21 +300,31 @@ body {
 }
 
 .eyebrow {
-    display: block;
 
-    color: var(--verde);
+    display:
+        block;
 
-    font-size: 8px;
+    color:
+        var(--verde);
 
-    font-weight: 800;
+    font-size:
+        8px;
 
-    letter-spacing: 2px;
+    font-weight:
+        800;
+
+    letter-spacing:
+        2px;
 }
 
 .intro-body h1 {
-    margin: 14px 0 20px;
 
-    font-family: "Manrope", sans-serif;
+    margin:
+        14px 0 20px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
 
     font-size:
         clamp(
@@ -272,101 +333,123 @@ body {
             66px
         );
 
-    line-height: .96;
+    line-height:
+        .96;
 
-    letter-spacing: -3px;
+    letter-spacing:
+        -3px;
 
-    color: var(--azul);
+    color:
+        var(--azul);
 }
 
 .intro-body h1 em {
-    color: var(--verde);
 
-    font-style: normal;
+    color:
+        var(--verde);
+
+    font-style:
+        normal;
 }
 
 .intro-text {
-    max-width: 590px;
 
-    margin: 0;
+    max-width:
+        590px;
 
-    color: #667b83;
+    margin:
+        0;
 
-    font-size: 11px;
+    color:
+        #667b83;
 
-    line-height: 1.7;
+    font-size:
+        11px;
+
+    line-height:
+        1.7;
 }
 
 .intro-instruction {
-    margin-top: 18px;
 
-    color: #849196;
+    margin-top:
+        18px;
 
-    font-size: 8px;
+    color:
+        #849196;
 
-    line-height: 1.6;
+    font-size:
+        8px;
+
+    line-height:
+        1.6;
 }
 
 .intro-instruction strong {
-    color: var(--azul-2);
+
+    color:
+        var(--azul-2);
 }
 
 
 /* =========================================================
-   FOTO DE PRESENTACIÓN
+   FOTO PRINCIPAL
    ========================================================= */
 
 .portrait {
-    width: 100%;
 
-    max-width: 235px;
+    width:
+        100%;
 
-    justify-self: center;
+    max-width:
+        235px;
+
+    justify-self:
+        center;
 
     padding:
         9px
         9px
         18px;
 
-    background: var(--blanco);
+    background:
+        var(--blanco);
 
-    border-radius: 17px;
+    border-radius:
+        17px;
 
-    transform: rotate(2deg);
+    transform:
+        rotate(2deg);
 
     box-shadow:
         0 20px 38px rgba(23,59,80,.15);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.portrait:hover {
-    transform:
-        rotate(0deg)
-        translateY(-4px);
-
-    box-shadow:
-        0 25px 45px rgba(23,59,80,.18);
 }
 
 .portrait img {
-    display: block;
 
-    width: 100%;
+    display:
+        block;
 
-    aspect-ratio: 4 / 5;
+    width:
+        100%;
 
-    object-fit: cover;
+    aspect-ratio:
+        4 / 5;
 
-    border-radius: 11px;
+    object-fit:
+        cover;
+
+    border-radius:
+        11px;
 }
 
 .portrait-caption {
-    display: flex;
 
-    flex-direction: column;
+    display:
+        flex;
+
+    flex-direction:
+        column;
 
     padding:
         8px
@@ -375,19 +458,28 @@ body {
 }
 
 .portrait-caption strong {
-    color: var(--azul);
 
-    font-family: "Manrope", sans-serif;
+    color:
+        var(--azul);
 
-    font-size: 15px;
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        15px;
 }
 
 .portrait-caption span {
-    margin-top: 2px;
 
-    color: #7d8c91;
+    margin-top:
+        2px;
 
-    font-size: 6px;
+    color:
+        #7d8c91;
+
+    font-size:
+        6px;
 }
 
 
@@ -396,35 +488,39 @@ body {
    ========================================================= */
 
 .mural-board {
-    position: relative;
 
-    width: min(1380px, 96vw);
+    position:
+        relative;
 
-    height: 790px;
+    width:
+        min(1380px, 96vw);
 
-    margin: 0 auto;
+    height:
+        760px;
 
-    border-radius: 30px;
+    margin:
+        0 auto;
+
+    border-radius:
+        28px;
 
     border:
         1px solid rgba(23,59,80,.10);
 
     background:
+
         radial-gradient(
             circle at 16% 22%,
             rgba(255,255,255,.8) 0 2px,
             transparent 3px
         ),
+
         radial-gradient(
             circle at 72% 62%,
             rgba(23,59,80,.045) 0 1.5px,
             transparent 2.5px
         ),
-        radial-gradient(
-            circle at 42% 83%,
-            rgba(42,166,154,.04) 0 2px,
-            transparent 3px
-        ),
+
         linear-gradient(
             135deg,
             var(--crema-2),
@@ -432,111 +528,121 @@ body {
         );
 
     box-shadow:
-        inset 0 0 0 8px rgba(255,255,255,.25),
-        0 25px 65px rgba(23,59,80,.10);
 
-    overflow: visible;
+        inset
+        0 0 0 8px
+        rgba(255,255,255,.25),
+
+        0 25px 65px
+        rgba(23,59,80,.10);
+
+    overflow:
+        visible;
 }
 
 
-/* Pequeños detalles de mural */
+/* Etiqueta superior */
 
 .mural-board::before {
-    content: "MURAL · MI RECORRIDO";
 
-    position: absolute;
+    content:
+        "MURAL · MI RECORRIDO";
 
-    top: 15px;
+    position:
+        absolute;
 
-    left: 50%;
+    top:
+        14px;
+
+    left:
+        50%;
 
     transform:
         translateX(-50%);
 
-    color: #9ba5a5;
+    color:
+        #9ba5a5;
 
-    font-size: 7px;
+    font-size:
+        7px;
 
-    font-weight: 800;
+    font-weight:
+        800;
 
-    letter-spacing: 2px;
+    letter-spacing:
+        2px;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 }
 
 
 /* =========================================================
-   DECORACIONES DEL MURAL
-   ========================================================= */
-
-.mural-board::after {
-    content: "";
-
-    position: absolute;
-
-    width: 8px;
-    height: 8px;
-
-    left: 17%;
-
-    top: 48%;
-
-    border-radius: 50%;
-
-    background: white;
-
-    box-shadow:
-        0 0 0 7px rgba(255,255,255,.18),
-        650px 170px 0 rgba(255,255,255,.40),
-        390px 430px 0 rgba(42,166,154,.07),
-        820px 70px 0 rgba(23,59,80,.04);
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   TARJETAS / FICHAS DEL MURAL
+   TARJETAS
    ========================================================= */
 
 .mural-board .note-window {
-    position: absolute;
 
-    width: 180px;
+    position:
+        absolute;
 
-    min-height: 150px;
+    width:
+        225px;
 
-    margin: 0;
+    margin:
+        0;
 
-    overflow: visible;
+    overflow:
+        visible;
 
-    border-radius: 18px;
+    border-radius:
+        16px;
 
     border:
-        1px solid rgba(23,59,80,.10);
+        1px solid rgba(23,59,80,.12);
 
     box-shadow:
-        0 12px 25px rgba(23,59,80,.13);
+        var(--sombra-tarjeta);
 
     transition:
-        transform .28s ease,
-        box-shadow .28s ease,
-        width .30s ease,
-        min-height .30s ease;
 
-    z-index: 10;
+        transform
+        .3s
+        cubic-bezier(.2,.8,.2,1),
+
+        box-shadow
+        .3s ease,
+
+        width
+        .35s ease,
+
+        top
+        .35s ease,
+
+        left
+        .35s ease,
+
+        right
+        .35s ease,
+
+        bottom
+        .35s ease;
 }
 
 
-/* =========================================================
-   HOVER DE LAS FICHAS
-   ========================================================= */
+/* Hover */
 
 .mural-board .note-window:hover {
-    z-index: 80;
+
+    z-index:
+        100;
 
     box-shadow:
-        0 20px 38px rgba(23,59,80,.18);
+        0 18px 38px rgba(23,59,80,.18);
+
+    transform:
+        translateY(-4px)
+        rotate(0deg);
 }
 
 
@@ -547,39 +653,49 @@ body {
 
 /* ---------------------------------------------------------
    01 · QUIÉN SOY
-   FICHA CENTRAL
+   CENTRO
    --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(1) {
 
-    top: 105px;
+    top:
+        88px;
 
-    left: 50%;
+    left:
+        50%;
 
-    width: 300px;
+    width:
+        285px;
 
-    min-height: 400px;
+    min-height:
+        365px;
 
     transform:
         translateX(-50%)
         rotate(-1deg);
 
-    z-index: 35;
+    z-index:
+        35;
 }
 
 
 /* ---------------------------------------------------------
-   02 · RECORRIDO LABORAL
+   02 · MI RECORRIDO LABORAL
    --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(2) {
 
-    top: 72px;
+    top:
+        70px;
 
-    left: 6%;
+    left:
+        4%;
 
     transform:
         rotate(-3deg);
+
+    z-index:
+        20;
 }
 
 
@@ -589,12 +705,17 @@ body {
 
 .mural-board .note-window:nth-child(3) {
 
-    top: 70px;
+    top:
+        72px;
 
-    right: 6%;
+    right:
+        4%;
 
     transform:
         rotate(3deg);
+
+    z-index:
+        20;
 }
 
 
@@ -604,12 +725,17 @@ body {
 
 .mural-board .note-window:nth-child(4) {
 
-    top: 350px;
+    top:
+        335px;
 
-    left: 8%;
+    left:
+        7%;
 
     transform:
         rotate(2deg);
+
+    z-index:
+        18;
 }
 
 
@@ -619,12 +745,17 @@ body {
 
 .mural-board .note-window:nth-child(5) {
 
-    top: 350px;
+    top:
+        340px;
 
-    right: 8%;
+    right:
+        7%;
 
     transform:
         rotate(-2deg);
+
+    z-index:
+        18;
 }
 
 
@@ -634,12 +765,17 @@ body {
 
 .mural-board .note-window:nth-child(6) {
 
-    bottom: 55px;
+    bottom:
+        52px;
 
-    left: 18%;
+    left:
+        14%;
 
     transform:
         rotate(-2deg);
+
+    z-index:
+        18;
 }
 
 
@@ -649,12 +785,17 @@ body {
 
 .mural-board .note-window:nth-child(7) {
 
-    bottom: 55px;
+    bottom:
+        48px;
 
-    right: 18%;
+    right:
+        14%;
 
     transform:
         rotate(2deg);
+
+    z-index:
+        18;
 }
 
 
@@ -664,137 +805,108 @@ body {
 
 .mural-board .note-window:nth-child(8) {
 
-    bottom: 25px;
+    bottom:
+        20px;
 
-    left: 50%;
+    left:
+        50%;
 
-    width: 195px;
+    width:
+        275px;
 
     transform:
         translateX(-50%)
         rotate(-1deg);
+
+    z-index:
+        18;
 }
 
 
 /* =========================================================
-   CABECERAS DE LAS FICHAS
+   CABECERAS DE LAS TARJETAS
    ========================================================= */
 
 .mural-board .note-window summary {
 
-    position: relative;
+    min-height:
+        52px;
 
-    min-height: 150px;
+    display:
+        flex;
 
-    display: flex;
+    align-items:
+        center;
 
-    flex-direction: column;
+    padding:
+        12px
+        13px;
 
-    align-items: flex-start;
+    border-radius:
+        15px;
 
-    justify-content: space-between;
+    background:
+        var(--blanco);
 
-    padding: 17px;
+    cursor:
+        pointer;
 
-    border-radius: 17px;
+    user-select:
+        none;
 
-    background: var(--blanco);
+    list-style:
+        none;
 
-    cursor: pointer;
-
-    user-select: none;
-
-    list-style: none;
+    transition:
+        border-radius .25s ease;
 }
 
 .mural-board .note-window summary::-webkit-details-marker {
-    display: none;
+
+    display:
+        none;
 }
 
 
 /* =========================================================
-   ICONO DE LAS FICHAS
-   ========================================================= */
-
-.mural-board .note-window .mini-icon {
-
-    width: 43px;
-
-    height: 43px;
-
-    flex: 0 0 43px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 13px;
-
-    background:
-        rgba(255,255,255,.80);
-
-    color: var(--azul);
-
-    font-size: 17px;
-
-    box-shadow:
-        0 4px 10px rgba(23,59,80,.09);
-}
-
-
-/* =========================================================
-   NÚMERO + TÍTULO
+   TEXTO DE LA CABECERA
    ========================================================= */
 
 .mural-board .note-window summary > span:nth-child(2) {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    align-items:
+        baseline;
 
-    align-items: flex-start;
+    gap:
+        8px;
 
-    gap: 5px;
+    color:
+        var(--azul);
 
-    color: var(--azul);
+    font-family:
+        "Manrope",
+        sans-serif;
 
-    font-family: "Manrope", sans-serif;
+    font-size:
+        11px;
 
-    font-size: 16px;
-
-    font-weight: 800;
-
-    line-height: 1.05;
-
-    letter-spacing: -.5px;
+    font-weight:
+        700;
 }
 
 .mural-board .note-window summary small {
 
-    color: var(--verde);
-
-    font-size: 7px;
-
-    font-weight: 800;
-
-    letter-spacing: .7px;
-}
-
-
-/* =========================================================
-   TEXTO "ABRIR"
-   ========================================================= */
-
-.mural-board .note-window summary::after {
-
-    content: "Abrir ficha →";
-
     color:
-        rgba(23,59,80,.48);
+        var(--verde);
 
-    font-size: 7px;
+    font-size:
+        7px;
 
-    font-weight: 700;
+    font-weight:
+        800;
 }
 
 
@@ -804,38 +916,49 @@ body {
 
 .mural-board .note-window summary b {
 
-    position: absolute;
+    width:
+        24px;
 
-    top: 16px;
+    height:
+        24px;
 
-    right: 16px;
+    flex:
+        0 0 24px;
 
-    width: 28px;
+    display:
+        grid;
 
-    height: 28px;
+    place-items:
+        center;
 
-    display: grid;
-
-    place-items: center;
+    margin-left:
+        auto;
 
     border:
-        1px solid rgba(23,59,80,.35);
+        1px solid
+        rgba(23,59,80,.55);
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
-    color: var(--azul);
+    color:
+        var(--azul);
 
-    background:
-        rgba(255,255,255,.65);
+    font-size:
+        17px;
 
-    font-size: 18px;
-
-    font-weight: 400;
+    font-weight:
+        400;
 
     transition:
+
         transform .25s ease,
+
         background .25s ease,
-        color .25s ease;
+
+        color .25s ease,
+
+        border-color .25s ease;
 }
 
 .mural-board .note-window[open] summary b {
@@ -843,7 +966,8 @@ body {
     transform:
         rotate(45deg);
 
-    color: white;
+    color:
+        white;
 
     background:
         var(--verde);
@@ -854,18 +978,73 @@ body {
 
 
 /* =========================================================
-   FICHA CENTRAL · LUCÍA
+   ICONITO
    ========================================================= */
+
+.mini-icon {
+
+    width:
+        23px;
+
+    height:
+        23px;
+
+    flex:
+        0 0 23px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        white;
+
+    color:
+        var(--verde);
+
+    font-size:
+        11px;
+
+    box-shadow:
+        0 2px 6px
+        rgba(23,59,80,.10);
+}
+
+
+/* =========================================================
+   FOTO DENTRO DE LA FICHA CENTRAL
+   ========================================================= */
+
+
+/*
+   La primera tarjeta funciona como una pequeña ficha
+   personal cuando está cerrada.
+*/
 
 .mural-board .note-window:nth-child(1) summary {
 
-    min-height: 400px;
+    min-height:
+        365px;
 
-    padding:
-        13px;
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        stretch;
 
     justify-content:
         flex-start;
+
+    padding:
+        11px;
 
     background:
         white;
@@ -874,36 +1053,41 @@ body {
         20px;
 
     box-shadow:
-        0 18px 35px rgba(23,59,80,.16);
+        0 18px 35px
+        rgba(23,59,80,.16);
 }
 
 
-/* =========================================================
-   FOTO CENTRAL
-   =========================================================
+/*
+   Foto.
 
-   La imagen se genera desde CSS para no obligarte
-   a modificar toda la estructura HTML.
+   IMPORTANTE:
+   usamos lucia.png, no lucia.jpg.
+*/
 
-   Archivo esperado:
-   lucia.png
-   ========================================================= */
+.mural-board .note-window:nth-child(1)
+summary::before {
 
-.mural-board .note-window:nth-child(1) summary::before {
+    content:
+        "";
 
-    content: "";
+    display:
+        block;
 
-    display: block;
+    width:
+        100%;
 
-    width: 100%;
+    height:
+        245px;
 
-    height: 275px;
+    flex:
+        0 0 245px;
 
-    flex: 0 0 275px;
+    margin-bottom:
+        12px;
 
-    margin-bottom: 13px;
-
-    border-radius: 15px;
+    border-radius:
+        15px;
 
     background-image:
         url("lucia.png");
@@ -918,91 +1102,249 @@ body {
         no-repeat;
 
     box-shadow:
-        inset 0 0 0 1px rgba(23,59,80,.06);
+        inset
+        0 0 0 1px
+        rgba(23,59,80,.06);
+
+    transition:
+        opacity .2s ease,
+
+        height .2s ease,
+
+        flex-basis .2s ease,
+
+        margin .2s ease;
 }
 
 
-/* =========================================================
-   NOMBRE DE LA FICHA CENTRAL
-   ========================================================= */
+/*
+   Nombre dentro de la ficha.
+*/
 
 .mural-board .note-window:nth-child(1)
 summary > span:nth-child(2) {
 
-    display: block;
+    display:
+        flex;
 
-    color: var(--azul);
+    align-items:
+        center;
 
-    font-size: 20px;
+    gap:
+        7px;
 
-    line-height: 1;
+    width:
+        100%;
 
-    letter-spacing: -.7px;
+    color:
+        var(--azul);
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        18px;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -.7px;
 }
+
+
+/*
+   Número pequeño.
+*/
 
 .mural-board .note-window:nth-child(1)
 summary small {
 
-    display: block;
-
-    margin-top: 6px;
-
-    color: var(--verde);
-
-    opacity: 1;
-
-    font-size: 7px;
-
-    letter-spacing: 1px;
-}
-
-
-/* =========================================================
-   TEXTO INFERIOR DE LA FICHA CENTRAL
-   ========================================================= */
-
-.mural-board .note-window:nth-child(1)
-summary::after {
-
-    content:
-        "Educación · Accesibilidad · Tecnología";
-
-    margin-top: 7px;
-
     color:
-        #849196;
+        var(--verde);
 
-    font-size: 7px;
-
-    font-weight: 600;
+    font-size:
+        7px;
 }
 
 
-/* =========================================================
-   + CENTRAL
-   ========================================================= */
+/*
+   Botón de la ficha central.
+*/
 
 .mural-board .note-window:nth-child(1)
 summary b {
 
-    top: 21px;
+    position:
+        absolute;
 
-    right: 21px;
+    top:
+        13px;
 
-    z-index: 5;
+    right:
+        13px;
+
+    margin-left:
+        0;
+
+    z-index:
+        5;
 
     background:
-        rgba(255,255,255,.88);
+        rgba(255,255,255,.94);
+
+    color:
+        var(--azul);
+
+    border-color:
+        rgba(23,59,80,.35);
+}
+
+
+/*
+   Cuando la ficha está abierta,
+   la foto desaparece COMPLETAMENTE.
+*/
+
+.mural-board .note-window:nth-child(1)[open]
+summary::before {
+
+    display:
+        none;
+}
+
+
+/*
+   La ficha central abierta vuelve a comportarse
+   como una ventana de contenido.
+*/
+
+.mural-board .note-window:nth-child(1)[open] {
+
+    width:
+        min(680px, 82vw);
+
+    max-height:
+        650px;
+
+    min-height:
+        auto;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    right:
+        auto;
+
+    bottom:
+        auto;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(0deg) !important;
+
+    z-index:
+        1000;
+
+    border-radius:
+        20px;
+
+    box-shadow:
+        0 35px 90px
+        rgba(23,59,80,.28);
+}
+
+
+/*
+   Cabecera de la ficha central abierta.
+*/
+
+.mural-board .note-window:nth-child(1)[open]
+summary {
+
+    min-height:
+        58px;
+
+    height:
+        58px;
+
+    padding:
+        12px 15px;
+
+    flex-direction:
+        row;
+
+    align-items:
+        center;
+
+    border-radius:
+        18px 18px 0 0;
+
+    background:
+        var(--azul);
+
+    box-shadow:
+        none;
+}
+
+
+/*
+   Al abrir, el nombre vuelve a ser pequeño,
+   como una ventana de sistema.
+*/
+
+.mural-board .note-window:nth-child(1)[open]
+summary > span:nth-child(2) {
+
+    flex:
+        1;
+
+    color:
+        white;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        0;
+}
+
+
+/*
+   Botón cerrar de la ficha central.
+*/
+
+.mural-board .note-window:nth-child(1)[open]
+summary b {
+
+    position:
+        static;
+
+    color:
+        white;
+
+    background:
+        transparent;
+
+    border-color:
+        rgba(255,255,255,.75);
+
+    margin-left:
+        auto;
 }
 
 
 /* =========================================================
-   COLORES DE CADA FICHA
+   COLORES DE CADA PAPEL
    ========================================================= */
 
 
 /* ---------------------------------------------------------
-   QUIÉN SOY
+   01 · QUIÉN SOY
    --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(1) summary {
@@ -1011,9 +1353,23 @@ summary b {
         white;
 }
 
+.mural-board .note-window:nth-child(1)
+summary > span:nth-child(2) {
+
+    color:
+        var(--azul);
+}
+
+.mural-board .note-window:nth-child(1)
+summary small {
+
+    color:
+        var(--verde);
+}
+
 
 /* ---------------------------------------------------------
-   RECORRIDO LABORAL
+   02 · TRAYECTORIA
    --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(2) summary {
@@ -1024,7 +1380,7 @@ summary b {
 
 
 /* ---------------------------------------------------------
-   EDUCACIÓN A DISTANCIA
+   03 · EDUCACIÓN A DISTANCIA
    --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(3) summary {
@@ -1059,7 +1415,7 @@ summary b {
 
 
 /* ---------------------------------------------------------
-   ACCESIBILIDAD
+   04 · ACCESIBILIDAD
    --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(4) summary {
@@ -1070,7 +1426,7 @@ summary b {
 
 
 /* ---------------------------------------------------------
-   FORMACIÓN
+   05 · FORMACIÓN
    --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(5) summary {
@@ -1081,7 +1437,7 @@ summary b {
 
 
 /* ---------------------------------------------------------
-   TRABAJOS ESCRITOS
+   06 · TRABAJOS
    --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(6) summary {
@@ -1092,7 +1448,7 @@ summary b {
 
 
 /* ---------------------------------------------------------
-   VIDEO
+   07 · VIDEO
    --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(7) summary {
@@ -1103,7 +1459,7 @@ summary b {
 
 
 /* ---------------------------------------------------------
-   LO QUE HAGO HOY
+   08 · ACTUALIDAD
    --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(8) summary {
@@ -1114,48 +1470,67 @@ summary b {
 
 
 /* =========================================================
-   TARJETA ABIERTA
+   TARJETA ABIERTA · GENERAL
    ========================================================= */
 
 .mural-board .note-window[open] {
 
-    position: absolute;
-
-    z-index: 1000;
-
-    top: 50%;
-
-    left: 50%;
-
-    width: 650px;
-
-    min-height: auto;
+    z-index:
+        200;
 
     transform:
         translate(-50%, -50%)
         rotate(0deg) !important;
 
     box-shadow:
-        0 35px 80px rgba(23,59,80,.27);
+        var(--sombra-fuerte);
 }
 
 
-/* =========================================================
-   ANCHOS ESPECÍFICOS AL ABRIR
-   ========================================================= */
+/*
+   Todas las tarjetas abiertas se convierten
+   en una ventana central.
+*/
 
-.mural-board .note-window:nth-child(1)[open] {
+.mural-board .note-window:nth-child(n)[open] {
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    right:
+        auto;
+
+    bottom:
+        auto;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(0deg) !important;
 
     width:
-        min(720px, 88vw);
+        min(620px, 82vw);
+
+    max-height:
+        680px;
+
+    z-index:
+        500;
 }
+
+
+/*
+   Anchos específicos para contenido más grande.
+*/
 
 .mural-board .note-window:nth-child(2)[open],
 .mural-board .note-window:nth-child(5)[open],
 .mural-board .note-window:nth-child(6)[open] {
 
     width:
-        min(680px, 88vw);
+        min(680px, 82vw);
 }
 
 .mural-board .note-window:nth-child(3)[open],
@@ -1164,103 +1539,18 @@ summary b {
 .mural-board .note-window:nth-child(8)[open] {
 
     width:
-        min(620px, 88vw);
+        min(620px, 82vw);
 }
 
 
-/* =========================================================
-   CUANDO SE ABRE EL CENTRO
-   ========================================================= */
+/*
+   La ficha central tiene su propio ancho.
+*/
 
 .mural-board .note-window:nth-child(1)[open] {
 
-    min-height:
-        520px;
-}
-
-
-/* =========================================================
-   CABECERA DE VENTANA ABIERTA
-   ========================================================= */
-
-.mural-board .note-window[open] summary {
-
-    min-height:
-        58px;
-
-    height:
-        58px;
-
-    flex-direction:
-        row;
-
-    align-items:
-        center;
-
-    padding:
-        10px
-        14px;
-
-    border-radius:
-        17px
-        17px
-        0
-        0;
-}
-
-
-/* =========================================================
-   ICONO AL ABRIR
-   ========================================================= */
-
-.mural-board .note-window[open]
-summary .mini-icon {
-
     width:
-        28px;
-
-    height:
-        28px;
-
-    flex:
-        0 0 28px;
-
-    border-radius:
-        50%;
-
-    font-size:
-        12px;
-}
-
-
-/* =========================================================
-   TÍTULO AL ABRIR
-   ========================================================= */
-
-.mural-board .note-window[open]
-summary > span:nth-child(2) {
-
-    display:
-        flex;
-
-    flex-direction:
-        row;
-
-    align-items:
-        baseline;
-
-    gap:
-        8px;
-
-    font-size:
-        11px;
-}
-
-.mural-board .note-window[open]
-summary::after {
-
-    display:
-        none;
+        min(680px, 82vw);
 }
 
 
@@ -1270,16 +1560,10 @@ summary::after {
 
 .mural-board .window-content {
 
-    max-height:
-        510px;
-
-    overflow-y:
-        auto;
-
     padding:
+        28px
         30px
-        32px
-        35px;
+        32px;
 
     background:
         white;
@@ -1287,24 +1571,41 @@ summary::after {
     border-radius:
         0
         0
-        17px
-        17px;
+        14px
+        14px;
 
     animation:
-        muralAppear .28s ease;
+        muralAppear
+        .28s
+        ease;
+
+    max-height:
+        600px;
+
+    overflow-y:
+        auto;
 }
+
+
+/* =========================================================
+   ANIMACIÓN DE APERTURA
+   ========================================================= */
 
 @keyframes muralAppear {
 
     from {
-        opacity: 0;
+
+        opacity:
+            0;
 
         transform:
-            translateY(-7px);
+            translateY(-5px);
     }
 
     to {
-        opacity: 1;
+
+        opacity:
+            1;
 
         transform:
             translateY(0);
@@ -1313,7 +1614,7 @@ summary::after {
 
 
 /* =========================================================
-   COLUMNAS
+   DOS COLUMNAS
    ========================================================= */
 
 .mural-board .two-col {
@@ -1331,21 +1632,20 @@ summary::after {
 
 
 /* =========================================================
-   TÍTULOS DE CONTENIDO
+   TÍTULOS
    ========================================================= */
 
 .mural-board .window-content h2 {
 
     margin:
-        0
-        0
-        16px;
+        0 0 16px;
 
     color:
         var(--azul);
 
     font-family:
-        "Manrope", sans-serif;
+        "Manrope",
+        sans-serif;
 
     font-size:
         clamp(
@@ -1361,12 +1661,15 @@ summary::after {
         -1.8px;
 }
 
+
+/* =========================================================
+   PÁRRAFOS
+   ========================================================= */
+
 .mural-board .window-content p {
 
     margin:
-        0
-        0
-        12px;
+        0 0 12px;
 
     color:
         #687b82;
@@ -1384,7 +1687,8 @@ summary::after {
         var(--azul-2);
 
     font-family:
-        "Manrope", sans-serif;
+        "Manrope",
+        sans-serif;
 
     font-size:
         15px;
@@ -1424,7 +1728,8 @@ summary::after {
         0;
 
     font-family:
-        "Manrope", sans-serif;
+        "Manrope",
+        sans-serif;
 
     font-size:
         11px;
@@ -1459,6 +1764,11 @@ summary::after {
     color:
         #c2d1d5;
 }
+
+
+/* =========================================================
+   PRINCIPIOS
+   ========================================================= */
 
 .principles {
 
@@ -1503,14 +1813,14 @@ summary::after {
 .principles h3 {
 
     margin:
-        7px
-        0;
+        7px 0;
 
     color:
         white;
 
     font-family:
-        "Manrope", sans-serif;
+        "Manrope",
+        sans-serif;
 
     font-size:
         12px;
@@ -1576,7 +1886,8 @@ summary::after {
         800;
 
     box-shadow:
-        0 2px 7px rgba(23,59,80,.07);
+        0 2px 7px
+        rgba(23,59,80,.07);
 }
 
 
@@ -1652,7 +1963,8 @@ summary::after {
         var(--verde);
 
     box-shadow:
-        0 0 0 4px var(--verde-claro);
+        0 0 0 4px
+        var(--verde-claro);
 }
 
 .timeline time {
@@ -1670,15 +1982,14 @@ summary::after {
 .timeline h3 {
 
     margin:
-        0
-        0
-        3px;
+        0 0 3px;
 
     color:
         var(--azul-2);
 
     font-family:
-        "Manrope", sans-serif;
+        "Manrope",
+        sans-serif;
 
     font-size:
         12px;
@@ -1774,7 +2085,8 @@ summary::after {
         var(--azul-2);
 
     font-family:
-        "Manrope", sans-serif;
+        "Manrope",
+        sans-serif;
 
     font-size:
         11px;
@@ -1818,6 +2130,11 @@ summary::after {
     letter-spacing:
         1px;
 }
+
+
+/* =========================================================
+   CURSOS
+   ========================================================= */
 
 .courses {
 
@@ -1897,14 +2214,14 @@ summary::after {
 .papers h3 {
 
     margin:
-        7px
-        0;
+        7px 0;
 
     color:
         var(--azul-2);
 
     font-family:
-        "Manrope", sans-serif;
+        "Manrope",
+        sans-serif;
 
     font-size:
         15px;
@@ -1947,6 +2264,9 @@ summary::after {
 
     font-weight:
         800;
+
+    transition:
+        color .2s ease;
 }
 
 .papers a:hover {
@@ -2006,7 +2326,8 @@ summary::after {
         15px;
 
     box-shadow:
-        0 15px 35px rgba(23,59,80,.18);
+        0 15px 35px
+        rgba(23,59,80,.18);
 
     color:
         white;
@@ -2042,7 +2363,8 @@ summary::after {
         12px;
 
     font-family:
-        "Manrope", sans-serif;
+        "Manrope",
+        sans-serif;
 
     font-size:
         8px;
@@ -2134,13 +2456,10 @@ summary::after {
         700px;
 
     margin:
-        14px
-        auto
-        0;
+        14px auto 0;
 
     padding:
-        8px
-        15px;
+        8px 15px;
 
     color:
         #7f8e92;
@@ -2178,8 +2497,7 @@ footer {
         18px;
 
     padding:
-        15px
-        20px;
+        15px 20px;
 
     color:
         #bdccd0;
@@ -2197,7 +2515,8 @@ footer strong {
         white;
 
     font-family:
-        "Manrope", sans-serif;
+        "Manrope",
+        sans-serif;
 
     font-size:
         13px;
@@ -2250,18 +2569,21 @@ footer a {
 
     .mural-board {
 
-        width:
-            96vw;
-
         height:
             900px;
     }
 
+
+    /* Quién soy */
+
     .mural-board .note-window:nth-child(1) {
 
         top:
-            120px;
+            110px;
     }
+
+
+    /* Trayectoria */
 
     .mural-board .note-window:nth-child(2) {
 
@@ -2269,11 +2591,17 @@ footer a {
             2%;
     }
 
+
+    /* Educación */
+
     .mural-board .note-window:nth-child(3) {
 
         right:
             2%;
     }
+
+
+    /* Accesibilidad */
 
     .mural-board .note-window:nth-child(4) {
 
@@ -2281,8 +2609,11 @@ footer a {
             2%;
 
         top:
-            410px;
+            390px;
     }
+
+
+    /* Formación */
 
     .mural-board .note-window:nth-child(5) {
 
@@ -2290,8 +2621,11 @@ footer a {
             2%;
 
         top:
-            410px;
+            390px;
     }
+
+
+    /* Trabajos */
 
     .mural-board .note-window:nth-child(6) {
 
@@ -2299,8 +2633,11 @@ footer a {
             5%;
 
         bottom:
-            40px;
+            35px;
     }
+
+
+    /* Video */
 
     .mural-board .note-window:nth-child(7) {
 
@@ -2308,19 +2645,31 @@ footer a {
             5%;
 
         bottom:
-            40px;
+            35px;
     }
+
+
+    /* Actualidad */
 
     .mural-board .note-window:nth-child(8) {
 
         bottom:
-            25px;
+            20px;
     }
 
-    .mural-board .note-window[open] {
+
+    /*
+       Cuando una tarjeta se abre en tablet,
+       ocupa una proporción razonable.
+    */
+
+    .mural-board .note-window:nth-child(n)[open] {
 
         width:
-            min(680px, 88vw);
+            min(700px, 84vw);
+
+        max-height:
+            760px;
     }
 
 }
@@ -2344,15 +2693,14 @@ footer a {
     }
 
 
-    /* -----------------------------------------
-       INTRO
-       ----------------------------------------- */
+    /* Ventana inicial */
 
     .intro-window {
 
         width:
             100%;
     }
+
 
     .intro-body {
 
@@ -2367,6 +2715,7 @@ footer a {
             28px;
     }
 
+
     .intro-body h1 {
 
         font-size:
@@ -2376,6 +2725,7 @@ footer a {
             -2px;
     }
 
+
     .portrait {
 
         max-width:
@@ -2383,9 +2733,7 @@ footer a {
     }
 
 
-    /* -----------------------------------------
-       MURAL
-       ----------------------------------------- */
+    /* Mural */
 
     .mural-board {
 
@@ -2416,6 +2764,7 @@ footer a {
             visible;
     }
 
+
     .mural-board::before {
 
         top:
@@ -2423,9 +2772,10 @@ footer a {
     }
 
 
-    /* -----------------------------------------
-       TODAS LAS FICHAS
-       ----------------------------------------- */
+    /*
+       En celular las tarjetas vuelven
+       a flujo normal.
+    */
 
     .mural-board .note-window,
     .mural-board .note-window:nth-child(n) {
@@ -2439,102 +2789,46 @@ footer a {
         width:
             100% !important;
 
-        min-height:
-            auto;
-
         transform:
             none;
 
+        min-height:
+            auto;
+
         z-index:
-            1;
+            auto;
     }
 
 
-    /* -----------------------------------------
-       FICHA CENTRAL
-       ----------------------------------------- */
+    /*
+       La ficha central cerrada conserva
+       la foto tipo tarjeta.
+    */
 
-    .mural-board .note-window:nth-child(1) {
-
-        order:
-            -1;
-    }
-
-    .mural-board .note-window:nth-child(1) summary {
+    .mural-board .note-window:nth-child(1)
+    summary {
 
         min-height:
             390px;
     }
 
 
-    /* -----------------------------------------
-       FICHAS CERRADAS EN CELULAR
-       ----------------------------------------- */
-
-    .mural-board .note-window:not(:nth-child(1))
-    summary {
-
-        min-height:
-            105px;
+    .mural-board .note-window:nth-child(1)
+    summary::before {
 
         height:
-            105px;
+            270px;
 
-        flex-direction:
-            row;
-
-        align-items:
-            center;
-
-        justify-content:
-            flex-start;
-
-        gap:
-            13px;
-
-        padding:
-            15px;
-    }
-
-    .mural-board .note-window:not(:nth-child(1))
-    summary .mini-icon {
-
-        width:
-            42px;
-
-        height:
-            42px;
-
-        flex:
-            0 0 42px;
-    }
-
-    .mural-board .note-window:not(:nth-child(1))
-    summary > span:nth-child(2) {
-
-        display:
-            flex;
-
-        flex-direction:
-            column;
-
-        font-size:
-            14px;
-    }
-
-    .mural-board .note-window:not(:nth-child(1))
-    summary::after {
-
-        display:
-            none;
+        flex-basis:
+            270px;
     }
 
 
-    /* -----------------------------------------
-       VENTANA ABIERTA EN CELULAR
-       ----------------------------------------- */
+    /*
+       Ficha abierta en celular.
+    */
 
-    .mural-board .note-window[open] {
+    .mural-board .note-window:nth-child(n)[open] {
 
         position:
             relative;
@@ -2545,11 +2839,17 @@ footer a {
         left:
             auto;
 
+        right:
+            auto;
+
+        bottom:
+            auto;
+
         width:
             100% !important;
 
-        min-height:
-            auto;
+        max-height:
+            none;
 
         transform:
             none !important;
@@ -2558,7 +2858,20 @@ footer a {
             100;
     }
 
-    .mural-board .note-window[open]
+
+    .mural-board .note-window:nth-child(1)[open] {
+
+        width:
+            100% !important;
+    }
+
+
+    /*
+       Al abrir la ficha central en celular,
+       vuelve a ser una ventana normal.
+    */
+
+    .mural-board .note-window:nth-child(1)[open]
     summary {
 
         min-height:
@@ -2566,7 +2879,27 @@ footer a {
 
         height:
             58px;
+
+        flex-direction:
+            row;
+
+        padding:
+            12px 15px;
+
+        border-radius:
+            18px 18px 0 0;
     }
+
+
+    .mural-board .note-window:nth-child(1)[open]
+    summary::before {
+
+        display:
+            none;
+    }
+
+
+    /* Contenido */
 
     .mural-board .window-content {
 
@@ -2580,9 +2913,7 @@ footer a {
     }
 
 
-    /* -----------------------------------------
-       COLUMNAS
-       ----------------------------------------- */
+    /* Columnas */
 
     .mural-board .two-col,
     .video-content {
@@ -2591,12 +2922,16 @@ footer a {
             1fr;
     }
 
+
+    /* Estudios */
+
     .studies,
     .papers {
 
         grid-template-columns:
             1fr 1fr;
     }
+
 }
 
 
@@ -2612,17 +2947,20 @@ footer a {
             36px;
     }
 
+
     .intro-text {
 
         font-size:
             10px;
     }
 
+
     .mural-board .window-content h2 {
 
         font-size:
             28px;
     }
+
 
     .studies,
     .papers,
@@ -2632,12 +2970,14 @@ footer a {
             1fr;
     }
 
+
     .timeline article {
 
         grid-template-columns:
             70px
             1fr;
     }
+
 
     .current-content {
 
@@ -2648,21 +2988,42 @@ footer a {
             flex-start;
     }
 
+
     .video-placeholder {
 
         height:
             210px;
     }
 
+
+    /* Foto central */
+
     .mural-board .note-window:nth-child(1)
     summary::before {
 
         height:
-            250px;
+            240px;
 
         flex-basis:
-            250px;
+            240px;
     }
+}
+
+
+/* =========================================================
+   ACCESIBILIDAD / FOCO DE TECLADO
+   ========================================================= */
+
+summary:focus-visible,
+a:focus-visible,
+button:focus-visible {
+
+    outline:
+        3px solid
+        var(--turquesa);
+
+    outline-offset:
+        3px;
 }
 
 
@@ -2672,22 +3033,20 @@ footer a {
 
 @media (prefers-reduced-motion: reduce) {
 
-    html {
-        scroll-behavior:
-            auto;
-    }
-
     *,
     *::before,
     *::after {
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
 
         animation-duration:
             .01ms !important;
 
         animation-iteration-count:
             1 !important;
-
-        transition-duration:
-            .01ms !important;
     }
 }
