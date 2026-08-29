@@ -1,0 +1,273 @@
+*{box-sizing:border-box}
+:root{--ink:#183447;--teal:#2aa69a;--teal2:#72d0c5;--cream:#f7f4ed;--paper:#fff;--muted:#718188;--line:#18344718}
+html{scroll-behavior:smooth}
+body{margin:0;background:#edf2ef;color:var(--ink);font-family:"DM Sans",sans-serif}
+.topbar{height:27px;background:#173447;color:#dce9e8;display:flex;align-items:center;justify-content:space-between;padding:0 15px;font-size:7px;letter-spacing:1px;font-weight:800;position:fixed;z-index:50;left:0;right:0;top:0}
+.mural{padding:70px 5vw 55px;min-height:100vh;background:
+radial-gradient(circle at 15% 25%,#ffffff 0 7%,transparent 7.3%),
+radial-gradient(circle at 87% 12%,#d5ebe7 0 13%,transparent 13.2%),
+linear-gradient(135deg,#faf8f1,#edf4f2)}
+.intro-window{max-width:1200px;margin:0 auto 25px;background:#fff;border:1px solid #17344712;border-radius:20px;box-shadow:0 20px 55px #17344712;overflow:hidden}
+.window-bar{height:34px;background:#f0f1f0;border-bottom:1px solid #17344712;display:flex;align-items:center;padding:0 14px;gap:12px;font-size:8px;color:#718188}
+.dots{display:flex;gap:5px}.dots i{width:7px;height:7px;border-radius:50%;background:#c5d1d0}.dots i:first-child{background:#2aa69a}
+.window-symbol{margin-left:auto;color:#2aa69a}
+.intro-body{display:grid;grid-template-columns:1.15fr .65fr;align-items:center;padding:45px 55px;gap:50px}
+.eyebrow{font-size:8px;font-weight:800;letter-spacing:2px;color:var(--teal)}
+.intro-body h1{font:800 clamp(45px,6vw,78px)/.96 Manrope;letter-spacing:-4px;margin:14px 0 20px}
+.intro-body h1 em{font-style:normal;color:var(--teal)}
+.intro-text{max-width:650px;color:#667b83;font-size:13px;line-height:1.7}
+.intro-instruction{font-size:9px;color:#789096;line-height:1.6;margin-top:20px}
+.intro-instruction strong{color:#315a6d}
+.portrait{max-width:300px;justify-self:center;background:#fff;padding:10px 10px 22px;border-radius:20px;box-shadow:0 22px 45px #1734471b;transform:rotate(2deg)}
+.portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:13px}
+.portrait-caption{padding:9px 5px 0;display:flex;flex-direction:column}
+.portrait-caption strong{font:700 17px Manrope}.portrait-caption span{font-size:7px;color:#7b8b91;margin-top:2px}
+.mural-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.note-window{background:#fff;border:1px solid #17344713;border-radius:18px;box-shadow:0 13px 35px #17344710;overflow:hidden;transition:box-shadow .25s,transform .25s}
+.note-window:hover{box-shadow:0 20px 45px #17344718}
+.note-window[open]{box-shadow:0 24px 55px #17344718}
+.note-window[open] summary{border-bottom:1px solid #17344710}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:13px 15px;background:#f1f1f3;user-select:none}
+summary::-webkit-details-marker{display:none}
+summary>span:nth-child(2){display:flex;align-items:baseline;gap:9px;font:700 12px Manrope;color:#24363f}
+summary small{font:800 7px DM Sans;color:var(--teal)}
+summary b{margin-left:auto;width:24px;height:24px;border:1px solid #29383e;border-radius:50%;display:grid;place-items:center;font-size:18px;font-weight:400;transition:.25s}
+.note-window[open] summary b{transform:rotate(45deg);background:var(--teal);border-color:var(--teal);color:#fff}
+.mini-icon{width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--teal);font-size:12px;flex:0 0 23px}
+.window-content{padding:28px 30px 32px;animation:appear .28s ease}
+@keyframes appear{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+.wide{grid-column:1/-1}
+.two-col{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px}
+.window-content h2{font:700 clamp(25px,3vw,39px)/1.08 Manrope;letter-spacing:-2px;margin:0 0 15px;color:#173b50}
+.window-content p{font-size:10px;line-height:1.6;color:#6c7d83;margin:0 0 12px}
+.window-content .lead{font:500 16px/1.5 Manrope;color:#244d62;margin-bottom:16px}
+.quote{padding:16px 18px;background:#dff1ed;border-left:3px solid var(--teal);border-radius:0 12px 12px 0;color:#246277;font:700 12px/1.4 Manrope}
+.teal-note{background:#173447;color:white}.teal-note summary{background:#21495e}.teal-note summary>span:nth-child(2){color:white}.teal-note .window-content{background:#173447}.teal-note .window-content h2,.teal-note .window-content .lead{color:white}.teal-note .window-content p{color:#b8c8cd}
+.principles{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}
+.principles div{background:#21495e;border:1px solid #ffffff12;border-radius:13px;padding:15px}
+.principles strong{font-size:8px;color:var(--teal2)}.principles h3{font:700 13px Manrope;margin:7px 0;color:white}.principles p{font-size:8px!important;color:#b8c8cd!important;margin:0}
+.accessibility-note{background:#e7f3f0}
+.access-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}.access-pills span{padding:8px 11px;border-radius:999px;background:#fff;font-size:8px;font-weight:800;color:#21617a}
+.timeline-window{grid-column:1/-1}
+.timeline{margin-top:20px;max-height:430px;overflow:auto;padding-right:8px}
+.timeline article{display:grid;grid-template-columns:95px 1fr;gap:15px;padding:0 0 17px 15px;border-left:1px solid #2aa69a55;position:relative}
+.timeline article:before{content:"";position:absolute;left:-4px;top:3px;width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px #dff1ed}
+.timeline time{font-size:8px;font-weight:800;color:var(--teal)}
+.timeline h3{font:700 13px/1.3 Manrope;color:#205671;margin:0 0 3px}
+.timeline b{font-size:8px;color:#65767e}.timeline p{font-size:8px;line-height:1.45;margin-top:4px}
+.timeline .important>div{background:#eef8f5;padding:10px;border-radius:11px}
+.timeline .current>div{background:#dff1ed;padding:10px;border-radius:11px}
+.studies-note{grid-column:1/-1}
+.studies{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.studies article{background:#f5f6f4;border:1px solid var(--line);padding:14px;border-radius:12px}.studies h3{font:700 12px/1.3 Manrope;color:#205671;margin:0}.studies p{font-size:8px;margin:5px 0 0}.main-study{background:#173447!important}.main-study h3{color:#fff!important}.main-study small{font-size:7px;font-weight:800;color:#72d0c5;letter-spacing:1px}
+.courses{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}.courses span{background:#edf1ef;border-radius:999px;padding:6px 8px;font-size:7px;color:#687980}
+.papers{display:grid;grid-template-columns:1fr 1fr;gap:10px}.papers article{background:#f6f7f5;border-radius:13px;padding:17px}.papers small{color:var(--teal);font-weight:800;font-size:8px}.papers h3{font:700 16px Manrope;color:#205671;margin:7px 0}.papers p{font-size:8px}.papers b{font-size:7px;color:#7a898e;display:block}.papers a{display:inline-block;margin-top:10px;color:#238b83;text-decoration:none;font-size:8px;font-weight:800}
+.video-note{grid-column:1/-1;background:#f7f0e4}
+.video-content{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:center}
+.video-placeholder{height:260px;border-radius:15px;background:#173447;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;box-shadow:0 15px 35px #17344720}.video-placeholder span{width:55px;height:55px;border-radius:50%;background:var(--teal);display:grid;place-items:center;font-size:20px}.video-placeholder strong{font:800 8px Manrope;letter-spacing:2px;margin-top:12px}.video-placeholder small{font-size:7px;color:#adc0c6;margin-top:4px}
+.nomade-note{grid-column:1/-1}.current-content{display:flex;justify-content:space-between;align-items:center;gap:30px}.nomade-link{background:var(--teal);color:white;text-decoration:none;padding:12px 17px;border-radius:999px;font-size:8px;font-weight:800;white-space:nowrap}
+.mural-tip{text-align:center;color:#879499;font-size:8px;padding-top:18px}
+footer{background:#173447;color:#bdccd0;padding:12px 20px;display:flex;justify-content:center;gap:18px;align-items:center;font-size:7px}footer strong{font:700 14px Manrope;color:white}footer a{color:#d7e6e8;text-decoration:none}
+@media(max-width:800px){
+body{background:#edf2ef}.mural{padding:60px 15px 40px}.intro-body{grid-template-columns:1fr;padding:30px 25px;gap:30px}.portrait{max-width:270px}.mural-grid{grid-template-columns:1fr}.wide,.timeline-window,.studies-note,.video-note,.nomade-note{grid-column:auto}.two-col,.video-content{grid-template-columns:1fr}.studies{grid-template-columns:1fr 1fr}.current-content{flex-direction:column;align-items:flex-start}.intro-body h1{font-size:46px}.timeline{max-height:none}
+}
+@media(max-width:500px){
+.studies,.papers,.principles{grid-template-columns:1fr}.window-content{padding:23px 20px}.timeline article{grid-template-columns:75px 1fr}.intro-body h1{font-size:39px;letter-spacing:-2px}
+}
+
+/* =========================================================
+   V13 — MURAL TIPO PADLET
+   Las tarjetas quedan distribuidas alrededor de un centro.
+   Al abrir una tarjeta, su contenido crece sobre el mural.
+   ========================================================= */
+.mural{
+  padding:62px 3vw 45px;
+  min-height:100vh;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 8% 20%,rgba(255,255,255,.95) 0 85px,transparent 86px),
+    radial-gradient(circle at 91% 14%,#d5ebe7 0 150px,transparent 151px),
+    radial-gradient(circle at 84% 88%,rgba(255,255,255,.8) 0 110px,transparent 111px),
+    linear-gradient(135deg,#f8f5ec 0%,#edf4f2 100%);
+}
+.intro-window{
+  max-width:860px;
+  margin:0 auto;
+  position:relative;
+  z-index:4;
+}
+.intro-body{
+  grid-template-columns:1.15fr .55fr;
+  padding:34px 40px;
+  gap:30px;
+}
+.intro-body h1{
+  font-size:clamp(40px,5vw,64px);
+}
+.portrait{max-width:245px}
+
+/* The actual board */
+.mural-board{
+  width:min(1400px,96vw);
+  height:790px;
+  margin:35px auto 0;
+  position:relative;
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 20% 30%,rgba(255,255,255,.85) 0 2px,transparent 3px),
+    radial-gradient(circle at 70% 65%,rgba(23,52,71,.035) 0 1.5px,transparent 2.5px),
+    linear-gradient(135deg,#eee9dd,#f5f2e9);
+  background-size:auto,auto,auto;
+  border:1px solid rgba(23,52,71,.10);
+  box-shadow:inset 0 0 0 10px rgba(255,255,255,.20),0 22px 60px rgba(23,52,71,.10);
+}
+
+/* little tape/thumbtack feeling */
+.mural-board:before{
+  content:"MURAL · RECORRIDO";
+  position:absolute;
+  top:15px;
+  left:50%;
+  transform:translateX(-50%);
+  font:800 7px/1 "DM Sans";
+  letter-spacing:2px;
+  color:#9aa6a6;
+}
+
+/* Turn each existing detail into a loose paper/card */
+.mural-board .note-window{
+  position:absolute;
+  width:220px;
+  margin:0;
+  border-radius:13px;
+  overflow:visible;
+  box-shadow:0 9px 18px rgba(23,52,71,.13);
+  border:1px solid rgba(23,52,71,.10);
+  transition:box-shadow .25s,transform .25s;
+}
+.mural-board .note-window:hover{
+  z-index:20;
+  box-shadow:0 16px 32px rgba(23,52,71,.20);
+}
+.mural-board .note-window[open]{
+  width:430px;
+  z-index:100;
+  transform:rotate(0deg)!important;
+  box-shadow:0 25px 55px rgba(23,52,71,.24);
+}
+.mural-board .note-window summary{
+  min-height:52px;
+  border-radius:13px;
+  background:#fff;
+  padding:12px 13px;
+}
+.mural-board .note-window[open] summary{
+  border-radius:13px 13px 0 0;
+}
+
+/* Every card gets a different location/rotation, like a real mural */
+.mural-board .note-window:nth-child(1){left:50%;top:105px;transform:translateX(-50%) rotate(-1deg);width:250px}
+.mural-board .note-window:nth-child(2){left:4%;top:95px;transform:rotate(-3deg)}
+.mural-board .note-window:nth-child(3){right:4%;top:105px;transform:rotate(3deg)}
+.mural-board .note-window:nth-child(4){left:7%;top:355px;transform:rotate(2deg)}
+.mural-board .note-window:nth-child(5){right:7%;top:355px;transform:rotate(-2deg)}
+.mural-board .note-window:nth-child(6){left:16%;bottom:62px;transform:rotate(-2deg)}
+.mural-board .note-window:nth-child(7){right:16%;bottom:58px;transform:rotate(2deg)}
+.mural-board .note-window:nth-child(8){left:50%;bottom:25px;transform:translateX(-50%) rotate(-1deg);width:270px}
+
+/* The central card is intentionally more prominent */
+.mural-board .note-window:nth-child(1) summary{
+  background:#173447;
+}
+.mural-board .note-window:nth-child(1) summary>span:nth-child(2){color:white}
+.mural-board .note-window:nth-child(1) summary b{border-color:white;color:white}
+.mural-board .note-window:nth-child(1)[open] summary{background:#173447}
+
+/* Open content floats over the board, rather than pushing every card down */
+.mural-board .window-content{
+  max-height:520px;
+  overflow:auto;
+  background:#fff;
+  border-radius:0 0 13px 13px;
+  padding:25px;
+}
+
+/* Small cards should feel like sticky notes */
+.mural-board .timeline-window summary{background:#fff8c9}
+.mural-board .accessibility-note summary{background:#dff1ed}
+.mural-board .studies-note summary{background:#f8e6dc}
+.mural-board .papers-note summary{background:#e8e4f4}
+.mural-board .video-note summary{background:#dcecf6}
+.mural-board .nomade-note summary{background:#d9eee9}
+
+.mural-board .mini-icon{
+  box-shadow:0 1px 4px rgba(23,52,71,.10);
+}
+
+/* Opened cards that are naturally very large */
+.mural-board .timeline-window[open],
+.mural-board .studies-note[open],
+.mural-board .papers-note[open]{
+  width:min(700px,70vw);
+}
+.mural-board .video-note[open],
+.mural-board .nomade-note[open]{
+  width:min(620px,70vw);
+}
+
+/* Keep text readable inside the board */
+.mural-board .timeline{max-height:390px}
+.mural-board .studies{grid-template-columns:repeat(2,1fr)}
+
+.mural-tip{
+  max-width:800px;
+  margin:14px auto 0;
+  background:rgba(255,255,255,.6);
+  border-radius:999px;
+  padding:8px 15px;
+}
+
+/* Tablet */
+@media(max-width:1050px) and (min-width:701px){
+  .mural-board{height:930px}
+  .mural-board .note-window:nth-child(1){top:130px}
+  .mural-board .note-window:nth-child(2){left:2%;top:40px}
+  .mural-board .note-window:nth-child(3){right:2%;top:40px}
+  .mural-board .note-window:nth-child(4){left:2%;top:480px}
+  .mural-board .note-window:nth-child(5){right:2%;top:480px}
+  .mural-board .note-window:nth-child(6){left:8%;bottom:35px}
+  .mural-board .note-window:nth-child(7){right:8%;bottom:35px}
+}
+
+/* Mobile becomes a tactile vertical mural so nothing gets clipped */
+@media(max-width:700px){
+  .mural{overflow:visible;padding-left:12px;padding-right:12px}
+  .intro-window{margin-bottom:20px}
+  .intro-body{grid-template-columns:1fr;padding:27px 22px}
+  .mural-board{
+    height:auto;
+    min-height:0;
+    padding:50px 12px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    background:linear-gradient(135deg,#eee9dd,#f5f2e9);
+  }
+  .mural-board:before{top:18px}
+  .mural-board .note-window,
+  .mural-board .note-window:nth-child(n){
+    position:relative;
+    inset:auto;
+    width:100%;
+    transform:none;
+  }
+  .mural-board .note-window[open],
+  .mural-board .timeline-window[open],
+  .mural-board .studies-note[open],
+  .mural-board .papers-note[open],
+  .mural-board .video-note[open],
+  .mural-board .nomade-note[open]{
+    width:100%;
+  }
+  .mural-board .window-content{max-height:none}
+}
