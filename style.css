@@ -1,23 +1,38 @@
+/* ============================================================
+   BASE
+============================================================ */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
-    font-family: "DM Sans", sans-serif;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
     color: #193448;
+
     background: #dce7e8;
+
     overflow: hidden;
 }
 
-button {
-    font: inherit;
+
+button,
+a {
+    font-family: inherit;
 }
+
 
 
 /* ============================================================
@@ -25,9 +40,13 @@ button {
 ============================================================ */
 
 .desktop {
+
     position: fixed;
+
     inset: 0;
-    overflow: auto;
+
+    overflow-y: auto;
+    overflow-x: hidden;
 
     background:
         radial-gradient(
@@ -40,17 +59,29 @@ button {
 
 
 .ambient {
+
     position: fixed;
+
     border-radius: 50%;
+
     pointer-events: none;
+
+    z-index: 0;
 }
 
 
 .a1 {
+
     width: 520px;
     height: 520px;
 
-    background: rgba(49,166,155,.12);
+    background:
+        rgba(
+            49,
+            166,
+            155,
+            .12
+        );
 
     right: -170px;
     top: -180px;
@@ -58,10 +89,17 @@ button {
 
 
 .a2 {
+
     width: 330px;
     height: 330px;
 
-    background: rgba(255,255,255,.55);
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .55
+        );
 
     left: -140px;
     bottom: -120px;
@@ -77,7 +115,7 @@ button {
 
     position: fixed;
 
-    z-index: 50;
+    z-index: 100;
 
     left: 0;
     right: 0;
@@ -85,7 +123,9 @@ button {
 
     height: 34px;
 
-    padding: 0 22px;
+    padding:
+        0
+        22px;
 
     display: flex;
 
@@ -93,7 +133,13 @@ button {
 
     align-items: center;
 
-    background: rgba(13,43,61,.92);
+    background:
+        rgba(
+            13,
+            43,
+            61,
+            .94
+        );
 
     color: #d9e7e8;
 
@@ -114,12 +160,14 @@ button {
 
     position: relative;
 
+    z-index: 1;
+
     min-height: 100vh;
 
     padding:
         70px
         4%
-        105px;
+        80px;
 }
 
 
@@ -132,21 +180,37 @@ button {
 
     position: relative;
 
-    width: min(1080px,100%);
+    width:
+        min(
+            1080px,
+            100%
+        );
 
-    margin: 0 auto;
+    margin:
+        0
+        auto;
 
     background: #fbfcfa;
 
     border:
         1px solid
-        rgba(23,52,72,.18);
+        rgba(
+            23,
+            52,
+            72,
+            .18
+        );
 
     border-radius: 14px;
 
     box-shadow:
         0 25px 70px
-        rgba(24,53,69,.18);
+        rgba(
+            24,
+            53,
+            69,
+            .18
+        );
 
     overflow: hidden;
 }
@@ -167,13 +231,20 @@ button {
 
     justify-content: space-between;
 
-    padding: 0 12px;
+    padding:
+        0
+        12px;
 
     background: #eef2ef;
 
     border-bottom:
         1px solid
-        rgba(23,52,72,.12);
+        rgba(
+            23,
+            52,
+            72,
+            .12
+        );
 
     user-select: none;
 }
@@ -222,7 +293,9 @@ button {
 
 
 .window-actions {
+
     display: flex;
+
     gap: 5px;
 }
 
@@ -242,24 +315,34 @@ button {
 
     cursor: pointer;
 
-    font-size: 17px;
+    font-size: 16px;
 
     line-height: 18px;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
 }
 
 
 .window-actions button:hover {
+
     background: #dce8e7;
+
+    transform: scale(1.08);
 }
 
 
 
 /* ============================================================
-   VENTANA PRINCIPAL
+   PORTADA
 ============================================================ */
 
 .welcome-window {
+
     min-height: 610px;
+
+    margin-bottom: 0;
 }
 
 
@@ -307,7 +390,11 @@ button {
 
     font:
         800
-        clamp(45px,6vw,76px)
+        clamp(
+            45px,
+            6vw,
+            76px
+        )
         / .98
         Manrope;
 
@@ -327,9 +414,11 @@ button {
 
 .lead {
 
-    max-width: 600px;
+    max-width: 610px;
 
     font-size: 16px;
+
+    line-height: 1.55;
 
     color: #6b7c85;
 
@@ -389,7 +478,12 @@ button {
 
     box-shadow:
         0 12px 28px
-        rgba(49,166,155,.22);
+        rgba(
+            49,
+            166,
+            155,
+            .22
+        );
 
     transition:
         transform .2s ease,
@@ -401,7 +495,8 @@ button {
 
     background: #21658b;
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 }
 
 
@@ -412,8 +507,12 @@ button {
 
 .portrait {
 
-    margin:
-        55px;
+    margin: 55px;
+
+    padding:
+        35px
+        25px
+        100px;
 
     border-radius: 25px;
 
@@ -432,15 +531,15 @@ button {
 
     position: relative;
 
-    padding:
-        35px
-        25px
-        95px;
-
     box-shadow:
         inset 0 0 0 10px #fff,
         0 20px 45px
-        rgba(23,52,72,.1);
+        rgba(
+            23,
+            52,
+            72,
+            .1
+        );
 
     transform: rotate(2deg);
 }
@@ -471,9 +570,16 @@ button {
         8px solid
         #fff;
 
+    background: #e8f1ef;
+
     box-shadow:
         0 14px 35px
-        rgba(23,52,72,.12);
+        rgba(
+            23,
+            52,
+            72,
+            .12
+        );
 }
 
 
@@ -525,13 +631,272 @@ button {
 
 
 /* ============================================================
+   CÍRCULOS DE NAVEGACIÓN
+============================================================ */
+
+.dock {
+
+    position: relative;
+
+    width: fit-content;
+
+    max-width:
+        min(
+            94vw,
+            780px
+        );
+
+    margin:
+        30px
+        auto
+        24px;
+
+    padding:
+        11px
+        15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .88
+        );
+
+    backdrop-filter:
+        blur(18px);
+
+    border:
+        1px solid
+        rgba(
+            23,
+            52,
+            72,
+            .12
+        );
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 16px 50px
+        rgba(
+            23,
+            52,
+            72,
+            .16
+        );
+
+    z-index: 20;
+}
+
+
+.dock button {
+
+    position: relative;
+
+    width: 68px;
+    height: 68px;
+
+    flex:
+        0 0
+        68px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    border:
+        1px solid
+        rgba(
+            23,
+            52,
+            72,
+            .13
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            23,
+            52,
+            72,
+            .14
+        );
+
+    display: grid;
+
+    place-items: center;
+
+    color: #21658b;
+
+    cursor: pointer;
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        background .22s ease;
+}
+
+
+.dock button span {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 25px;
+
+    color: #31a69b;
+}
+
+
+.dock button b {
+
+    position: absolute;
+
+    top: 78px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(-5px);
+
+    white-space: nowrap;
+
+    padding:
+        7px
+        10px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(
+            23,
+            52,
+            72,
+            .95
+        );
+
+    color: #fff;
+
+    font-size: 9px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity .18s ease,
+        transform .18s ease;
+}
+
+
+.dock button:hover {
+
+    transform:
+        translateY(-7px)
+        scale(1.06);
+
+    background: #e7f5f2;
+
+    box-shadow:
+        0 16px 35px
+        rgba(
+            23,
+            52,
+            72,
+            .2
+        );
+}
+
+
+.dock button:hover b {
+
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+
+/* ============================================================
+   GUÍA DE NAVEGACIÓN
+============================================================ */
+
+.dock-guide {
+
+    width: fit-content;
+
+    margin:
+        0
+        auto
+        35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #829299;
+
+    font-size: 8px;
+
+    letter-spacing: .8px;
+
+    text-transform: uppercase;
+}
+
+
+.dock-guide span:first-child {
+
+    color: #31a69b;
+
+    font-size: 7px;
+}
+
+
+.dock-guide span:last-child {
+
+    color: #31a69b;
+
+    font-size: 14px;
+}
+
+
+
+/* ============================================================
    VENTANAS INTERNAS
 ============================================================ */
 
 .panel-window {
 
+    margin-top: 0;
+
+    margin-bottom: 35px;
+
+    scroll-margin-top: 50px;
+
     max-height:
-        calc(100vh - 145px);
+        calc(
+            100vh - 120px
+        );
 
     overflow: auto;
 }
@@ -550,7 +915,11 @@ button {
 
     font:
         700
-        clamp(35px,4.8vw,55px)
+        clamp(
+            35px,
+            4.8vw,
+            55px
+        )
         / 1.03
         Manrope;
 
@@ -615,7 +984,12 @@ button {
 
     box-shadow:
         0 20px 50px
-        rgba(10,40,58,.2);
+        rgba(
+            10,
+            40,
+            58,
+            .2
+        );
 }
 
 
@@ -639,6 +1013,16 @@ button {
     cursor: pointer;
 
     margin-bottom: 15px;
+
+    transition:
+        transform .2s ease;
+}
+
+
+.play:hover {
+
+    transform:
+        scale(1.08);
 }
 
 
@@ -751,6 +1135,7 @@ button {
 ============================================================ */
 
 .timeline {
+
     margin-top: 30px;
 }
 
@@ -775,7 +1160,12 @@ button {
 
     border-left:
         1px solid
-        rgba(33,101,139,.18);
+        rgba(
+            33,
+            101,
+            139,
+            .18
+        );
 
     position: relative;
 }
@@ -847,7 +1237,10 @@ button {
     display: grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+        repeat(
+            4,
+            1fr
+        );
 
     gap: 9px;
 
@@ -865,7 +1258,12 @@ button {
 
     border:
         1px solid
-        rgba(23,52,72,.13);
+        rgba(
+            23,
+            52,
+            72,
+            .13
+        );
 
     border-radius: 13px;
 
@@ -879,7 +1277,8 @@ button {
 
     transition:
         transform .2s ease,
-        background .2s ease;
+        background .2s ease,
+        border-color .2s ease;
 }
 
 
@@ -936,7 +1335,12 @@ button {
 
     border:
         1px solid
-        rgba(23,52,72,.1);
+        rgba(
+            23,
+            52,
+            72,
+            .1
+        );
 
     border-radius: 16px;
 }
@@ -984,7 +1388,10 @@ button {
     display: grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+        repeat(
+            4,
+            1fr
+        );
 
     gap: 11px;
 
@@ -1000,7 +1407,12 @@ button {
 
     border:
         1px solid
-        rgba(23,52,72,.11);
+        rgba(
+            23,
+            52,
+            72,
+            .11
+        );
 
     border-radius: 17px;
 
@@ -1143,7 +1555,12 @@ button {
 
     border:
         1px solid
-        rgba(23,52,72,.12);
+        rgba(
+            23,
+            52,
+            72,
+            .12
+        );
 
     border-radius: 14px;
 }
@@ -1206,7 +1623,10 @@ button {
     display: grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+        repeat(
+            2,
+            1fr
+        );
 
     gap: 13px;
 
@@ -1224,7 +1644,32 @@ button {
 
     border:
         1px solid
-        rgba(23,52,72,.11);
+        rgba(
+            23,
+            52,
+            72,
+            .11
+        );
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.work-grid article:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(
+            23,
+            52,
+            72,
+            .08
+        );
 }
 
 
@@ -1273,12 +1718,83 @@ button {
 
     font-size: 11px;
 
+    line-height: 1.55;
+
     color: #74838b;
 }
 
 
 .work-grid article:first-child p {
     color: #aebfc8;
+}
+
+
+
+/* CELCIT */
+
+.celcit-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            #e8f5f2,
+            #ffffff
+        ) !important;
+
+    border-color:
+        rgba(
+            49,
+            166,
+            155,
+            .25
+        ) !important;
+}
+
+
+.celcit-card h3 {
+    color: #21658b !important;
+}
+
+
+.celcit-card p {
+    color: #74838b !important;
+}
+
+
+.project-link {
+
+    display: inline-flex;
+
+    margin-top: 15px;
+
+    padding:
+        9px
+        13px;
+
+    border-radius: 999px;
+
+    background: #31a69b;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+
+.project-link:hover {
+
+    background: #21658b;
+
+    transform:
+        translateY(-2px);
 }
 
 
@@ -1291,7 +1807,12 @@ button {
 
     border-top:
         1px solid
-        rgba(23,52,72,.1);
+        rgba(
+            23,
+            52,
+            72,
+            .1
+        );
 
     margin-top: 25px;
 }
@@ -1320,7 +1841,12 @@ button {
 
     border-bottom:
         1px solid
-        rgba(23,52,72,.1);
+        rgba(
+            23,
+            52,
+            72,
+            .1
+        );
 
     background: transparent;
 
@@ -1329,12 +1855,16 @@ button {
     cursor: pointer;
 
     transition:
-        background .2s ease;
+        background .2s ease,
+        padding-left .2s ease;
 }
 
 
 .pub:hover {
+
     background: #f5f8f5;
+
+    padding-left: 10px;
 }
 
 
@@ -1383,7 +1913,7 @@ button {
 
 
 /* ============================================================
-   PDF
+   VISOR PDF
 ============================================================ */
 
 .pdf-window {
@@ -1399,16 +1929,24 @@ button {
     transform:
         translateX(-50%);
 
-    width: min(1000px,92vw);
+    width:
+        min(
+            1000px,
+            92vw
+        );
 
     height: 86vh;
+
+    margin: 0;
 }
 
 
 .pdf-body {
 
     height:
-        calc(100% - 38px);
+        calc(
+            100% - 38px
+        );
 
     background: #172f40;
 }
@@ -1426,161 +1964,45 @@ button {
 
 
 /* ============================================================
-   DOCK DE CÍRCULOS
+   ANIMACIÓN DE APERTURA
 ============================================================ */
 
-.dock {
+.opening {
 
-    position: fixed;
-
-    z-index: 2500;
-
-    left: 50%;
-
-    bottom: 22px;
-
-    transform:
-        translateX(-50%);
-
-    display: flex;
-
-    gap: 10px;
-
-    padding:
-        10px
-        14px;
-
-    background:
-        rgba(255,255,255,.88);
-
-    backdrop-filter: blur(18px);
-
-    border:
-        1px solid
-        rgba(23,52,72,.12);
-
-    border-radius: 999px;
-
-    box-shadow:
-        0 16px 50px
-        rgba(23,52,72,.16);
-
-    max-width: 92vw;
-
-    overflow: visible;
+    animation:
+        windowDrop
+        .48s
+        cubic-bezier(
+            .2,
+            .8,
+            .2,
+            1
+        );
 }
 
 
-.dock button {
+@keyframes windowDrop {
 
-    position: relative;
+    from {
 
-    width: 66px;
-    height: 66px;
+        opacity: 0;
 
-    flex: 0 0 66px;
+        transform:
+            translateY(-18px)
+            scale(.985);
 
-    padding: 0;
+    }
 
-    border-radius: 50%;
+    to {
 
-    background: #fff;
+        opacity: 1;
 
-    border:
-        1px solid
-        rgba(23,52,72,.13);
+        transform:
+            translateY(0)
+            scale(1);
 
-    box-shadow:
-        0 8px 25px
-        rgba(23,52,72,.14);
+    }
 
-    display: grid;
-
-    place-items: center;
-
-    color: #21658b;
-
-    cursor: pointer;
-
-    transition:
-        transform .22s ease,
-        box-shadow .22s ease,
-        background .22s ease;
-}
-
-
-.dock button span {
-
-    display: grid;
-
-    place-items: center;
-
-    width: 100%;
-    height: 100%;
-
-    font-size: 25px;
-
-    color: #31a69b;
-}
-
-
-.dock button b {
-
-    position: absolute;
-
-    bottom: 76px;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%)
-        translateY(5px);
-
-    white-space: nowrap;
-
-    padding:
-        7px
-        10px;
-
-    border-radius: 8px;
-
-    background: #173448;
-
-    color: #fff;
-
-    font-size: 9px;
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition:
-        opacity .18s,
-        transform .18s;
-}
-
-
-.dock button:hover {
-
-    transform:
-        translateY(-8px)
-        scale(1.06);
-
-    background: #e7f5f2;
-
-    box-shadow:
-        0 16px 35px
-        rgba(23,52,72,.2);
-}
-
-
-.dock button:hover b {
-
-    opacity: 1;
-
-    transform:
-        translateX(-50%)
-        translateY(0);
 }
 
 
@@ -1604,7 +2026,12 @@ button {
     color: #6e7d85;
 
     background:
-        rgba(255,255,255,.72);
+        rgba(
+            255,
+            255,
+            255,
+            .72
+        );
 
     padding:
         7px
@@ -1631,43 +2058,6 @@ button {
 
 
 /* ============================================================
-   ANIMACIÓN DE APERTURA
-============================================================ */
-
-.opening {
-
-    animation:
-        open
-        .42s
-        cubic-bezier(.2,.8,.2,1);
-}
-
-
-@keyframes open {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            scale(.96)
-            translateY(12px);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            scale(1)
-            translateY(0);
-    }
-
-}
-
-
-
-/* ============================================================
    TABLET
 ============================================================ */
 
@@ -1683,7 +2073,7 @@ button {
         padding:
             55px
             3%
-            100px;
+            70px;
     }
 
 
@@ -1725,20 +2115,25 @@ button {
 
     .dock {
 
-        bottom: 10px;
+        max-width: 94vw;
 
-        gap: 7px;
+        overflow-x: auto;
 
-        padding: 8px;
+        justify-content: flex-start;
+
+        margin:
+            25px
+            auto
+            25px;
     }
 
 
     .dock button {
 
-        width: 58px;
-        height: 58px;
+        width: 60px;
+        height: 60px;
 
-        flex-basis: 58px;
+        flex-basis: 60px;
     }
 
 
@@ -1761,6 +2156,7 @@ button {
 
 @media (max-width: 600px) {
 
+
     .top-strip {
 
         font-size: 7px;
@@ -1776,7 +2172,7 @@ button {
         padding:
             50px
             10px
-            95px;
+            60px;
     }
 
 
@@ -1790,7 +2186,7 @@ button {
 
     .welcome-copy h1 {
 
-        font-size: 50px;
+        font-size: 48px;
 
         letter-spacing: -3px;
     }
@@ -1864,14 +2260,18 @@ button {
 
     .dock {
 
-        left: 7px;
-        right: 7px;
-
-        bottom: 9px;
-
-        transform: none;
+        width:
+            calc(
+                100% - 20px
+            );
 
         max-width: none;
+
+        padding:
+            8px
+            10px;
+
+        gap: 7px;
 
         overflow-x: auto;
 
@@ -1893,7 +2293,17 @@ button {
 
 
     .dock button span {
+
         font-size: 22px;
+    }
+
+
+    .dock-guide {
+
+        margin:
+            0
+            auto
+            28px;
     }
 
 
