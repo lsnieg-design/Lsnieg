@@ -10,6 +10,7 @@
 :root {
     --azul: #173B50;
     --azul-2: #214F67;
+
     --verde: #2AA69A;
     --verde-claro: #DDF0EC;
     --turquesa: #72CEC2;
@@ -51,8 +52,11 @@ html {
 
 body {
     margin: 0;
+
     color: var(--texto);
+
     font-family: "DM Sans", sans-serif;
+
     background:
         radial-gradient(
             circle at 8% 20%,
@@ -78,6 +82,7 @@ body {
 
 .topbar {
     position: fixed;
+
     z-index: 9999;
 
     top: 0;
@@ -87,16 +92,20 @@ body {
     height: 27px;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
     padding: 0 16px;
 
     background: var(--azul);
+
     color: #dcebea;
 
     font-size: 7px;
+
     font-weight: 800;
+
     letter-spacing: 1.2px;
 }
 
@@ -145,18 +154,19 @@ body {
 
 .intro-window {
     position: relative;
+
     z-index: 20;
 
     width: min(880px, 92vw);
 
-    margin: 0 auto 30px;
+    margin: 0 auto 38px;
 
     background: rgba(255,255,255,.97);
 
     border:
         1px solid rgba(23,59,80,.10);
 
-    border-radius: 20px;
+    border-radius: 22px;
 
     overflow: hidden;
 
@@ -165,12 +175,15 @@ body {
 }
 
 
-/* Barra de ventana */
+/* =========================================================
+   BARRA DE VENTANA
+   ========================================================= */
 
 .window-bar {
     height: 34px;
 
     display: flex;
+
     align-items: center;
 
     padding: 0 14px;
@@ -189,6 +202,7 @@ body {
 
 .dots {
     display: flex;
+
     gap: 5px;
 }
 
@@ -214,7 +228,9 @@ body {
 }
 
 
-/* Contenido principal */
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
 
 .intro-body {
     display: grid;
@@ -238,6 +254,7 @@ body {
     color: var(--verde);
 
     font-size: 8px;
+
     font-weight: 800;
 
     letter-spacing: 2px;
@@ -264,6 +281,7 @@ body {
 
 .intro-body h1 em {
     color: var(--verde);
+
     font-style: normal;
 }
 
@@ -295,16 +313,20 @@ body {
 
 
 /* =========================================================
-   FOTO
+   FOTO DE PRESENTACIÓN
    ========================================================= */
 
 .portrait {
     width: 100%;
+
     max-width: 235px;
 
     justify-self: center;
 
-    padding: 9px 9px 18px;
+    padding:
+        9px
+        9px
+        18px;
 
     background: var(--blanco);
 
@@ -314,6 +336,19 @@ body {
 
     box-shadow:
         0 20px 38px rgba(23,59,80,.15);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.portrait:hover {
+    transform:
+        rotate(0deg)
+        translateY(-4px);
+
+    box-shadow:
+        0 25px 45px rgba(23,59,80,.18);
 }
 
 .portrait img {
@@ -330,6 +365,7 @@ body {
 
 .portrait-caption {
     display: flex;
+
     flex-direction: column;
 
     padding:
@@ -364,11 +400,11 @@ body {
 
     width: min(1380px, 96vw);
 
-    height: 760px;
+    height: 790px;
 
     margin: 0 auto;
 
-    border-radius: 28px;
+    border-radius: 30px;
 
     border:
         1px solid rgba(23,59,80,.10);
@@ -384,6 +420,11 @@ body {
             rgba(23,59,80,.045) 0 1.5px,
             transparent 2.5px
         ),
+        radial-gradient(
+            circle at 42% 83%,
+            rgba(42,166,154,.04) 0 2px,
+            transparent 3px
+        ),
         linear-gradient(
             135deg,
             var(--crema-2),
@@ -393,127 +434,241 @@ body {
     box-shadow:
         inset 0 0 0 8px rgba(255,255,255,.25),
         0 25px 65px rgba(23,59,80,.10);
+
+    overflow: visible;
 }
 
+
+/* Pequeños detalles de mural */
+
 .mural-board::before {
-    content: "MURAL · RECORRIDO";
+    content: "MURAL · MI RECORRIDO";
 
     position: absolute;
 
-    top: 14px;
+    top: 15px;
+
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     color: #9ba5a5;
 
     font-size: 7px;
+
     font-weight: 800;
 
     letter-spacing: 2px;
+
+    pointer-events: none;
 }
 
 
 /* =========================================================
-   TARJETAS
+   DECORACIONES DEL MURAL
+   ========================================================= */
+
+.mural-board::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    left: 17%;
+
+    top: 48%;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 7px rgba(255,255,255,.18),
+        650px 170px 0 rgba(255,255,255,.40),
+        390px 430px 0 rgba(42,166,154,.07),
+        820px 70px 0 rgba(23,59,80,.04);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TARJETAS / FICHAS DEL MURAL
    ========================================================= */
 
 .mural-board .note-window {
     position: absolute;
 
-    width: 225px;
+    width: 180px;
+
+    min-height: 150px;
 
     margin: 0;
 
     overflow: visible;
 
-    border-radius: 14px;
+    border-radius: 18px;
 
     border:
-        1px solid rgba(23,59,80,.12);
+        1px solid rgba(23,59,80,.10);
 
     box-shadow:
-        0 10px 22px rgba(23,59,80,.13);
+        0 12px 25px rgba(23,59,80,.13);
 
     transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        width .3s ease;
-}
+        transform .28s ease,
+        box-shadow .28s ease,
+        width .30s ease,
+        min-height .30s ease;
 
-
-/* Hover */
-
-.mural-board .note-window:hover {
-    z-index: 50;
-
-    box-shadow:
-        0 18px 35px rgba(23,59,80,.18);
+    z-index: 10;
 }
 
 
 /* =========================================================
-   POSICIONES
+   HOVER DE LAS FICHAS
    ========================================================= */
 
+.mural-board .note-window:hover {
+    z-index: 80;
+
+    box-shadow:
+        0 20px 38px rgba(23,59,80,.18);
+}
+
+
+/* =========================================================
+   POSICIONES DEL MURAL
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   01 · QUIÉN SOY
+   FICHA CENTRAL
+   --------------------------------------------------------- */
+
 .mural-board .note-window:nth-child(1) {
-    top: 88px;
+
+    top: 105px;
+
     left: 50%;
 
-    width: 255px;
+    width: 300px;
+
+    min-height: 400px;
 
     transform:
         translateX(-50%)
         rotate(-1deg);
+
+    z-index: 35;
 }
+
+
+/* ---------------------------------------------------------
+   02 · RECORRIDO LABORAL
+   --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(2) {
-    top: 70px;
-    left: 4%;
 
-    transform: rotate(-3deg);
+    top: 72px;
+
+    left: 6%;
+
+    transform:
+        rotate(-3deg);
 }
+
+
+/* ---------------------------------------------------------
+   03 · EDUCACIÓN A DISTANCIA
+   --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(3) {
-    top: 72px;
-    right: 4%;
 
-    transform: rotate(3deg);
+    top: 70px;
+
+    right: 6%;
+
+    transform:
+        rotate(3deg);
 }
+
+
+/* ---------------------------------------------------------
+   04 · ACCESIBILIDAD
+   --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(4) {
-    top: 335px;
-    left: 7%;
 
-    transform: rotate(2deg);
+    top: 350px;
+
+    left: 8%;
+
+    transform:
+        rotate(2deg);
 }
+
+
+/* ---------------------------------------------------------
+   05 · FORMACIÓN
+   --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(5) {
-    top: 340px;
-    right: 7%;
 
-    transform: rotate(-2deg);
+    top: 350px;
+
+    right: 8%;
+
+    transform:
+        rotate(-2deg);
 }
+
+
+/* ---------------------------------------------------------
+   06 · TRABAJOS ESCRITOS
+   --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(6) {
-    bottom: 52px;
-    left: 14%;
 
-    transform: rotate(-2deg);
+    bottom: 55px;
+
+    left: 18%;
+
+    transform:
+        rotate(-2deg);
 }
+
+
+/* ---------------------------------------------------------
+   07 · VIDEO
+   --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(7) {
-    bottom: 48px;
-    right: 14%;
 
-    transform: rotate(2deg);
+    bottom: 55px;
+
+    right: 18%;
+
+    transform:
+        rotate(2deg);
 }
 
+
+/* ---------------------------------------------------------
+   08 · LO QUE HAGO HOY
+   --------------------------------------------------------- */
+
 .mural-board .note-window:nth-child(8) {
-    bottom: 20px;
+
+    bottom: 25px;
+
     left: 50%;
 
-    width: 275px;
+    width: 195px;
 
     transform:
         translateX(-50%)
@@ -522,20 +677,26 @@ body {
 
 
 /* =========================================================
-   CABECERAS DE LAS TARJETAS
+   CABECERAS DE LAS FICHAS
    ========================================================= */
 
 .mural-board .note-window summary {
-    min-height: 52px;
+
+    position: relative;
+
+    min-height: 150px;
 
     display: flex;
-    align-items: center;
 
-    padding:
-        12px
-        13px;
+    flex-direction: column;
 
-    border-radius: 13px;
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    padding: 17px;
+
+    border-radius: 17px;
 
     background: var(--blanco);
 
@@ -550,175 +711,405 @@ body {
     display: none;
 }
 
+
+/* =========================================================
+   ICONO DE LAS FICHAS
+   ========================================================= */
+
+.mural-board .note-window .mini-icon {
+
+    width: 43px;
+
+    height: 43px;
+
+    flex: 0 0 43px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,255,255,.80);
+
+    color: var(--azul);
+
+    font-size: 17px;
+
+    box-shadow:
+        0 4px 10px rgba(23,59,80,.09);
+}
+
+
+/* =========================================================
+   NÚMERO + TÍTULO
+   ========================================================= */
+
 .mural-board .note-window summary > span:nth-child(2) {
+
     display: flex;
-    align-items: baseline;
-    gap: 8px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
 
     color: var(--azul);
 
     font-family: "Manrope", sans-serif;
 
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 16px;
+
+    font-weight: 800;
+
+    line-height: 1.05;
+
+    letter-spacing: -.5px;
 }
 
 .mural-board .note-window summary small {
+
     color: var(--verde);
 
     font-size: 7px;
+
     font-weight: 800;
+
+    letter-spacing: .7px;
 }
 
+
+/* =========================================================
+   TEXTO "ABRIR"
+   ========================================================= */
+
+.mural-board .note-window summary::after {
+
+    content: "Abrir ficha →";
+
+    color:
+        rgba(23,59,80,.48);
+
+    font-size: 7px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BOTÓN +
+   ========================================================= */
+
 .mural-board .note-window summary b {
-    width: 24px;
-    height: 24px;
+
+    position: absolute;
+
+    top: 16px;
+
+    right: 16px;
+
+    width: 28px;
+
+    height: 28px;
 
     display: grid;
+
     place-items: center;
 
-    margin-left: auto;
-
     border:
-        1px solid rgba(23,59,80,.55);
+        1px solid rgba(23,59,80,.35);
 
     border-radius: 50%;
 
     color: var(--azul);
 
-    font-size: 17px;
+    background:
+        rgba(255,255,255,.65);
+
+    font-size: 18px;
+
     font-weight: 400;
 
     transition:
-        transform .25s,
-        background .25s,
-        color .25s;
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease;
 }
 
 .mural-board .note-window[open] summary b {
-    transform: rotate(45deg);
+
+    transform:
+        rotate(45deg);
 
     color: white;
 
-    background: var(--verde);
+    background:
+        var(--verde);
 
-    border-color: var(--verde);
-}
-
-
-/* Iconito */
-
-.mini-icon {
-    width: 23px;
-    height: 23px;
-
-    flex: 0 0 23px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 50%;
-
-    background: white;
-
-    color: var(--verde);
-
-    font-size: 11px;
-
-    box-shadow:
-        0 2px 6px rgba(23,59,80,.10);
+    border-color:
+        var(--verde);
 }
 
 
 /* =========================================================
-   COLORES DE CADA PAPEL
+   FICHA CENTRAL · LUCÍA
    ========================================================= */
 
-/* Quién soy */
+.mural-board .note-window:nth-child(1) summary {
+
+    min-height: 400px;
+
+    padding:
+        13px;
+
+    justify-content:
+        flex-start;
+
+    background:
+        white;
+
+    border-radius:
+        20px;
+
+    box-shadow:
+        0 18px 35px rgba(23,59,80,.16);
+}
+
+
+/* =========================================================
+   FOTO CENTRAL
+   =========================================================
+
+   La imagen se genera desde CSS para no obligarte
+   a modificar toda la estructura HTML.
+
+   Archivo esperado:
+   lucia.png
+   ========================================================= */
+
+.mural-board .note-window:nth-child(1) summary::before {
+
+    content: "";
+
+    display: block;
+
+    width: 100%;
+
+    height: 275px;
+
+    flex: 0 0 275px;
+
+    margin-bottom: 13px;
+
+    border-radius: 15px;
+
+    background-image:
+        url("lucia.png");
+
+    background-position:
+        center center;
+
+    background-size:
+        cover;
+
+    background-repeat:
+        no-repeat;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(23,59,80,.06);
+}
+
+
+/* =========================================================
+   NOMBRE DE LA FICHA CENTRAL
+   ========================================================= */
+
+.mural-board .note-window:nth-child(1)
+summary > span:nth-child(2) {
+
+    display: block;
+
+    color: var(--azul);
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    letter-spacing: -.7px;
+}
+
+.mural-board .note-window:nth-child(1)
+summary small {
+
+    display: block;
+
+    margin-top: 6px;
+
+    color: var(--verde);
+
+    opacity: 1;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   TEXTO INFERIOR DE LA FICHA CENTRAL
+   ========================================================= */
+
+.mural-board .note-window:nth-child(1)
+summary::after {
+
+    content:
+        "Educación · Accesibilidad · Tecnología";
+
+    margin-top: 7px;
+
+    color:
+        #849196;
+
+    font-size: 7px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   + CENTRAL
+   ========================================================= */
+
+.mural-board .note-window:nth-child(1)
+summary b {
+
+    top: 21px;
+
+    right: 21px;
+
+    z-index: 5;
+
+    background:
+        rgba(255,255,255,.88);
+}
+
+
+/* =========================================================
+   COLORES DE CADA FICHA
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   QUIÉN SOY
+   --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(1) summary {
-    background: var(--azul);
-}
 
-.mural-board .note-window:nth-child(1)
-summary > span:nth-child(2) {
-    color: white;
-}
-
-.mural-board .note-window:nth-child(1)
-summary small {
-    color: var(--turquesa);
-}
-
-.mural-board .note-window:nth-child(1)
-summary b {
-    color: white;
-    border-color: rgba(255,255,255,.8);
+    background:
+        white;
 }
 
 
-/* Trayectoria */
+/* ---------------------------------------------------------
+   RECORRIDO LABORAL
+   --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(2) summary {
-    background: var(--amarillo);
+
+    background:
+        var(--amarillo);
 }
 
 
-/* Educación a distancia */
+/* ---------------------------------------------------------
+   EDUCACIÓN A DISTANCIA
+   --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(3) summary {
-    background: var(--verde);
+
+    background:
+        var(--verde);
 }
 
 .mural-board .note-window:nth-child(3)
 summary > span:nth-child(2) {
-    color: white;
+
+    color:
+        white;
 }
 
 .mural-board .note-window:nth-child(3)
 summary small {
-    color: #d8fff9;
+
+    color:
+        #d8fff9;
 }
 
 .mural-board .note-window:nth-child(3)
 summary b {
-    color: white;
-    border-color: white;
+
+    color:
+        white;
+
+    border-color:
+        white;
 }
 
 
-/* Accesibilidad */
+/* ---------------------------------------------------------
+   ACCESIBILIDAD
+   --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(4) summary {
-    background: var(--verde-claro);
+
+    background:
+        var(--verde-claro);
 }
 
 
-/* Formación */
+/* ---------------------------------------------------------
+   FORMACIÓN
+   --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(5) summary {
-    background: var(--coral-suave);
+
+    background:
+        var(--coral-suave);
 }
 
 
-/* Trabajos */
+/* ---------------------------------------------------------
+   TRABAJOS ESCRITOS
+   --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(6) summary {
-    background: var(--lila);
+
+    background:
+        var(--lila);
 }
 
 
-/* Video */
+/* ---------------------------------------------------------
+   VIDEO
+   --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(7) summary {
-    background: var(--celeste);
+
+    background:
+        var(--celeste);
 }
 
 
-/* Actualidad */
+/* ---------------------------------------------------------
+   LO QUE HAGO HOY
+   --------------------------------------------------------- */
 
 .mural-board .note-window:nth-child(8) summary {
-    background: #D7ECE7;
+
+    background:
+        #D7ECE7;
 }
 
 
@@ -727,36 +1118,149 @@ summary b {
    ========================================================= */
 
 .mural-board .note-window[open] {
-    z-index: 200;
 
-    transform: rotate(0deg) !important;
+    position: absolute;
+
+    z-index: 1000;
+
+    top: 50%;
+
+    left: 50%;
+
+    width: 650px;
+
+    min-height: auto;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(0deg) !important;
 
     box-shadow:
-        var(--sombra-fuerte);
+        0 35px 80px rgba(23,59,80,.27);
 }
 
 
-/*
-   IMPORTANTE:
-   Al abrir NO queremos que la información
-   se convierta en una columna microscópica.
-*/
+/* =========================================================
+   ANCHOS ESPECÍFICOS AL ABRIR
+   ========================================================= */
 
-.mural-board .note-window[open] {
-    width: 560px;
+.mural-board .note-window:nth-child(1)[open] {
+
+    width:
+        min(720px, 88vw);
 }
 
 .mural-board .note-window:nth-child(2)[open],
 .mural-board .note-window:nth-child(5)[open],
 .mural-board .note-window:nth-child(6)[open] {
-    width: 680px;
+
+    width:
+        min(680px, 88vw);
 }
 
 .mural-board .note-window:nth-child(3)[open],
 .mural-board .note-window:nth-child(4)[open],
 .mural-board .note-window:nth-child(7)[open],
 .mural-board .note-window:nth-child(8)[open] {
-    width: 620px;
+
+    width:
+        min(620px, 88vw);
+}
+
+
+/* =========================================================
+   CUANDO SE ABRE EL CENTRO
+   ========================================================= */
+
+.mural-board .note-window:nth-child(1)[open] {
+
+    min-height:
+        520px;
+}
+
+
+/* =========================================================
+   CABECERA DE VENTANA ABIERTA
+   ========================================================= */
+
+.mural-board .note-window[open] summary {
+
+    min-height:
+        58px;
+
+    height:
+        58px;
+
+    flex-direction:
+        row;
+
+    align-items:
+        center;
+
+    padding:
+        10px
+        14px;
+
+    border-radius:
+        17px
+        17px
+        0
+        0;
+}
+
+
+/* =========================================================
+   ICONO AL ABRIR
+   ========================================================= */
+
+.mural-board .note-window[open]
+summary .mini-icon {
+
+    width:
+        28px;
+
+    height:
+        28px;
+
+    flex:
+        0 0 28px;
+
+    border-radius:
+        50%;
+
+    font-size:
+        12px;
+}
+
+
+/* =========================================================
+   TÍTULO AL ABRIR
+   ========================================================= */
+
+.mural-board .note-window[open]
+summary > span:nth-child(2) {
+
+    display:
+        flex;
+
+    flex-direction:
+        row;
+
+    align-items:
+        baseline;
+
+    gap:
+        8px;
+
+    font-size:
+        11px;
+}
+
+.mural-board .note-window[open]
+summary::after {
+
+    display:
+        none;
 }
 
 
@@ -765,18 +1269,26 @@ summary b {
    ========================================================= */
 
 .mural-board .window-content {
-    padding:
-        28px
-        30px
-        32px;
 
-    background: white;
+    max-height:
+        510px;
+
+    overflow-y:
+        auto;
+
+    padding:
+        30px
+        32px
+        35px;
+
+    background:
+        white;
 
     border-radius:
         0
         0
-        14px
-        14px;
+        17px
+        17px;
 
     animation:
         muralAppear .28s ease;
@@ -786,38 +1298,54 @@ summary b {
 
     from {
         opacity: 0;
-        transform: translateY(-5px);
+
+        transform:
+            translateY(-7px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
-    }
 
+        transform:
+            translateY(0);
+    }
 }
 
 
-/* Evitamos columnas ridículas */
+/* =========================================================
+   COLUMNAS
+   ========================================================= */
 
 .mural-board .two-col {
-    display: grid;
+
+    display:
+        grid;
 
     grid-template-columns:
         minmax(180px, .75fr)
         minmax(260px, 1.25fr);
 
-    gap: 35px;
+    gap:
+        35px;
 }
 
+
+/* =========================================================
+   TÍTULOS DE CONTENIDO
+   ========================================================= */
+
 .mural-board .window-content h2 {
+
     margin:
         0
         0
         16px;
 
-    color: var(--azul);
+    color:
+        var(--azul);
 
-    font-family: "Manrope", sans-serif;
+    font-family:
+        "Manrope", sans-serif;
 
     font-size:
         clamp(
@@ -826,32 +1354,43 @@ summary b {
             39px
         );
 
-    line-height: 1.08;
+    line-height:
+        1.08;
 
-    letter-spacing: -1.8px;
+    letter-spacing:
+        -1.8px;
 }
 
 .mural-board .window-content p {
+
     margin:
         0
         0
         12px;
 
-    color: #687b82;
+    color:
+        #687b82;
 
-    font-size: 10px;
+    font-size:
+        10px;
 
-    line-height: 1.65;
+    line-height:
+        1.65;
 }
 
 .mural-board .window-content .lead {
-    color: var(--azul-2);
 
-    font-family: "Manrope", sans-serif;
+    color:
+        var(--azul-2);
 
-    font-size: 15px;
+    font-family:
+        "Manrope", sans-serif;
 
-    line-height: 1.45;
+    font-size:
+        15px;
+
+    line-height:
+        1.45;
 }
 
 
@@ -860,15 +1399,19 @@ summary b {
    ========================================================= */
 
 .quote {
-    margin-top: 20px;
+
+    margin-top:
+        20px;
 
     padding:
         15px
         17px;
 
-    color: #246277;
+    color:
+        #246277;
 
-    background: var(--verde-claro);
+    background:
+        var(--verde-claro);
 
     border-left:
         3px solid
@@ -880,12 +1423,17 @@ summary b {
         12px
         0;
 
-    font-family: "Manrope", sans-serif;
+    font-family:
+        "Manrope", sans-serif;
 
-    font-size: 11px;
-    font-weight: 700;
+    font-size:
+        11px;
 
-    line-height: 1.4;
+    font-weight:
+        700;
+
+    line-height:
+        1.4;
 }
 
 
@@ -894,65 +1442,90 @@ summary b {
    ========================================================= */
 
 .teal-note .window-content {
-    background: var(--azul);
+
+    background:
+        var(--azul);
 }
 
 .teal-note .window-content h2,
 .teal-note .window-content .lead {
-    color: white;
+
+    color:
+        white;
 }
 
 .teal-note .window-content p {
-    color: #c2d1d5;
+
+    color:
+        #c2d1d5;
 }
 
 .principles {
-    display: grid;
+
+    display:
+        grid;
 
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 10px;
+    gap:
+        10px;
 
-    margin-top: 20px;
+    margin-top:
+        20px;
 }
 
 .principles div {
-    padding: 15px;
 
-    background: var(--azul-2);
+    padding:
+        15px;
+
+    background:
+        var(--azul-2);
 
     border:
         1px solid
         rgba(255,255,255,.08);
 
-    border-radius: 13px;
+    border-radius:
+        13px;
 }
 
 .principles strong {
-    color: var(--turquesa);
 
-    font-size: 8px;
+    color:
+        var(--turquesa);
+
+    font-size:
+        8px;
 }
 
 .principles h3 {
+
     margin:
         7px
         0;
 
-    color: white;
+    color:
+        white;
 
-    font-family: "Manrope", sans-serif;
+    font-family:
+        "Manrope", sans-serif;
 
-    font-size: 12px;
+    font-size:
+        12px;
 }
 
 .principles p {
-    margin: 0;
 
-    color: #bdcdd1 !important;
+    margin:
+        0;
 
-    font-size: 8px !important;
+    color:
+        #bdcdd1 !important;
+
+    font-size:
+        8px !important;
 }
 
 
@@ -961,31 +1534,46 @@ summary b {
    ========================================================= */
 
 .accessibility-note {
-    background: var(--verde-claro);
+
+    background:
+        var(--verde-claro);
 }
 
 .access-pills {
-    display: flex;
-    flex-wrap: wrap;
 
-    gap: 7px;
+    display:
+        flex;
 
-    margin-top: 20px;
+    flex-wrap:
+        wrap;
+
+    gap:
+        7px;
+
+    margin-top:
+        20px;
 }
 
 .access-pills span {
+
     padding:
         8px
         12px;
 
-    color: #21617a;
+    color:
+        #21617a;
 
-    background: white;
+    background:
+        white;
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
-    font-size: 8px;
-    font-weight: 800;
+    font-size:
+        8px;
+
+    font-weight:
+        800;
 
     box-shadow:
         0 2px 7px rgba(23,59,80,.07);
@@ -997,25 +1585,34 @@ summary b {
    ========================================================= */
 
 .timeline {
-    max-height: 430px;
 
-    margin-top: 20px;
+    max-height:
+        430px;
 
-    padding-right: 10px;
+    margin-top:
+        20px;
 
-    overflow-y: auto;
+    padding-right:
+        10px;
+
+    overflow-y:
+        auto;
 }
 
 .timeline article {
-    position: relative;
 
-    display: grid;
+    position:
+        relative;
+
+    display:
+        grid;
 
     grid-template-columns:
         85px
         1fr;
 
-    gap: 15px;
+    gap:
+        15px;
 
     padding:
         0
@@ -1029,74 +1626,110 @@ summary b {
 }
 
 .timeline article::before {
-    content: "";
 
-    position: absolute;
+    content:
+        "";
 
-    left: -4px;
-    top: 3px;
+    position:
+        absolute;
 
-    width: 7px;
-    height: 7px;
+    left:
+        -4px;
 
-    border-radius: 50%;
+    top:
+        3px;
 
-    background: var(--verde);
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--verde);
 
     box-shadow:
         0 0 0 4px var(--verde-claro);
 }
 
 .timeline time {
-    color: var(--verde);
 
-    font-size: 8px;
-    font-weight: 800;
+    color:
+        var(--verde);
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
 }
 
 .timeline h3 {
+
     margin:
         0
         0
         3px;
 
-    color: var(--azul-2);
+    color:
+        var(--azul-2);
 
-    font-family: "Manrope", sans-serif;
+    font-family:
+        "Manrope", sans-serif;
 
-    font-size: 12px;
+    font-size:
+        12px;
 
-    line-height: 1.3;
+    line-height:
+        1.3;
 }
 
 .timeline b {
-    color: #65767e;
 
-    font-size: 8px;
+    color:
+        #65767e;
+
+    font-size:
+        8px;
 }
 
 .timeline p {
-    margin-top: 4px !important;
 
-    font-size: 8px !important;
+    margin-top:
+        4px !important;
 
-    line-height: 1.5 !important;
+    font-size:
+        8px !important;
+
+    line-height:
+        1.5 !important;
 }
 
 .timeline .important > div {
-    padding: 11px;
 
-    background: #eef8f5;
+    padding:
+        11px;
 
-    border-radius: 11px;
+    background:
+        #eef8f5;
+
+    border-radius:
+        11px;
 }
 
 .timeline .current > div {
-    padding: 11px;
 
-    background: #d9eee9;
+    padding:
+        11px;
 
-    border-radius: 11px;
+    background:
+        #d9eee9;
+
+    border-radius:
+        11px;
 }
 
 
@@ -1105,82 +1738,119 @@ summary b {
    ========================================================= */
 
 .studies {
-    display: grid;
+
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 10px;
+    gap:
+        10px;
 }
 
 .studies article {
-    padding: 14px;
 
-    background: #f7f7f5;
+    padding:
+        14px;
+
+    background:
+        #f7f7f5;
 
     border:
         1px solid
         rgba(23,59,80,.08);
 
-    border-radius: 12px;
+    border-radius:
+        12px;
 }
 
 .studies h3 {
-    margin: 0;
 
-    color: var(--azul-2);
+    margin:
+        0;
 
-    font-family: "Manrope", sans-serif;
+    color:
+        var(--azul-2);
 
-    font-size: 11px;
+    font-family:
+        "Manrope", sans-serif;
 
-    line-height: 1.35;
+    font-size:
+        11px;
+
+    line-height:
+        1.35;
 }
 
 .studies p {
-    margin-top: 5px !important;
 
-    font-size: 8px !important;
+    margin-top:
+        5px !important;
+
+    font-size:
+        8px !important;
 }
 
 .main-study {
-    background: var(--azul) !important;
+
+    background:
+        var(--azul) !important;
 }
 
 .main-study h3 {
-    color: white !important;
+
+    color:
+        white !important;
 }
 
 .main-study small {
-    color: var(--turquesa);
 
-    font-size: 7px;
-    font-weight: 800;
+    color:
+        var(--turquesa);
 
-    letter-spacing: 1px;
+    font-size:
+        7px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1px;
 }
 
 .courses {
-    display: flex;
-    flex-wrap: wrap;
 
-    gap: 6px;
+    display:
+        flex;
 
-    margin-top: 14px;
+    flex-wrap:
+        wrap;
+
+    gap:
+        6px;
+
+    margin-top:
+        14px;
 }
 
 .courses span {
+
     padding:
         6px
         9px;
 
-    color: #687980;
+    color:
+        #687980;
 
-    background: #edf1ef;
+    background:
+        #edf1ef;
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
-    font-size: 7px;
+    font-size:
+        7px;
 }
 
 
@@ -1189,64 +1859,100 @@ summary b {
    ========================================================= */
 
 .papers {
-    display: grid;
+
+    display:
+        grid;
 
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 11px;
+    gap:
+        11px;
 }
 
 .papers article {
-    padding: 17px;
 
-    background: var(--lila-suave);
+    padding:
+        17px;
 
-    border-radius: 13px;
+    background:
+        var(--lila-suave);
+
+    border-radius:
+        13px;
 }
 
 .papers small {
-    color: var(--verde);
 
-    font-size: 8px;
-    font-weight: 800;
+    color:
+        var(--verde);
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
 }
 
 .papers h3 {
+
     margin:
         7px
         0;
 
-    color: var(--azul-2);
+    color:
+        var(--azul-2);
 
-    font-family: "Manrope", sans-serif;
+    font-family:
+        "Manrope", sans-serif;
 
-    font-size: 15px;
+    font-size:
+        15px;
 }
 
 .papers p {
-    font-size: 8px !important;
+
+    font-size:
+        8px !important;
 }
 
 .papers b {
-    display: block;
 
-    color: #7a898e;
+    display:
+        block;
 
-    font-size: 7px;
+    color:
+        #7a898e;
+
+    font-size:
+        7px;
 }
 
 .papers a {
-    display: inline-block;
 
-    margin-top: 10px;
+    display:
+        inline-block;
 
-    color: var(--verde);
+    margin-top:
+        10px;
 
-    text-decoration: none;
+    color:
+        var(--verde);
 
-    font-size: 8px;
-    font-weight: 800;
+    text-decoration:
+        none;
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
+}
+
+.papers a:hover {
+
+    color:
+        var(--azul);
 }
 
 
@@ -1255,69 +1961,106 @@ summary b {
    ========================================================= */
 
 .video-note {
-    background: var(--celeste-suave);
+
+    background:
+        var(--celeste-suave);
 }
 
 .video-content {
-    display: grid;
+
+    display:
+        grid;
 
     grid-template-columns:
         .8fr
         1.2fr;
 
-    gap: 25px;
+    gap:
+        25px;
 
-    align-items: center;
+    align-items:
+        center;
 }
 
 .video-placeholder {
-    height: 250px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height:
+        250px;
 
-    background: var(--azul);
+    display:
+        flex;
 
-    border-radius: 15px;
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        var(--azul);
+
+    border-radius:
+        15px;
 
     box-shadow:
         0 15px 35px rgba(23,59,80,.18);
 
-    color: white;
+    color:
+        white;
 }
 
 .video-placeholder span {
-    width: 55px;
-    height: 55px;
 
-    display: grid;
-    place-items: center;
+    width:
+        55px;
 
-    background: var(--verde);
+    height:
+        55px;
 
-    border-radius: 50%;
+    display:
+        grid;
 
-    font-size: 20px;
+    place-items:
+        center;
+
+    background:
+        var(--verde);
+
+    border-radius:
+        50%;
+
+    font-size:
+        20px;
 }
 
 .video-placeholder strong {
-    margin-top: 12px;
 
-    font-family: "Manrope", sans-serif;
+    margin-top:
+        12px;
 
-    font-size: 8px;
+    font-family:
+        "Manrope", sans-serif;
 
-    letter-spacing: 2px;
+    font-size:
+        8px;
+
+    letter-spacing:
+        2px;
 }
 
 .video-placeholder small {
-    margin-top: 4px;
 
-    color: #adc0c6;
+    margin-top:
+        4px;
 
-    font-size: 7px;
+    color:
+        #adc0c6;
+
+    font-size:
+        7px;
 }
 
 
@@ -1326,39 +2069,58 @@ summary b {
    ========================================================= */
 
 .current-content {
-    display: flex;
 
-    align-items: center;
-    justify-content: space-between;
+    display:
+        flex;
 
-    gap: 30px;
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
 }
 
 .nomade-link {
-    flex-shrink: 0;
+
+    flex-shrink:
+        0;
 
     padding:
         12px
         17px;
 
-    color: white;
+    color:
+        white;
 
-    background: var(--verde);
+    background:
+        var(--verde);
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
-    font-size: 8px;
-    font-weight: 800;
+    font-size:
+        8px;
 
-    transition: .2s;
+    font-weight:
+        800;
+
+    transition:
+        .2s;
 }
 
 .nomade-link:hover {
-    background: var(--azul);
 
-    transform: translateY(-2px);
+    background:
+        var(--azul);
+
+    transform:
+        translateY(-2px);
 }
 
 
@@ -1367,7 +2129,9 @@ summary b {
    ========================================================= */
 
 .mural-tip {
-    max-width: 700px;
+
+    max-width:
+        700px;
 
     margin:
         14px
@@ -1378,15 +2142,20 @@ summary b {
         8px
         15px;
 
-    color: #7f8e92;
+    color:
+        #7f8e92;
 
-    background: rgba(255,255,255,.62);
+    background:
+        rgba(255,255,255,.62);
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    font-size: 8px;
+    font-size:
+        8px;
 }
 
 
@@ -1395,34 +2164,52 @@ summary b {
    ========================================================= */
 
 footer {
-    display: flex;
 
-    align-items: center;
-    justify-content: center;
+    display:
+        flex;
 
-    gap: 18px;
+    align-items:
+        center;
 
-    padding: 15px 20px;
+    justify-content:
+        center;
 
-    color: #bdccd0;
+    gap:
+        18px;
 
-    background: var(--azul);
+    padding:
+        15px
+        20px;
 
-    font-size: 7px;
+    color:
+        #bdccd0;
+
+    background:
+        var(--azul);
+
+    font-size:
+        7px;
 }
 
 footer strong {
-    color: white;
 
-    font-family: "Manrope", sans-serif;
+    color:
+        white;
 
-    font-size: 13px;
+    font-family:
+        "Manrope", sans-serif;
+
+    font-size:
+        13px;
 }
 
 footer a {
-    color: #d7e6e8;
 
-    text-decoration: none;
+    color:
+        #d7e6e8;
+
+    text-decoration:
+        none;
 }
 
 
@@ -1432,19 +2219,26 @@ footer a {
 
 .timeline::-webkit-scrollbar,
 .window-content::-webkit-scrollbar {
-    width: 6px;
+
+    width:
+        6px;
 }
 
 .timeline::-webkit-scrollbar-thumb,
 .window-content::-webkit-scrollbar-thumb {
-    background: #bfd4d1;
 
-    border-radius: 20px;
+    background:
+        #bfd4d1;
+
+    border-radius:
+        20px;
 }
 
 .timeline::-webkit-scrollbar-track,
 .window-content::-webkit-scrollbar-track {
-    background: transparent;
+
+    background:
+        transparent;
 }
 
 
@@ -1455,43 +2249,78 @@ footer a {
 @media (max-width: 1050px) and (min-width: 701px) {
 
     .mural-board {
-        height: 900px;
+
+        width:
+            96vw;
+
+        height:
+            900px;
     }
 
     .mural-board .note-window:nth-child(1) {
-        top: 110px;
+
+        top:
+            120px;
     }
 
     .mural-board .note-window:nth-child(2) {
-        left: 2%;
+
+        left:
+            2%;
     }
 
     .mural-board .note-window:nth-child(3) {
-        right: 2%;
+
+        right:
+            2%;
     }
 
     .mural-board .note-window:nth-child(4) {
-        left: 2%;
-        top: 390px;
+
+        left:
+            2%;
+
+        top:
+            410px;
     }
 
     .mural-board .note-window:nth-child(5) {
-        right: 2%;
-        top: 390px;
+
+        right:
+            2%;
+
+        top:
+            410px;
     }
 
     .mural-board .note-window:nth-child(6) {
-        left: 5%;
-        bottom: 35px;
+
+        left:
+            5%;
+
+        bottom:
+            40px;
     }
 
     .mural-board .note-window:nth-child(7) {
-        right: 5%;
-        bottom: 35px;
+
+        right:
+            5%;
+
+        bottom:
+            40px;
     }
 
     .mural-board .note-window:nth-child(8) {
-        bottom: 20px;
+
+        bottom:
+            25px;
+    }
+
+    .mural-board .note-window[open] {
+
+        width:
+            min(680px, 88vw);
     }
 
 }
@@ -1504,78 +2333,245 @@ footer a {
 @media (max-width: 700px) {
 
     .mural {
+
         padding:
             50px
             12px
             35px;
 
-        overflow: visible;
+        overflow:
+            visible;
     }
 
+
+    /* -----------------------------------------
+       INTRO
+       ----------------------------------------- */
+
     .intro-window {
-        width: 100%;
+
+        width:
+            100%;
     }
 
     .intro-body {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
 
         padding:
             28px
             23px;
 
-        gap: 28px;
+        gap:
+            28px;
     }
 
     .intro-body h1 {
-        font-size: 40px;
 
-        letter-spacing: -2px;
+        font-size:
+            40px;
+
+        letter-spacing:
+            -2px;
     }
 
     .portrait {
-        max-width: 250px;
+
+        max-width:
+            250px;
     }
 
-    .mural-board {
-        width: 100%;
-        height: auto;
 
-        min-height: 0;
+    /* -----------------------------------------
+       MURAL
+       ----------------------------------------- */
+
+    .mural-board {
+
+        width:
+            100%;
+
+        height:
+            auto;
+
+        min-height:
+            0;
 
         padding:
             48px
             12px
             20px;
 
-        display: flex;
-        flex-direction: column;
+        display:
+            flex;
 
-        gap: 12px;
+        flex-direction:
+            column;
 
-        overflow: visible;
+        gap:
+            12px;
+
+        overflow:
+            visible;
     }
 
     .mural-board::before {
-        top: 17px;
+
+        top:
+            17px;
     }
+
+
+    /* -----------------------------------------
+       TODAS LAS FICHAS
+       ----------------------------------------- */
 
     .mural-board .note-window,
     .mural-board .note-window:nth-child(n) {
-        position: relative;
 
-        inset: auto;
+        position:
+            relative;
 
-        width: 100% !important;
+        inset:
+            auto;
 
-        transform: none;
+        width:
+            100% !important;
+
+        min-height:
+            auto;
+
+        transform:
+            none;
+
+        z-index:
+            1;
     }
 
+
+    /* -----------------------------------------
+       FICHA CENTRAL
+       ----------------------------------------- */
+
+    .mural-board .note-window:nth-child(1) {
+
+        order:
+            -1;
+    }
+
+    .mural-board .note-window:nth-child(1) summary {
+
+        min-height:
+            390px;
+    }
+
+
+    /* -----------------------------------------
+       FICHAS CERRADAS EN CELULAR
+       ----------------------------------------- */
+
+    .mural-board .note-window:not(:nth-child(1))
+    summary {
+
+        min-height:
+            105px;
+
+        height:
+            105px;
+
+        flex-direction:
+            row;
+
+        align-items:
+            center;
+
+        justify-content:
+            flex-start;
+
+        gap:
+            13px;
+
+        padding:
+            15px;
+    }
+
+    .mural-board .note-window:not(:nth-child(1))
+    summary .mini-icon {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+        flex:
+            0 0 42px;
+    }
+
+    .mural-board .note-window:not(:nth-child(1))
+    summary > span:nth-child(2) {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        font-size:
+            14px;
+    }
+
+    .mural-board .note-window:not(:nth-child(1))
+    summary::after {
+
+        display:
+            none;
+    }
+
+
+    /* -----------------------------------------
+       VENTANA ABIERTA EN CELULAR
+       ----------------------------------------- */
+
     .mural-board .note-window[open] {
-        width: 100% !important;
+
+        position:
+            relative;
+
+        top:
+            auto;
+
+        left:
+            auto;
+
+        width:
+            100% !important;
+
+        min-height:
+            auto;
+
+        transform:
+            none !important;
+
+        z-index:
+            100;
+    }
+
+    .mural-board .note-window[open]
+    summary {
+
+        min-height:
+            58px;
+
+        height:
+            58px;
     }
 
     .mural-board .window-content {
-        max-height: none;
+
+        max-height:
+            none;
 
         padding:
             24px
@@ -1583,16 +2579,24 @@ footer a {
             27px;
     }
 
+
+    /* -----------------------------------------
+       COLUMNAS
+       ----------------------------------------- */
+
     .mural-board .two-col,
     .video-content {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
     }
 
     .studies,
     .papers {
-        grid-template-columns: 1fr 1fr;
-    }
 
+        grid-template-columns:
+            1fr 1fr;
+    }
 }
 
 
@@ -1603,37 +2607,87 @@ footer a {
 @media (max-width: 500px) {
 
     .intro-body h1 {
-        font-size: 36px;
+
+        font-size:
+            36px;
     }
 
     .intro-text {
-        font-size: 10px;
+
+        font-size:
+            10px;
     }
 
     .mural-board .window-content h2 {
-        font-size: 28px;
+
+        font-size:
+            28px;
     }
 
     .studies,
     .papers,
     .principles {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
     }
 
     .timeline article {
+
         grid-template-columns:
             70px
             1fr;
     }
 
     .current-content {
-        flex-direction: column;
 
-        align-items: flex-start;
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
     }
 
     .video-placeholder {
-        height: 210px;
+
+        height:
+            210px;
     }
 
+    .mural-board .note-window:nth-child(1)
+    summary::before {
+
+        height:
+            250px;
+
+        flex-basis:
+            250px;
+    }
+}
+
+
+/* =========================================================
+   REDUCCIÓN DE MOVIMIENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior:
+            auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+    }
 }
