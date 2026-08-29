@@ -1,273 +1,1639 @@
-*{box-sizing:border-box}
-:root{--ink:#183447;--teal:#2aa69a;--teal2:#72d0c5;--cream:#f7f4ed;--paper:#fff;--muted:#718188;--line:#18344718}
-html{scroll-behavior:smooth}
-body{margin:0;background:#edf2ef;color:var(--ink);font-family:"DM Sans",sans-serif}
-.topbar{height:27px;background:#173447;color:#dce9e8;display:flex;align-items:center;justify-content:space-between;padding:0 15px;font-size:7px;letter-spacing:1px;font-weight:800;position:fixed;z-index:50;left:0;right:0;top:0}
-.mural{padding:70px 5vw 55px;min-height:100vh;background:
-radial-gradient(circle at 15% 25%,#ffffff 0 7%,transparent 7.3%),
-radial-gradient(circle at 87% 12%,#d5ebe7 0 13%,transparent 13.2%),
-linear-gradient(135deg,#faf8f1,#edf4f2)}
-.intro-window{max-width:1200px;margin:0 auto 25px;background:#fff;border:1px solid #17344712;border-radius:20px;box-shadow:0 20px 55px #17344712;overflow:hidden}
-.window-bar{height:34px;background:#f0f1f0;border-bottom:1px solid #17344712;display:flex;align-items:center;padding:0 14px;gap:12px;font-size:8px;color:#718188}
-.dots{display:flex;gap:5px}.dots i{width:7px;height:7px;border-radius:50%;background:#c5d1d0}.dots i:first-child{background:#2aa69a}
-.window-symbol{margin-left:auto;color:#2aa69a}
-.intro-body{display:grid;grid-template-columns:1.15fr .65fr;align-items:center;padding:45px 55px;gap:50px}
-.eyebrow{font-size:8px;font-weight:800;letter-spacing:2px;color:var(--teal)}
-.intro-body h1{font:800 clamp(45px,6vw,78px)/.96 Manrope;letter-spacing:-4px;margin:14px 0 20px}
-.intro-body h1 em{font-style:normal;color:var(--teal)}
-.intro-text{max-width:650px;color:#667b83;font-size:13px;line-height:1.7}
-.intro-instruction{font-size:9px;color:#789096;line-height:1.6;margin-top:20px}
-.intro-instruction strong{color:#315a6d}
-.portrait{max-width:300px;justify-self:center;background:#fff;padding:10px 10px 22px;border-radius:20px;box-shadow:0 22px 45px #1734471b;transform:rotate(2deg)}
-.portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:13px}
-.portrait-caption{padding:9px 5px 0;display:flex;flex-direction:column}
-.portrait-caption strong{font:700 17px Manrope}.portrait-caption span{font-size:7px;color:#7b8b91;margin-top:2px}
-.mural-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
-.note-window{background:#fff;border:1px solid #17344713;border-radius:18px;box-shadow:0 13px 35px #17344710;overflow:hidden;transition:box-shadow .25s,transform .25s}
-.note-window:hover{box-shadow:0 20px 45px #17344718}
-.note-window[open]{box-shadow:0 24px 55px #17344718}
-.note-window[open] summary{border-bottom:1px solid #17344710}
-summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:13px 15px;background:#f1f1f3;user-select:none}
-summary::-webkit-details-marker{display:none}
-summary>span:nth-child(2){display:flex;align-items:baseline;gap:9px;font:700 12px Manrope;color:#24363f}
-summary small{font:800 7px DM Sans;color:var(--teal)}
-summary b{margin-left:auto;width:24px;height:24px;border:1px solid #29383e;border-radius:50%;display:grid;place-items:center;font-size:18px;font-weight:400;transition:.25s}
-.note-window[open] summary b{transform:rotate(45deg);background:var(--teal);border-color:var(--teal);color:#fff}
-.mini-icon{width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--teal);font-size:12px;flex:0 0 23px}
-.window-content{padding:28px 30px 32px;animation:appear .28s ease}
-@keyframes appear{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
-.wide{grid-column:1/-1}
-.two-col{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px}
-.window-content h2{font:700 clamp(25px,3vw,39px)/1.08 Manrope;letter-spacing:-2px;margin:0 0 15px;color:#173b50}
-.window-content p{font-size:10px;line-height:1.6;color:#6c7d83;margin:0 0 12px}
-.window-content .lead{font:500 16px/1.5 Manrope;color:#244d62;margin-bottom:16px}
-.quote{padding:16px 18px;background:#dff1ed;border-left:3px solid var(--teal);border-radius:0 12px 12px 0;color:#246277;font:700 12px/1.4 Manrope}
-.teal-note{background:#173447;color:white}.teal-note summary{background:#21495e}.teal-note summary>span:nth-child(2){color:white}.teal-note .window-content{background:#173447}.teal-note .window-content h2,.teal-note .window-content .lead{color:white}.teal-note .window-content p{color:#b8c8cd}
-.principles{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}
-.principles div{background:#21495e;border:1px solid #ffffff12;border-radius:13px;padding:15px}
-.principles strong{font-size:8px;color:var(--teal2)}.principles h3{font:700 13px Manrope;margin:7px 0;color:white}.principles p{font-size:8px!important;color:#b8c8cd!important;margin:0}
-.accessibility-note{background:#e7f3f0}
-.access-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}.access-pills span{padding:8px 11px;border-radius:999px;background:#fff;font-size:8px;font-weight:800;color:#21617a}
-.timeline-window{grid-column:1/-1}
-.timeline{margin-top:20px;max-height:430px;overflow:auto;padding-right:8px}
-.timeline article{display:grid;grid-template-columns:95px 1fr;gap:15px;padding:0 0 17px 15px;border-left:1px solid #2aa69a55;position:relative}
-.timeline article:before{content:"";position:absolute;left:-4px;top:3px;width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px #dff1ed}
-.timeline time{font-size:8px;font-weight:800;color:var(--teal)}
-.timeline h3{font:700 13px/1.3 Manrope;color:#205671;margin:0 0 3px}
-.timeline b{font-size:8px;color:#65767e}.timeline p{font-size:8px;line-height:1.45;margin-top:4px}
-.timeline .important>div{background:#eef8f5;padding:10px;border-radius:11px}
-.timeline .current>div{background:#dff1ed;padding:10px;border-radius:11px}
-.studies-note{grid-column:1/-1}
-.studies{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-.studies article{background:#f5f6f4;border:1px solid var(--line);padding:14px;border-radius:12px}.studies h3{font:700 12px/1.3 Manrope;color:#205671;margin:0}.studies p{font-size:8px;margin:5px 0 0}.main-study{background:#173447!important}.main-study h3{color:#fff!important}.main-study small{font-size:7px;font-weight:800;color:#72d0c5;letter-spacing:1px}
-.courses{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}.courses span{background:#edf1ef;border-radius:999px;padding:6px 8px;font-size:7px;color:#687980}
-.papers{display:grid;grid-template-columns:1fr 1fr;gap:10px}.papers article{background:#f6f7f5;border-radius:13px;padding:17px}.papers small{color:var(--teal);font-weight:800;font-size:8px}.papers h3{font:700 16px Manrope;color:#205671;margin:7px 0}.papers p{font-size:8px}.papers b{font-size:7px;color:#7a898e;display:block}.papers a{display:inline-block;margin-top:10px;color:#238b83;text-decoration:none;font-size:8px;font-weight:800}
-.video-note{grid-column:1/-1;background:#f7f0e4}
-.video-content{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:center}
-.video-placeholder{height:260px;border-radius:15px;background:#173447;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;box-shadow:0 15px 35px #17344720}.video-placeholder span{width:55px;height:55px;border-radius:50%;background:var(--teal);display:grid;place-items:center;font-size:20px}.video-placeholder strong{font:800 8px Manrope;letter-spacing:2px;margin-top:12px}.video-placeholder small{font-size:7px;color:#adc0c6;margin-top:4px}
-.nomade-note{grid-column:1/-1}.current-content{display:flex;justify-content:space-between;align-items:center;gap:30px}.nomade-link{background:var(--teal);color:white;text-decoration:none;padding:12px 17px;border-radius:999px;font-size:8px;font-weight:800;white-space:nowrap}
-.mural-tip{text-align:center;color:#879499;font-size:8px;padding-top:18px}
-footer{background:#173447;color:#bdccd0;padding:12px 20px;display:flex;justify-content:center;gap:18px;align-items:center;font-size:7px}footer strong{font:700 14px Manrope;color:white}footer a{color:#d7e6e8;text-decoration:none}
-@media(max-width:800px){
-body{background:#edf2ef}.mural{padding:60px 15px 40px}.intro-body{grid-template-columns:1fr;padding:30px 25px;gap:30px}.portrait{max-width:270px}.mural-grid{grid-template-columns:1fr}.wide,.timeline-window,.studies-note,.video-note,.nomade-note{grid-column:auto}.two-col,.video-content{grid-template-columns:1fr}.studies{grid-template-columns:1fr 1fr}.current-content{flex-direction:column;align-items:flex-start}.intro-body h1{font-size:46px}.timeline{max-height:none}
+/* =========================================================
+   LUCÍA SNIEG · CV INTERACTIVO
+   MURAL / PADLET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
 }
-@media(max-width:500px){
-.studies,.papers,.principles{grid-template-columns:1fr}.window-content{padding:23px 20px}.timeline article{grid-template-columns:75px 1fr}.intro-body h1{font-size:39px;letter-spacing:-2px}
+
+:root {
+    --azul: #173B50;
+    --azul-2: #214F67;
+    --verde: #2AA69A;
+    --verde-claro: #DDF0EC;
+    --turquesa: #72CEC2;
+
+    --crema: #F7F3EA;
+    --crema-2: #EEE8DC;
+
+    --amarillo: #F5E7A5;
+    --amarillo-suave: #FFF8D8;
+
+    --coral: #E8B9AA;
+    --coral-suave: #F7E5DF;
+
+    --lila: #DCD8EA;
+    --lila-suave: #F0EDF7;
+
+    --celeste: #D8EAF2;
+    --celeste-suave: #EEF7FA;
+
+    --blanco: #FFFFFF;
+    --texto: #213842;
+    --gris: #718187;
+
+    --sombra:
+        0 18px 40px rgba(23, 59, 80, .10);
+
+    --sombra-fuerte:
+        0 28px 70px rgba(23, 59, 80, .20);
 }
+
 
 /* =========================================================
-   V13 — MURAL TIPO PADLET
-   Las tarjetas quedan distribuidas alrededor de un centro.
-   Al abrir una tarjeta, su contenido crece sobre el mural.
+   BASE
    ========================================================= */
-.mural{
-  padding:62px 3vw 45px;
-  min-height:100vh;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 8% 20%,rgba(255,255,255,.95) 0 85px,transparent 86px),
-    radial-gradient(circle at 91% 14%,#d5ebe7 0 150px,transparent 151px),
-    radial-gradient(circle at 84% 88%,rgba(255,255,255,.8) 0 110px,transparent 111px),
-    linear-gradient(135deg,#f8f5ec 0%,#edf4f2 100%);
-}
-.intro-window{
-  max-width:860px;
-  margin:0 auto;
-  position:relative;
-  z-index:4;
-}
-.intro-body{
-  grid-template-columns:1.15fr .55fr;
-  padding:34px 40px;
-  gap:30px;
-}
-.intro-body h1{
-  font-size:clamp(40px,5vw,64px);
-}
-.portrait{max-width:245px}
 
-/* The actual board */
-.mural-board{
-  width:min(1400px,96vw);
-  height:790px;
-  margin:35px auto 0;
-  position:relative;
-  border-radius:28px;
-  background:
-    radial-gradient(circle at 20% 30%,rgba(255,255,255,.85) 0 2px,transparent 3px),
-    radial-gradient(circle at 70% 65%,rgba(23,52,71,.035) 0 1.5px,transparent 2.5px),
-    linear-gradient(135deg,#eee9dd,#f5f2e9);
-  background-size:auto,auto,auto;
-  border:1px solid rgba(23,52,71,.10);
-  box-shadow:inset 0 0 0 10px rgba(255,255,255,.20),0 22px 60px rgba(23,52,71,.10);
+html {
+    scroll-behavior: smooth;
 }
 
-/* little tape/thumbtack feeling */
-.mural-board:before{
-  content:"MURAL · RECORRIDO";
-  position:absolute;
-  top:15px;
-  left:50%;
-  transform:translateX(-50%);
-  font:800 7px/1 "DM Sans";
-  letter-spacing:2px;
-  color:#9aa6a6;
+body {
+    margin: 0;
+    color: var(--texto);
+    font-family: "DM Sans", sans-serif;
+    background:
+        radial-gradient(
+            circle at 8% 20%,
+            rgba(255,255,255,.95) 0 90px,
+            transparent 91px
+        ),
+        radial-gradient(
+            circle at 91% 10%,
+            rgba(213,235,231,.9) 0 170px,
+            transparent 171px
+        ),
+        linear-gradient(
+            135deg,
+            #faf8f2 0%,
+            #eef5f3 100%
+        );
 }
 
-/* Turn each existing detail into a loose paper/card */
-.mural-board .note-window{
-  position:absolute;
-  width:220px;
-  margin:0;
-  border-radius:13px;
-  overflow:visible;
-  box-shadow:0 9px 18px rgba(23,52,71,.13);
-  border:1px solid rgba(23,52,71,.10);
-  transition:box-shadow .25s,transform .25s;
-}
-.mural-board .note-window:hover{
-  z-index:20;
-  box-shadow:0 16px 32px rgba(23,52,71,.20);
-}
-.mural-board .note-window[open]{
-  width:430px;
-  z-index:100;
-  transform:rotate(0deg)!important;
-  box-shadow:0 25px 55px rgba(23,52,71,.24);
-}
-.mural-board .note-window summary{
-  min-height:52px;
-  border-radius:13px;
-  background:#fff;
-  padding:12px 13px;
-}
-.mural-board .note-window[open] summary{
-  border-radius:13px 13px 0 0;
+
+/* =========================================================
+   BARRA SUPERIOR
+   ========================================================= */
+
+.topbar {
+    position: fixed;
+    z-index: 9999;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 16px;
+
+    background: var(--azul);
+    color: #dcebea;
+
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
 }
 
-/* Every card gets a different location/rotation, like a real mural */
-.mural-board .note-window:nth-child(1){left:50%;top:105px;transform:translateX(-50%) rotate(-1deg);width:250px}
-.mural-board .note-window:nth-child(2){left:4%;top:95px;transform:rotate(-3deg)}
-.mural-board .note-window:nth-child(3){right:4%;top:105px;transform:rotate(3deg)}
-.mural-board .note-window:nth-child(4){left:7%;top:355px;transform:rotate(2deg)}
-.mural-board .note-window:nth-child(5){right:7%;top:355px;transform:rotate(-2deg)}
-.mural-board .note-window:nth-child(6){left:16%;bottom:62px;transform:rotate(-2deg)}
-.mural-board .note-window:nth-child(7){right:16%;bottom:58px;transform:rotate(2deg)}
-.mural-board .note-window:nth-child(8){left:50%;bottom:25px;transform:translateX(-50%) rotate(-1deg);width:270px}
 
-/* The central card is intentionally more prominent */
-.mural-board .note-window:nth-child(1) summary{
-  background:#173447;
-}
-.mural-board .note-window:nth-child(1) summary>span:nth-child(2){color:white}
-.mural-board .note-window:nth-child(1) summary b{border-color:white;color:white}
-.mural-board .note-window:nth-child(1)[open] summary{background:#173447}
+/* =========================================================
+   FONDO GENERAL
+   ========================================================= */
 
-/* Open content floats over the board, rather than pushing every card down */
-.mural-board .window-content{
-  max-height:520px;
-  overflow:auto;
-  background:#fff;
-  border-radius:0 0 13px 13px;
-  padding:25px;
-}
+.mural {
+    min-height: 100vh;
 
-/* Small cards should feel like sticky notes */
-.mural-board .timeline-window summary{background:#fff8c9}
-.mural-board .accessibility-note summary{background:#dff1ed}
-.mural-board .studies-note summary{background:#f8e6dc}
-.mural-board .papers-note summary{background:#e8e4f4}
-.mural-board .video-note summary{background:#dcecf6}
-.mural-board .nomade-note summary{background:#d9eee9}
+    padding:
+        62px
+        3vw
+        55px;
 
-.mural-board .mini-icon{
-  box-shadow:0 1px 4px rgba(23,52,71,.10);
-}
+    overflow: hidden;
 
-/* Opened cards that are naturally very large */
-.mural-board .timeline-window[open],
-.mural-board .studies-note[open],
-.mural-board .papers-note[open]{
-  width:min(700px,70vw);
-}
-.mural-board .video-note[open],
-.mural-board .nomade-note[open]{
-  width:min(620px,70vw);
+    background:
+        radial-gradient(
+            circle at 13% 28%,
+            rgba(255,255,255,.92) 0 75px,
+            transparent 76px
+        ),
+        radial-gradient(
+            circle at 92% 15%,
+            rgba(210,235,231,.8) 0 170px,
+            transparent 171px
+        ),
+        radial-gradient(
+            circle at 85% 87%,
+            rgba(255,255,255,.8) 0 110px,
+            transparent 111px
+        ),
+        linear-gradient(
+            135deg,
+            #faf8f2,
+            #edf4f2
+        );
 }
 
-/* Keep text readable inside the board */
-.mural-board .timeline{max-height:390px}
-.mural-board .studies{grid-template-columns:repeat(2,1fr)}
 
-.mural-tip{
-  max-width:800px;
-  margin:14px auto 0;
-  background:rgba(255,255,255,.6);
-  border-radius:999px;
-  padding:8px 15px;
+/* =========================================================
+   VENTANA PRINCIPAL
+   ========================================================= */
+
+.intro-window {
+    position: relative;
+    z-index: 20;
+
+    width: min(880px, 92vw);
+
+    margin: 0 auto 30px;
+
+    background: rgba(255,255,255,.97);
+
+    border:
+        1px solid rgba(23,59,80,.10);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 65px rgba(23,59,80,.12);
 }
 
-/* Tablet */
-@media(max-width:1050px) and (min-width:701px){
-  .mural-board{height:930px}
-  .mural-board .note-window:nth-child(1){top:130px}
-  .mural-board .note-window:nth-child(2){left:2%;top:40px}
-  .mural-board .note-window:nth-child(3){right:2%;top:40px}
-  .mural-board .note-window:nth-child(4){left:2%;top:480px}
-  .mural-board .note-window:nth-child(5){right:2%;top:480px}
-  .mural-board .note-window:nth-child(6){left:8%;bottom:35px}
-  .mural-board .note-window:nth-child(7){right:8%;bottom:35px}
+
+/* Barra de ventana */
+
+.window-bar {
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 14px;
+
+    gap: 12px;
+
+    background: #F1F2F1;
+
+    border-bottom:
+        1px solid rgba(23,59,80,.08);
+
+    color: #7a898e;
+
+    font-size: 8px;
 }
 
-/* Mobile becomes a tactile vertical mural so nothing gets clipped */
-@media(max-width:700px){
-  .mural{overflow:visible;padding-left:12px;padding-right:12px}
-  .intro-window{margin-bottom:20px}
-  .intro-body{grid-template-columns:1fr;padding:27px 22px}
-  .mural-board{
-    height:auto;
-    min-height:0;
-    padding:50px 12px 20px;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    background:linear-gradient(135deg,#eee9dd,#f5f2e9);
-  }
-  .mural-board:before{top:18px}
-  .mural-board .note-window,
-  .mural-board .note-window:nth-child(n){
-    position:relative;
-    inset:auto;
-    width:100%;
-    transform:none;
-  }
-  .mural-board .note-window[open],
-  .mural-board .timeline-window[open],
-  .mural-board .studies-note[open],
-  .mural-board .papers-note[open],
-  .mural-board .video-note[open],
-  .mural-board .nomade-note[open]{
-    width:100%;
-  }
-  .mural-board .window-content{max-height:none}
+.dots {
+    display: flex;
+    gap: 5px;
+}
+
+.dots i {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #c5d1d0;
+}
+
+.dots i:first-child {
+    background: var(--verde);
+}
+
+.window-symbol {
+    margin-left: auto;
+
+    color: var(--verde);
+
+    font-size: 10px;
+}
+
+
+/* Contenido principal */
+
+.intro-body {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        250px;
+
+    align-items: center;
+
+    gap: 45px;
+
+    padding:
+        40px
+        45px;
+}
+
+.eyebrow {
+    display: block;
+
+    color: var(--verde);
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.intro-body h1 {
+    margin: 14px 0 20px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size:
+        clamp(
+            42px,
+            5vw,
+            66px
+        );
+
+    line-height: .96;
+
+    letter-spacing: -3px;
+
+    color: var(--azul);
+}
+
+.intro-body h1 em {
+    color: var(--verde);
+    font-style: normal;
+}
+
+.intro-text {
+    max-width: 590px;
+
+    margin: 0;
+
+    color: #667b83;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+.intro-instruction {
+    margin-top: 18px;
+
+    color: #849196;
+
+    font-size: 8px;
+
+    line-height: 1.6;
+}
+
+.intro-instruction strong {
+    color: var(--azul-2);
+}
+
+
+/* =========================================================
+   FOTO
+   ========================================================= */
+
+.portrait {
+    width: 100%;
+    max-width: 235px;
+
+    justify-self: center;
+
+    padding: 9px 9px 18px;
+
+    background: var(--blanco);
+
+    border-radius: 17px;
+
+    transform: rotate(2deg);
+
+    box-shadow:
+        0 20px 38px rgba(23,59,80,.15);
+}
+
+.portrait img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    border-radius: 11px;
+}
+
+.portrait-caption {
+    display: flex;
+    flex-direction: column;
+
+    padding:
+        8px
+        4px
+        0;
+}
+
+.portrait-caption strong {
+    color: var(--azul);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 15px;
+}
+
+.portrait-caption span {
+    margin-top: 2px;
+
+    color: #7d8c91;
+
+    font-size: 6px;
+}
+
+
+/* =========================================================
+   EL MURAL
+   ========================================================= */
+
+.mural-board {
+    position: relative;
+
+    width: min(1380px, 96vw);
+
+    height: 760px;
+
+    margin: 0 auto;
+
+    border-radius: 28px;
+
+    border:
+        1px solid rgba(23,59,80,.10);
+
+    background:
+        radial-gradient(
+            circle at 16% 22%,
+            rgba(255,255,255,.8) 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 72% 62%,
+            rgba(23,59,80,.045) 0 1.5px,
+            transparent 2.5px
+        ),
+        linear-gradient(
+            135deg,
+            var(--crema-2),
+            #F5F1E8
+        );
+
+    box-shadow:
+        inset 0 0 0 8px rgba(255,255,255,.25),
+        0 25px 65px rgba(23,59,80,.10);
+}
+
+.mural-board::before {
+    content: "MURAL · RECORRIDO";
+
+    position: absolute;
+
+    top: 14px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #9ba5a5;
+
+    font-size: 7px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
+.mural-board .note-window {
+    position: absolute;
+
+    width: 225px;
+
+    margin: 0;
+
+    overflow: visible;
+
+    border-radius: 14px;
+
+    border:
+        1px solid rgba(23,59,80,.12);
+
+    box-shadow:
+        0 10px 22px rgba(23,59,80,.13);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        width .3s ease;
+}
+
+
+/* Hover */
+
+.mural-board .note-window:hover {
+    z-index: 50;
+
+    box-shadow:
+        0 18px 35px rgba(23,59,80,.18);
+}
+
+
+/* =========================================================
+   POSICIONES
+   ========================================================= */
+
+.mural-board .note-window:nth-child(1) {
+    top: 88px;
+    left: 50%;
+
+    width: 255px;
+
+    transform:
+        translateX(-50%)
+        rotate(-1deg);
+}
+
+.mural-board .note-window:nth-child(2) {
+    top: 70px;
+    left: 4%;
+
+    transform: rotate(-3deg);
+}
+
+.mural-board .note-window:nth-child(3) {
+    top: 72px;
+    right: 4%;
+
+    transform: rotate(3deg);
+}
+
+.mural-board .note-window:nth-child(4) {
+    top: 335px;
+    left: 7%;
+
+    transform: rotate(2deg);
+}
+
+.mural-board .note-window:nth-child(5) {
+    top: 340px;
+    right: 7%;
+
+    transform: rotate(-2deg);
+}
+
+.mural-board .note-window:nth-child(6) {
+    bottom: 52px;
+    left: 14%;
+
+    transform: rotate(-2deg);
+}
+
+.mural-board .note-window:nth-child(7) {
+    bottom: 48px;
+    right: 14%;
+
+    transform: rotate(2deg);
+}
+
+.mural-board .note-window:nth-child(8) {
+    bottom: 20px;
+    left: 50%;
+
+    width: 275px;
+
+    transform:
+        translateX(-50%)
+        rotate(-1deg);
+}
+
+
+/* =========================================================
+   CABECERAS DE LAS TARJETAS
+   ========================================================= */
+
+.mural-board .note-window summary {
+    min-height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    padding:
+        12px
+        13px;
+
+    border-radius: 13px;
+
+    background: var(--blanco);
+
+    cursor: pointer;
+
+    user-select: none;
+
+    list-style: none;
+}
+
+.mural-board .note-window summary::-webkit-details-marker {
+    display: none;
+}
+
+.mural-board .note-window summary > span:nth-child(2) {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+
+    color: var(--azul);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.mural-board .note-window summary small {
+    color: var(--verde);
+
+    font-size: 7px;
+    font-weight: 800;
+}
+
+.mural-board .note-window summary b {
+    width: 24px;
+    height: 24px;
+
+    display: grid;
+    place-items: center;
+
+    margin-left: auto;
+
+    border:
+        1px solid rgba(23,59,80,.55);
+
+    border-radius: 50%;
+
+    color: var(--azul);
+
+    font-size: 17px;
+    font-weight: 400;
+
+    transition:
+        transform .25s,
+        background .25s,
+        color .25s;
+}
+
+.mural-board .note-window[open] summary b {
+    transform: rotate(45deg);
+
+    color: white;
+
+    background: var(--verde);
+
+    border-color: var(--verde);
+}
+
+
+/* Iconito */
+
+.mini-icon {
+    width: 23px;
+    height: 23px;
+
+    flex: 0 0 23px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: var(--verde);
+
+    font-size: 11px;
+
+    box-shadow:
+        0 2px 6px rgba(23,59,80,.10);
+}
+
+
+/* =========================================================
+   COLORES DE CADA PAPEL
+   ========================================================= */
+
+/* Quién soy */
+
+.mural-board .note-window:nth-child(1) summary {
+    background: var(--azul);
+}
+
+.mural-board .note-window:nth-child(1)
+summary > span:nth-child(2) {
+    color: white;
+}
+
+.mural-board .note-window:nth-child(1)
+summary small {
+    color: var(--turquesa);
+}
+
+.mural-board .note-window:nth-child(1)
+summary b {
+    color: white;
+    border-color: rgba(255,255,255,.8);
+}
+
+
+/* Trayectoria */
+
+.mural-board .note-window:nth-child(2) summary {
+    background: var(--amarillo);
+}
+
+
+/* Educación a distancia */
+
+.mural-board .note-window:nth-child(3) summary {
+    background: var(--verde);
+}
+
+.mural-board .note-window:nth-child(3)
+summary > span:nth-child(2) {
+    color: white;
+}
+
+.mural-board .note-window:nth-child(3)
+summary small {
+    color: #d8fff9;
+}
+
+.mural-board .note-window:nth-child(3)
+summary b {
+    color: white;
+    border-color: white;
+}
+
+
+/* Accesibilidad */
+
+.mural-board .note-window:nth-child(4) summary {
+    background: var(--verde-claro);
+}
+
+
+/* Formación */
+
+.mural-board .note-window:nth-child(5) summary {
+    background: var(--coral-suave);
+}
+
+
+/* Trabajos */
+
+.mural-board .note-window:nth-child(6) summary {
+    background: var(--lila);
+}
+
+
+/* Video */
+
+.mural-board .note-window:nth-child(7) summary {
+    background: var(--celeste);
+}
+
+
+/* Actualidad */
+
+.mural-board .note-window:nth-child(8) summary {
+    background: #D7ECE7;
+}
+
+
+/* =========================================================
+   TARJETA ABIERTA
+   ========================================================= */
+
+.mural-board .note-window[open] {
+    z-index: 200;
+
+    transform: rotate(0deg) !important;
+
+    box-shadow:
+        var(--sombra-fuerte);
+}
+
+
+/*
+   IMPORTANTE:
+   Al abrir NO queremos que la información
+   se convierta en una columna microscópica.
+*/
+
+.mural-board .note-window[open] {
+    width: 560px;
+}
+
+.mural-board .note-window:nth-child(2)[open],
+.mural-board .note-window:nth-child(5)[open],
+.mural-board .note-window:nth-child(6)[open] {
+    width: 680px;
+}
+
+.mural-board .note-window:nth-child(3)[open],
+.mural-board .note-window:nth-child(4)[open],
+.mural-board .note-window:nth-child(7)[open],
+.mural-board .note-window:nth-child(8)[open] {
+    width: 620px;
+}
+
+
+/* =========================================================
+   CONTENIDO ABIERTO
+   ========================================================= */
+
+.mural-board .window-content {
+    padding:
+        28px
+        30px
+        32px;
+
+    background: white;
+
+    border-radius:
+        0
+        0
+        14px
+        14px;
+
+    animation:
+        muralAppear .28s ease;
+}
+
+@keyframes muralAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Evitamos columnas ridículas */
+
+.mural-board .two-col {
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, .75fr)
+        minmax(260px, 1.25fr);
+
+    gap: 35px;
+}
+
+.mural-board .window-content h2 {
+    margin:
+        0
+        0
+        16px;
+
+    color: var(--azul);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size:
+        clamp(
+            25px,
+            3vw,
+            39px
+        );
+
+    line-height: 1.08;
+
+    letter-spacing: -1.8px;
+}
+
+.mural-board .window-content p {
+    margin:
+        0
+        0
+        12px;
+
+    color: #687b82;
+
+    font-size: 10px;
+
+    line-height: 1.65;
+}
+
+.mural-board .window-content .lead {
+    color: var(--azul-2);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   CITA
+   ========================================================= */
+
+.quote {
+    margin-top: 20px;
+
+    padding:
+        15px
+        17px;
+
+    color: #246277;
+
+    background: var(--verde-claro);
+
+    border-left:
+        3px solid
+        var(--verde);
+
+    border-radius:
+        0
+        12px
+        12px
+        0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   EDUCACIÓN A DISTANCIA
+   ========================================================= */
+
+.teal-note .window-content {
+    background: var(--azul);
+}
+
+.teal-note .window-content h2,
+.teal-note .window-content .lead {
+    color: white;
+}
+
+.teal-note .window-content p {
+    color: #c2d1d5;
+}
+
+.principles {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.principles div {
+    padding: 15px;
+
+    background: var(--azul-2);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 13px;
+}
+
+.principles strong {
+    color: var(--turquesa);
+
+    font-size: 8px;
+}
+
+.principles h3 {
+    margin:
+        7px
+        0;
+
+    color: white;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 12px;
+}
+
+.principles p {
+    margin: 0;
+
+    color: #bdcdd1 !important;
+
+    font-size: 8px !important;
+}
+
+
+/* =========================================================
+   ACCESIBILIDAD
+   ========================================================= */
+
+.accessibility-note {
+    background: var(--verde-claro);
+}
+
+.access-pills {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 20px;
+}
+
+.access-pills span {
+    padding:
+        8px
+        12px;
+
+    color: #21617a;
+
+    background: white;
+
+    border-radius: 999px;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    box-shadow:
+        0 2px 7px rgba(23,59,80,.07);
+}
+
+
+/* =========================================================
+   TRAYECTORIA
+   ========================================================= */
+
+.timeline {
+    max-height: 430px;
+
+    margin-top: 20px;
+
+    padding-right: 10px;
+
+    overflow-y: auto;
+}
+
+.timeline article {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        85px
+        1fr;
+
+    gap: 15px;
+
+    padding:
+        0
+        0
+        18px
+        15px;
+
+    border-left:
+        1px solid
+        rgba(42,166,154,.45);
+}
+
+.timeline article::before {
+    content: "";
+
+    position: absolute;
+
+    left: -4px;
+    top: 3px;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--verde);
+
+    box-shadow:
+        0 0 0 4px var(--verde-claro);
+}
+
+.timeline time {
+    color: var(--verde);
+
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.timeline h3 {
+    margin:
+        0
+        0
+        3px;
+
+    color: var(--azul-2);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+}
+
+.timeline b {
+    color: #65767e;
+
+    font-size: 8px;
+}
+
+.timeline p {
+    margin-top: 4px !important;
+
+    font-size: 8px !important;
+
+    line-height: 1.5 !important;
+}
+
+.timeline .important > div {
+    padding: 11px;
+
+    background: #eef8f5;
+
+    border-radius: 11px;
+}
+
+.timeline .current > div {
+    padding: 11px;
+
+    background: #d9eee9;
+
+    border-radius: 11px;
+}
+
+
+/* =========================================================
+   FORMACIÓN
+   ========================================================= */
+
+.studies {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+.studies article {
+    padding: 14px;
+
+    background: #f7f7f5;
+
+    border:
+        1px solid
+        rgba(23,59,80,.08);
+
+    border-radius: 12px;
+}
+
+.studies h3 {
+    margin: 0;
+
+    color: var(--azul-2);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.35;
+}
+
+.studies p {
+    margin-top: 5px !important;
+
+    font-size: 8px !important;
+}
+
+.main-study {
+    background: var(--azul) !important;
+}
+
+.main-study h3 {
+    color: white !important;
+}
+
+.main-study small {
+    color: var(--turquesa);
+
+    font-size: 7px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 14px;
+}
+
+.courses span {
+    padding:
+        6px
+        9px;
+
+    color: #687980;
+
+    background: #edf1ef;
+
+    border-radius: 999px;
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   TRABAJOS ESCRITOS
+   ========================================================= */
+
+.papers {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 11px;
+}
+
+.papers article {
+    padding: 17px;
+
+    background: var(--lila-suave);
+
+    border-radius: 13px;
+}
+
+.papers small {
+    color: var(--verde);
+
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.papers h3 {
+    margin:
+        7px
+        0;
+
+    color: var(--azul-2);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 15px;
+}
+
+.papers p {
+    font-size: 8px !important;
+}
+
+.papers b {
+    display: block;
+
+    color: #7a898e;
+
+    font-size: 7px;
+}
+
+.papers a {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: var(--verde);
+
+    text-decoration: none;
+
+    font-size: 8px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
+
+.video-note {
+    background: var(--celeste-suave);
+}
+
+.video-content {
+    display: grid;
+
+    grid-template-columns:
+        .8fr
+        1.2fr;
+
+    gap: 25px;
+
+    align-items: center;
+}
+
+.video-placeholder {
+    height: 250px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--azul);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 35px rgba(23,59,80,.18);
+
+    color: white;
+}
+
+.video-placeholder span {
+    width: 55px;
+    height: 55px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--verde);
+
+    border-radius: 50%;
+
+    font-size: 20px;
+}
+
+.video-placeholder strong {
+    margin-top: 12px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.video-placeholder small {
+    margin-top: 4px;
+
+    color: #adc0c6;
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   ACTUALIDAD
+   ========================================================= */
+
+.current-content {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.nomade-link {
+    flex-shrink: 0;
+
+    padding:
+        12px
+        17px;
+
+    color: white;
+
+    background: var(--verde);
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    transition: .2s;
+}
+
+.nomade-link:hover {
+    background: var(--azul);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   INDICACIÓN FINAL
+   ========================================================= */
+
+.mural-tip {
+    max-width: 700px;
+
+    margin:
+        14px
+        auto
+        0;
+
+    padding:
+        8px
+        15px;
+
+    color: #7f8e92;
+
+    background: rgba(255,255,255,.62);
+
+    border-radius: 999px;
+
+    text-align: center;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    padding: 15px 20px;
+
+    color: #bdccd0;
+
+    background: var(--azul);
+
+    font-size: 7px;
+}
+
+footer strong {
+    color: white;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 13px;
+}
+
+footer a {
+    color: #d7e6e8;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+.timeline::-webkit-scrollbar,
+.window-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.timeline::-webkit-scrollbar-thumb,
+.window-content::-webkit-scrollbar-thumb {
+    background: #bfd4d1;
+
+    border-radius: 20px;
+}
+
+.timeline::-webkit-scrollbar-track,
+.window-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) and (min-width: 701px) {
+
+    .mural-board {
+        height: 900px;
+    }
+
+    .mural-board .note-window:nth-child(1) {
+        top: 110px;
+    }
+
+    .mural-board .note-window:nth-child(2) {
+        left: 2%;
+    }
+
+    .mural-board .note-window:nth-child(3) {
+        right: 2%;
+    }
+
+    .mural-board .note-window:nth-child(4) {
+        left: 2%;
+        top: 390px;
+    }
+
+    .mural-board .note-window:nth-child(5) {
+        right: 2%;
+        top: 390px;
+    }
+
+    .mural-board .note-window:nth-child(6) {
+        left: 5%;
+        bottom: 35px;
+    }
+
+    .mural-board .note-window:nth-child(7) {
+        right: 5%;
+        bottom: 35px;
+    }
+
+    .mural-board .note-window:nth-child(8) {
+        bottom: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .mural {
+        padding:
+            50px
+            12px
+            35px;
+
+        overflow: visible;
+    }
+
+    .intro-window {
+        width: 100%;
+    }
+
+    .intro-body {
+        grid-template-columns: 1fr;
+
+        padding:
+            28px
+            23px;
+
+        gap: 28px;
+    }
+
+    .intro-body h1 {
+        font-size: 40px;
+
+        letter-spacing: -2px;
+    }
+
+    .portrait {
+        max-width: 250px;
+    }
+
+    .mural-board {
+        width: 100%;
+        height: auto;
+
+        min-height: 0;
+
+        padding:
+            48px
+            12px
+            20px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 12px;
+
+        overflow: visible;
+    }
+
+    .mural-board::before {
+        top: 17px;
+    }
+
+    .mural-board .note-window,
+    .mural-board .note-window:nth-child(n) {
+        position: relative;
+
+        inset: auto;
+
+        width: 100% !important;
+
+        transform: none;
+    }
+
+    .mural-board .note-window[open] {
+        width: 100% !important;
+    }
+
+    .mural-board .window-content {
+        max-height: none;
+
+        padding:
+            24px
+            20px
+            27px;
+    }
+
+    .mural-board .two-col,
+    .video-content {
+        grid-template-columns: 1fr;
+    }
+
+    .studies,
+    .papers {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .intro-body h1 {
+        font-size: 36px;
+    }
+
+    .intro-text {
+        font-size: 10px;
+    }
+
+    .mural-board .window-content h2 {
+        font-size: 28px;
+    }
+
+    .studies,
+    .papers,
+    .principles {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline article {
+        grid-template-columns:
+            70px
+            1fr;
+    }
+
+    .current-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .video-placeholder {
+        height: 210px;
+    }
+
 }
