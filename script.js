@@ -1,169 +1,54 @@
 // =========================================================
-// CV INTERACTIVO · LUCÍA SNIEG
-// V18
+// LUCÍA SNIEG · CV INTERACTIVO
+// Interacción de las ventanas del mural
 // =========================================================
-//
-// Las fichas del mural utilizan:
-//
-// <details>
-// <summary>
-//
-// Por eso abrir/cerrar las fichas funciona sin JavaScript.
-//
-// Este archivo queda preparado para agregar:
-// - cierre automático de otras fichas
-// - animaciones
-// - modal de trabajos
-// - reproducción del video
-// - otras interacciones
-// =========================================================
-
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /*
-     * -----------------------------------------------------
-     * FICHAS DEL MURAL
-     * -----------------------------------------------------
-     */
+    const fichas = Array.from(
+        document.querySelectorAll("details.note-window")
+    );
 
-    const fichas = document.querySelectorAll(".note-window");
-
-
-    /*
-     * -----------------------------------------------------
-     * CIERRE AUTOMÁTICO
-     *
-     * Cuando se abre una ficha, cerramos las demás.
-     * Así evitamos que el mural termine lleno de ventanas
-     * abiertas al mismo tiempo.
-     * -----------------------------------------------------
-     */
-
+    // Abrir una ficha cierra automáticamente las demás.
     fichas.forEach((ficha) => {
 
-        const summary = ficha.querySelector("summary");
+        ficha.addEventListener("toggle", () => {
 
-        if (!summary) {
-            return;
-        }
+            if (!ficha.open) {
+                return;
+            }
 
-        summary.addEventListener("click", () => {
+            fichas.forEach((otraFicha) => {
 
-            /*
-             * Esperamos un instante para que <details>
-             * actualice su estado.
-             */
-
-            setTimeout(() => {
-
-                if (ficha.open) {
-
-                    fichas.forEach((otraFicha) => {
-
-                        if (otraFicha !== ficha) {
-                            otraFicha.open = false;
-                        }
-
-                    });
-
+                if (otraFicha !== ficha) {
+                    otraFicha.open = false;
                 }
 
-            }, 0);
+            });
+
+            // Lleva la ventana abierta a una zona visible del mural.
+            requestAnimationFrame(() => {
+                ficha.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "nearest"
+                });
+            });
 
         });
 
     });
 
 
-
-    /*
-     * -----------------------------------------------------
-     * LINKS DE TRABAJOS
-     *
-     * Los enlaces se mantienen como enlaces normales.
-     * Esto permite que funcionen incluso si JavaScript
-     * está desactivado.
-     * -----------------------------------------------------
-     */
-
-    const enlacesTrabajos =
-        document.querySelectorAll(".papers a");
-
-
-    enlacesTrabajos.forEach((enlace) => {
-
-        enlace.addEventListener("click", () => {
-
-            /*
-             * No hacemos preventDefault.
-             *
-             * El navegador abre directamente el enlace
-             * definido en el HTML.
-             */
-
-        });
-
-    });
-
-
-
-    /*
-     * -----------------------------------------------------
-     * VIDEO
-     *
-     * La zona del video queda preparada para que después
-     * podamos reemplazar el contenido por:
-     *
-     * <iframe>
-     *
-     * o
-     *
-     * <video>
-     *
-     * sin cambiar el resto del mural.
-     * -----------------------------------------------------
-     */
-
-    const video =
-        document.querySelector(".video-placeholder");
-
-
-    if (video) {
-
-        video.addEventListener("click", () => {
-
-            /*
-             * Todavía no hacemos nada porque el archivo
-             * del video aún no está incorporado.
-             */
-
-        });
-
-    }
-
-
-
-    /*
-     * -----------------------------------------------------
-     * ESCAPE
-     *
-     * Si alguna ficha está abierta y presionás ESC,
-     * la cerramos.
-     * -----------------------------------------------------
-     */
-
+    // Escape cierra la ventana abierta.
     document.addEventListener("keydown", (event) => {
 
         if (event.key !== "Escape") {
             return;
         }
 
-
         fichas.forEach((ficha) => {
-
             ficha.open = false;
-
         });
 
     });
